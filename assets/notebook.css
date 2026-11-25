@@ -1,0 +1,60 @@
+/* ELVISim lab-notebook system. Paper + graph grid, ink text, pen-blue actions, red-pen annotations (the one loud element).
+   Type: Newsreader (prose, headlines) · Martian Mono (title blocks, figure labels, numbers) · Caveat (handwritten margin notes). */
+:root{
+  --paper:#f6f3ea; --paper-2:#fbf9f3; --grid:#dde6ef; --grid-major:#c7d5e4;
+  --ink:#1d2733; --ink-2:#4a5563; --ink-3:#7a8492;
+  --pen:#2346a8; --pen-dark:#1a3684; --redpen:#c8372d; --hl:#fbe36b;
+  --rule:#1d2733;
+  --serif:"Newsreader",Georgia,"Times New Roman",serif;
+  --mono:"Martian Mono",ui-monospace,"SFMono-Regular",monospace;
+  --hand:"Caveat","Comic Sans MS",cursive;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{background:var(--paper)}
+body{margin:0;color:var(--ink);font:400 18px/1.6 var(--serif);-webkit-font-smoothing:antialiased;
+  background-color:var(--paper);
+  background-image:linear-gradient(var(--grid-major) 1px,transparent 1px),linear-gradient(90deg,var(--grid-major) 1px,transparent 1px),
+    linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:100px 100px,100px 100px,20px 20px,20px 20px;background-position:-1px -1px}
+a{color:var(--pen)}
+:focus-visible{outline:2px solid var(--pen);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+/* top bar: a ruled strip, like the header of a notebook page */
+.top{border-bottom:2px solid var(--rule);background:var(--paper-2)}
+.top .wrap{display:flex;align-items:center;gap:20px;min-height:64px;flex-wrap:wrap}
+.mark{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
+.mark b{font:700 19px var(--mono);letter-spacing:-.02em}
+.mark small{display:block;font:500 10.5px var(--mono);color:var(--ink-3);letter-spacing:.06em;text-transform:uppercase}
+.top nav{margin-left:auto;display:flex;gap:4px;flex-wrap:wrap}
+.top nav a{font:500 12.5px var(--mono);color:var(--ink);text-decoration:none;padding:7px 12px;border-radius:4px;letter-spacing:.02em}
+.top nav a[aria-current="page"]{background:var(--ink);color:var(--paper)}
+@media (hover:hover){.top nav a:not([aria-current]):hover{background:var(--grid)}}
+/* type */
+.label{font:600 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
+h1,h2,h3{font-family:var(--serif);font-weight:600;letter-spacing:-.015em;text-wrap:balance;margin:0}
+h1{font-size:clamp(40px,6.2vw,72px);line-height:1.02;font-weight:500}
+h1 em{font-style:italic;font-weight:400}
+h2{font-size:34px;line-height:1.1}
+h3{font-size:22px;line-height:1.2}
+p{margin:0;max-width:62ch}
+.lede{font-size:21px;line-height:1.5;color:var(--ink-2)}
+.hand{font:600 26px/1.1 var(--hand);color:var(--redpen)}
+.hl{background:linear-gradient(transparent 55%,var(--hl) 55%,var(--hl) 92%,transparent 92%)}
+/* buttons: ink stamps */
+.btn{display:inline-flex;align-items:center;gap:10px;font:600 13.5px var(--mono);letter-spacing:.02em;text-decoration:none;padding:13px 20px;border:2px solid var(--ink);border-radius:6px;background:var(--paper-2);color:var(--ink);box-shadow:4px 4px 0 var(--ink);
+  transition-property:translate,box-shadow,background-color;transition-duration:150ms;transition-timing-function:ease-out}
+.btn.primary{background:var(--pen);border-color:var(--pen-dark);color:#fff;box-shadow:4px 4px 0 var(--pen-dark)}
+@media (hover:hover){.btn:hover{translate:-1px -1px;box-shadow:5px 5px 0 var(--ink)}.btn.primary:hover{box-shadow:5px 5px 0 var(--pen-dark)}}
+.btn:active{translate:3px 3px;box-shadow:1px 1px 0 var(--ink)}
+.btn.primary:active{box-shadow:1px 1px 0 var(--pen-dark)}
+@media (prefers-reduced-motion:reduce){.btn,.btn:hover,.btn:active{translate:none;transition:none}}
+/* cards = pages pinned on the grid */
+.sheet{background:var(--paper-2);border:1.5px solid var(--rule);border-radius:4px}
+/* engineering title block */
+.titleblock{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));border:2px solid var(--rule);background:var(--paper-2);font-family:var(--mono)}
+.titleblock div{padding:10px 14px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.titleblock span{display:block;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
+.titleblock b{display:block;font-size:13px;font-weight:600;margin-top:2px}
+footer.page{margin-top:96px;padding-bottom:48px}
+footer.page .credits{margin-top:14px;font:500 12px/1.7 var(--mono);color:var(--ink-2);max-width:none}

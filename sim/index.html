@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ELVISim · Bench</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20width%3D%2264%22%20height%3D%2264%22%20viewBox%3D%220%200%2016%2016%22%20shape-rendering%3D%22crispEdges%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Crect%20x%3D%222%22%20y%3D%220%22%20width%3D%2212%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%221%22%20y%3D%221%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%222%22%20y%3D%221%22%20width%3D%2212%22%20height%3D%221%22%20fill%3D%22%235DB34A%22/%3E%3Crect%20x%3D%2214%22%20y%3D%221%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%220%22%20y%3D%222%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%221%22%20y%3D%222%22%20width%3D%2214%22%20height%3D%221%22%20fill%3D%22%235DB34A%22/%3E%3Crect%20x%3D%2215%22%20y%3D%222%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%220%22%20y%3D%223%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%221%22%20y%3D%223%22%20width%3D%2214%22%20height%3D%221%22%20fill%3D%22%23F6C12E%22/%3E%3Crect%20x%3D%2215%22%20y%3D%223%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%220%22%20y%3D%224%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%221%22%20y%3D%224%22%20width%3D%2214%22%20height%3D%221%22%20fill%3D%22%23F6C12E%22/%3E%3Crect%20x%3D%2215%22%20y%3D%224%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%220%22%20y%3D%225%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%221%22%20y%3D%225%22%20width%3D%225%22%20height%3D%221%22%20fill%3D%22%23F08A24%22/%3E%3Crect%20x%3D%226%22%20y%3D%225%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23ffffff%22/%3E%3Crect%20x%3D%227%22%20y%3D%225%22%20width%3D%228%22%20height%3D%221%22%20fill%3D%22%23F08A24%22/%3E%3Crect%20x%3D%2215%22%20y%3D%225%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%220%22%20y%3D%226%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%221%22%20y%3D%226%22%20width%3D%224%22%20height%3D%221%22%20fill%3D%22%23F08A24%22/%3E%3Crect%20x%3D%225%22%20y%3D%226%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23ffffff%22/%3E%3Crect%20x%3D%226%22%20y%3D%226%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%227%22%20y%3D%226%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23ffffff%22/%3E%3Crect%20x%3D%228%22%20y%3D%226%22%20width%3D%227%22%20height%3D%221%22%20fill%3D%22%23F08A24%22/%3E%3Crect%20x%3D%2215%22%20y%3D%226%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%220%22%20y%3D%227%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%221%22%20y%3D%227%22%20width%3D%223%22%20height%3D%221%22%20fill%3D%22%23DC3D3A%22/%3E%3Crect%20x%3D%224%22%20y%3D%227%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23ffffff%22/%3E%3Crect%20x%3D%225%22%20y%3D%227%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%226%22%20y%3D%227%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23DC3D3A%22/%3E%3Crect%20x%3D%227%22%20y%3D%227%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%228%22%20y%3D%227%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23ffffff%22/%3E%3Crect%20x%3D%229%22%20y%3D%227%22%20width%3D%226%22%20height%3D%221%22%20fill%3D%22%23DC3D3A%22/%3E%3Crect%20x%3D%2215%22%20y%3D%227%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%220%22%20y%3D%228%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%221%22%20y%3D%228%22%20width%3D%223%22%20height%3D%221%22%20fill%3D%22%23ffffff%22/%3E%3Crect%20x%3D%224%22%20y%3D%228%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%225%22%20y%3D%228%22%20width%3D%223%22%20height%3D%221%22%20fill%3D%22%23DC3D3A%22/%3E%3Crect%20x%3D%228%22%20y%3D%228%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%229%22%20y%3D%228%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23ffffff%22/%3E%3Crect%20x%3D%2210%22%20y%3D%228%22%20width%3D%223%22%20height%3D%221%22%20fill%3D%22%23DC3D3A%22/%3E%3Crect%20x%3D%2213%22%20y%3D%228%22%20width%3D%222%22%20height%3D%221%22%20fill%3D%22%23ffffff%22/%3E%3Crect%20x%3D%2215%22%20y%3D%228%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%220%22%20y%3D%229%22%20width%3D%224%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%224%22%20y%3D%229%22%20width%3D%225%22%20height%3D%221%22%20fill%3D%22%23DC3D3A%22/%3E%3Crect%20x%3D%229%22%20y%3D%229%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%2210%22%20y%3D%229%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23ffffff%22/%3E%3Crect%20x%3D%2211%22%20y%3D%229%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23DC3D3A%22/%3E%3Crect%20x%3D%2212%22%20y%3D%229%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23ffffff%22/%3E%3Crect%20x%3D%2213%22%20y%3D%229%22%20width%3D%223%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%220%22%20y%3D%2210%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%221%22%20y%3D%2210%22%20width%3D%229%22%20height%3D%221%22%20fill%3D%22%238E4A9C%22/%3E%3Crect%20x%3D%2210%22%20y%3D%2210%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%2211%22%20y%3D%2210%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23ffffff%22/%3E%3Crect%20x%3D%2212%22%20y%3D%2210%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%2213%22%20y%3D%2210%22%20width%3D%222%22%20height%3D%221%22%20fill%3D%22%238E4A9C%22/%3E%3Crect%20x%3D%2215%22%20y%3D%2210%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%220%22%20y%3D%2211%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%221%22%20y%3D%2211%22%20width%3D%2210%22%20height%3D%221%22%20fill%3D%22%238E4A9C%22/%3E%3Crect%20x%3D%2211%22%20y%3D%2211%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%2212%22%20y%3D%2211%22%20width%3D%223%22%20height%3D%221%22%20fill%3D%22%238E4A9C%22/%3E%3Crect%20x%3D%2215%22%20y%3D%2211%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%220%22%20y%3D%2212%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%221%22%20y%3D%2212%22%20width%3D%2214%22%20height%3D%221%22%20fill%3D%22%232A9AD6%22/%3E%3Crect%20x%3D%2215%22%20y%3D%2212%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%220%22%20y%3D%2213%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%221%22%20y%3D%2213%22%20width%3D%2214%22%20height%3D%221%22%20fill%3D%22%232A9AD6%22/%3E%3Crect%20x%3D%2215%22%20y%3D%2213%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%221%22%20y%3D%2214%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%222%22%20y%3D%2214%22%20width%3D%2212%22%20height%3D%221%22%20fill%3D%22%232A9AD6%22/%3E%3Crect%20x%3D%2214%22%20y%3D%2214%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%222%22%20y%3D%2215%22%20width%3D%2212%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Martian+Mono:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+
+/* Layout: app shell. Sticky top bar (brand, view nav, experiment, theme) → per-view toolbar → canvas → inspector; sticky status bar shows live instrument readings on every view. Board and PC mock keep their physical colours; the shell follows the light/dark tokens. */
+:root{
+  --bg:#f6f3ea; --surface:#fbf9f3; --surface-2:#f1ede1; --sunken:#e9e3d3;
+  --line:rgba(29,39,51,.18); --line-strong:rgba(29,39,51,.32);
+  --ink:#1d2733; --muted:#4a5563; --faint:#7a8492;
+  --accent:#2346a8; --accent-ink:#ffffff; --accent-soft:color-mix(in oklab,#2346a8 11%,transparent);
+  --grid:#dde6ef; --grid-major:#c7d5e4; --redpen:#c8372d;
+  --good:#15803d; --bad:#c62828; --warn:#a15c07;
+  --ch0:#b98300; --ch1:#0284c7;
+  --stage-a:#5a6873; --stage-b:#47535d;
+  --shadow-border:0 0 0 1.5px rgba(29,39,51,.75);
+  --shadow-border-hover:0 0 0 1.5px rgba(29,39,51,1);
+  --sans:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"Martian Mono",ui-monospace,"SFMono-Regular",monospace;
+  --serif:"Newsreader",Georgia,serif;
+  --display:var(--sans); --body:var(--sans);
+  --r-sm:5px; --r-md:6px; --r-lg:6px;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html,body{margin:0;background:var(--bg);color:var(--ink);font:14.5px/1.55 var(--sans);-webkit-font-smoothing:antialiased}
+body{background-color:var(--bg);background-image:linear-gradient(var(--grid-major) 1px,transparent 1px),linear-gradient(90deg,var(--grid-major) 1px,transparent 1px),linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:100px 100px,100px 100px,20px 20px,20px 20px;background-position:-1px -1px}
+button,select,input{font-family:inherit}
+.app{min-height:100vh;display:grid;grid-template-rows:auto 1fr auto}
+/* top bar */
+.topbar{position:sticky;top:0;z-index:20;background:var(--surface);border-bottom:2px solid var(--ink)}
+.topbar-in{max-width:1500px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;margin-right:6px}
+.brand-mark{display:grid;place-items:center;text-decoration:none}
+.brand h1{font:700 18px/1.1 var(--mono);margin:0;letter-spacing:-.02em}
+.brand h1 small{display:block;font:500 10px var(--mono);color:var(--faint);letter-spacing:.06em;text-transform:uppercase;margin-top:3px}
+.brand a{color:inherit;text-decoration:none}
+.nav{display:flex;gap:2px;background:transparent;padding:0;border-radius:0}
+.nav button{display:flex;align-items:center;gap:7px;background:none;border:1px solid transparent;color:#334155;font:500 13.5px var(--sans);padding:6px 12px 6px 10px;border-radius:6px;box-shadow:none}
+.nav button[aria-selected="true"]{background:var(--ink);color:var(--bg);font-weight:600;box-shadow:none}
+.nav button[aria-selected="true"] kbd{color:#c9d2dc;border-color:#5b6672}
+.nav kbd{font:500 10.5px var(--mono);color:#64748b;border:1px solid var(--line);border-radius:4px;padding:0 4px;margin-left:2px}
+.spacer{flex:1}
+.toplink{font:500 12px var(--mono);color:var(--ink);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--line-strong)}
+@media (hover:hover){.toplink:hover{text-decoration-color:var(--ink)}}
+.field{display:flex;align-items:center;gap:8px}
+.field>span{font-size:12px;color:#334155;font-weight:600}
+/* controls */
+label{font-size:12.5px;color:var(--muted)}
+select,input[type=number]{background:var(--surface);color:var(--ink);border:1px solid var(--line-strong);border-radius:var(--r-sm);padding:5px 8px;font:13.5px var(--mono);font-variant-numeric:tabular-nums}
+input[type=number]{width:96px}
+button{font:500 13px var(--sans);color:var(--ink);background:var(--surface);border:1px solid transparent;box-shadow:var(--shadow-border);border-radius:var(--r-sm);padding:6px 12px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition-property:scale,background-color,box-shadow,color;transition-duration:150ms;transition-timing-function:ease-out;-webkit-tap-highlight-color:transparent}
+button svg{flex:none}
+button.has-icon{padding-inline-start:10px}
+.win button{box-shadow:none}
+@media (hover:hover){button:not(.win *):hover{box-shadow:var(--shadow-border-hover);background:var(--surface-2)}.win button:hover{filter:brightness(1.12)}button.primary:hover{background:color-mix(in oklab,var(--accent) 88%,black)}}
+button:not(:disabled):active{scale:0.96}
+button.primary{background:var(--accent);color:var(--accent-ink);font-weight:600;border:1.5px solid #1a3684;box-shadow:3px 3px 0 #1a3684}
+button.ghost{box-shadow:none;background:transparent;color:#334155}
+.segs{display:inline-flex;background:#e2e7ee;padding:3px;border-radius:9px;gap:2px}
+.segs button{box-shadow:none;background:transparent;color:#334155;font-weight:500;padding:5px 11px;border-radius:6px}
+@media (hover:hover){.segs button:not([aria-pressed="true"]):hover,.nav button:not([aria-selected="true"]):hover{background:color-mix(in oklab,var(--surface) 55%,transparent);color:var(--ink);box-shadow:none}}
+.segs button[aria-pressed="true"]{background:var(--ink);color:var(--bg);font-weight:600;box-shadow:none}
+.iconbtn{width:34px;height:34px;padding:0;justify-content:center}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+/* page */
+main{max-width:1500px;width:100%;margin:0 auto;padding:18px 20px 28px;display:grid;gap:14px;align-content:start}
+h2{font:600 21px/1.2 var(--serif);letter-spacing:-.01em;margin:0 0 10px;color:var(--ink)}
+h3{font:600 11.5px var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--faint);margin:0}
+.panel{background:var(--surface);border:1px solid transparent;box-shadow:var(--shadow-border);border-radius:var(--r-lg);padding:16px}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.viewhead{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.viewhead p{margin:2px 0 0;color:var(--muted);font-size:13px;max-width:70ch}
+.toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;background:var(--surface);box-shadow:var(--shadow-border);border:1px solid transparent;border-radius:12px;padding:8px}
+.tgroup{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.tsep{width:1px;height:22px;background:var(--line);margin:0 2px}
+.swatches{display:flex;gap:5px;align-items:center}
+.sw{width:22px;height:22px;border-radius:50%;padding:0;justify-content:center;box-shadow:inset 0 0 0 1px oklch(0.55 0 0 / .55)}
+.sw[aria-pressed="true"]{box-shadow:0 0 0 2px var(--surface),0 0 0 4px var(--accent)}
+.sw.auto{background:conic-gradient(#d93a3a 0 25%,#222 0 50%,#e6b800 0 75%,#2f9e44 0);}
+details.help{position:relative}
+details.help summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px;font:500 13px var(--sans);color:var(--muted);padding:6px 10px;border-radius:var(--r-sm)}
+details.help summary::-webkit-details-marker{display:none}
+@media (hover:hover){details.help summary:hover{background:var(--surface-2);color:var(--ink)}}
+.helpcard{position:absolute;z-index:15;top:calc(100% + 6px);left:0;width:min(420px,86vw);background:var(--surface);box-shadow:var(--shadow-border),0 16px 32px -8px oklch(0 0 0 / .25);border:1px solid transparent;border-radius:12px;padding:14px 16px;font-size:13px;color:var(--muted);display:grid;gap:7px}
+.helpcard b{color:var(--ink);font-weight:600}
+.helpcard kbd{font:500 11px var(--mono);border:1px solid var(--line-strong);border-radius:4px;padding:0 5px;color:var(--ink)}
+/* stage */
+#stage{position:relative;overflow-x:auto;overflow-y:hidden;padding:10px 70px 26px;background:linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px) 0 0/24px 24px,linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px) 0 0/24px 24px,radial-gradient(ellipse at 50% 25%,var(--stage-a) 0%,var(--stage-b) 80%);border-radius:var(--r-lg);box-shadow:var(--shadow-border);border:1px solid transparent}
+#tw{min-width:1100px;transform-origin:50% 50%}
+@media (prefers-reduced-motion:no-preference){#tw{transition:transform 350ms cubic-bezier(0.2,0,0,1)}}
+svg#bb{display:block;width:100%;height:auto;touch-action:none;user-select:none;-webkit-user-select:none}
+#stage.tilt #tw{transform:perspective(2600px) rotateX(22deg)}
+
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.guide{border-left:0;display:grid;gap:8px}
+.guide .ghead{display:flex;justify-content:space-between;align-items:center}
+.guide h3{color:var(--accent);font-size:12px}
+.gsteps{margin:0;padding-left:20px;display:grid;gap:4px;font-size:14px;color:var(--ink)}
+.gsteps b{font-weight:600}
+.gexp{font:500 13.5px var(--sans);color:var(--muted)}
+.gexp b{font:600 15px var(--mono);color:var(--good)}
+.inspector{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:14px}
+@media (max-width:900px){.inspector{grid-template-columns:1fr}}
+.inspector .panel{padding:12px 14px;display:grid;gap:6px;align-content:start}
+.status{font:12.5px/1.5 var(--mono);color:var(--muted);min-height:1.5em}
+.status b{color:var(--ink);font-weight:600}
+.warns div{font:500 13px var(--sans)}
+#checkOut{font-size:13.5px;display:grid;gap:4px}
+#checkOut .ok{color:var(--good);font-weight:500}#checkOut .no{color:var(--bad)}
+.empty{font-size:13px;color:var(--faint)}
+/* status bar */
+.statusbar{position:sticky;bottom:0;z-index:20;background:var(--surface);border-top:1px solid var(--line)}
+.statusbar{box-shadow:0 -6px 16px -10px oklch(0 0 0 / .18)}
+.pcstrip{max-width:1500px;margin:0 auto;padding:8px 20px;display:flex;gap:10px;align-items:stretch;overflow-x:auto;font-variant-numeric:tabular-nums}
+.ro2{display:flex;align-items:center;gap:12px;background:var(--surface-2);border:1px solid var(--line);border-radius:10px;padding:5px 12px;white-space:nowrap}
+.ro2 .lab{font:600 10.5px var(--sans);letter-spacing:.07em;text-transform:uppercase;color:#475569}
+.ro2 .val{font:600 17px var(--mono);color:var(--ink);letter-spacing:-.01em}
+.ro2 .sub{font:500 12.5px var(--mono);color:#334155}
+.ro2 .mode{font:600 11.5px var(--mono);color:var(--accent);background:var(--accent-soft);border-radius:5px;padding:1px 6px}
+.ro2.dmm{background:#0b1220;border-color:#0b1220}.ro2.dmm .lab{color:#94a3b8}.ro2.dmm .val{color:#7cf2b4;font-size:19px}.ro2.dmm .mode{color:#bcd4ff;background:rgba(91,155,255,.2)}
+.ro2 .ch{display:flex;align-items:baseline;gap:5px}.ro2 .ch b{font:700 11px var(--mono)}
+.ro2.warn{background:color-mix(in oklab,var(--bad) 9%,white);border-color:color-mix(in oklab,var(--bad) 30%,white);color:var(--bad);font:500 12.5px var(--sans);white-space:normal;min-width:220px}
+.pill{align-self:center}
+.credits{max-width:1500px;width:100%;margin:0 auto;padding:4px 20px 18px;display:flex;flex-wrap:wrap;justify-content:center;gap:4px 10px;font:400 13px var(--sans);color:#475569}
+.credits b{color:var(--ink);font-weight:600}
+.credits span{color:var(--faint)}
+.sbwrap{max-width:1500px;margin:0 auto;display:flex;align-items:center;gap:10px;padding-right:20px}.sbwrap .pcstrip{flex:1;margin:0}
+.pill.visits{white-space:nowrap;color:#334155;background:#e2e7ee}
+.pill{display:inline-flex;align-items:center;gap:6px;font:500 12px var(--sans);padding:2px 9px;border-radius:999px;background:var(--sunken);color:var(--muted)}
+.pill i{width:7px;height:7px;border-radius:50%;background:currentColor;display:inline-block}
+.pill.on{color:var(--good);background:color-mix(in oklab,var(--good) 13%,transparent)}
+.pill.off{color:var(--bad);background:color-mix(in oklab,var(--bad) 12%,transparent)}
+details summary{cursor:pointer;color:var(--accent);font-size:13.5px}
+details p{font-size:13px;color:var(--muted);margin:6px 0}
+@media (prefers-reduced-motion:reduce){button:not(:disabled):active{scale:1}}
+
+/* ---------- computer screen ---------- */
+.monitor{background:#0c0d0f;border-radius:20px;padding:18px 18px 10px;border:1px solid #2a2d31;box-shadow:0 24px 48px -12px rgba(0,0,0,.45)}
+.screen{background:#1e5a9e;background:linear-gradient(160deg,#1f5fa6,#173f74);border-radius:4px;overflow:hidden;display:grid;grid-template-rows:auto 1fr auto;min-height:760px;font-family:"Segoe UI",system-ui,sans-serif}
+.monitor .chin{text-align:center;font:600 12px var(--body);color:#59606a;padding-top:8px;letter-spacing:.2em}
+.launcher{display:flex;align-items:center;gap:6px;background:#2b2f35;border-bottom:1px solid #111;padding:6px 10px;flex-wrap:wrap}
+.launcher .lbrand{font:700 13px "Segoe UI",var(--body);color:#fff;margin-right:12px}
+.launcher .lbrand span{color:#8fd14f}
+.ltile{display:grid;justify-items:center;gap:2px;background:#3a3f46;border:1px solid #50565e;border-radius:4px;padding:4px 8px;min-width:58px;color:#e9edf1;font:600 11px "Segoe UI",var(--body)}
+.ltile i{font-style:normal;font:700 15px var(--mono);color:#ffd34d}
+.ltile.on{background:#44617f;border-color:#7fb2e5}
+.desk{display:grid;grid-template-columns:minmax(330px,.9fr) minmax(0,1.6fr);gap:12px;padding:12px;align-items:start}
+@media (max-width:1000px){.desk{grid-template-columns:1fr}}
+.win{background:#3c3f43;border:1px solid #1a1c1f;border-radius:6px;box-shadow:0 10px 24px rgba(0,0,0,.35);overflow:hidden;color:#e8ebee;font:13px "Segoe UI",var(--body)}
+.win .tbar{display:flex;align-items:center;justify-content:space-between;background:linear-gradient(#5a6068,#474c53);padding:5px 8px;font-weight:600;font-size:12.5px;border-bottom:1px solid #222}
+.win .tbar .wb{display:flex;gap:4px}.win .tbar .wb span{width:12px;height:12px;border-radius:2px;background:#6b7179;display:inline-block}.win .tbar .wb span:last-child{background:#c0392b}
+.win .body{padding:10px;display:grid;gap:10px}
+.grp{border:1px solid #5b6068;border-radius:4px;padding:8px;display:grid;gap:8px;position:relative}
+.grp>.gl{position:absolute;top:-9px;left:8px;background:#3c3f43;padding:0 4px;font-size:11.5px;color:#c7cdd3}
+.lcd2{background:#050607;border:2px solid #24272b;border-radius:3px;padding:8px 12px;text-align:right;font:600 44px var(--mono);color:#e8f3ff;font-variant-numeric:tabular-nums;min-height:72px}
+.lcd2 small{display:flex;justify-content:space-between;font:500 11px var(--mono);color:#7d8995}
+.mbtns{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
+.mb{background:linear-gradient(#5d636b,#4a4f56);border:1px solid #23262a;color:#fff;border-radius:3px;padding:6px 2px;display:grid;justify-items:center;font:600 15px var(--mono)}
+.mb small{font:500 10px "Segoe UI",var(--body);color:#cfd5db}
+.mb[aria-pressed="true"]{background:linear-gradient(#3f86c9,#2c6aa6);border-color:#9cc9f2}
+.sfpbtns{display:flex;gap:6px;justify-content:flex-end;flex-wrap:wrap}
+.sfpbtns button{background:linear-gradient(#61676f,#4b5057);border:1px solid #23262a;color:#fff;border-radius:3px;padding:4px 12px;font:600 12px "Segoe UI",var(--body)}
+.sfpbtns button[aria-pressed="true"]{background:linear-gradient(#5fa743,#3f7f2a)}
+.hint2{font-size:11.5px;color:#b8c0c8}
+.win select,.win input[type=number]{background:#f4f5f6;color:#111;border:1px solid #23262a;border-radius:2px;padding:3px 6px;font:13px var(--mono)}
+.win label{color:#d4d9de;font-size:12px}
+.kv2{display:grid;grid-template-columns:84px minmax(0,1fr);gap:6px;align-items:center}
+.win select{width:100%}
+.wbtns{display:flex;gap:6px}
+.wbtn{background:linear-gradient(#5d636b,#4a4f56);border:1px solid #23262a;border-radius:3px;padding:4px 10px}
+.wbtn svg{display:block}
+.wbtn[aria-pressed="true"]{background:linear-gradient(#3f86c9,#2c6aa6);border-color:#9cc9f2}
+.freqbig{background:#050607;border:2px solid #24272b;border-radius:3px;font:600 30px var(--mono);color:#e8f3ff;text-align:right;padding:4px 10px}
+.scopegrid{display:grid;grid-template-columns:minmax(0,1fr) 250px;gap:10px}
+@media (max-width:760px){.scopegrid{grid-template-columns:1fr}}
+canvas#scr{width:100%;aspect-ratio:10/8;background:#000;border:2px solid #24272b;display:block;cursor:ew-resize;touch-action:none}
+.meas{display:grid;grid-template-columns:repeat(2,1fr);gap:6px;font:12px var(--mono);font-variant-numeric:tabular-nums}
+.meas div{background:#2a2d31;border:1px solid #1a1c1f;border-radius:3px;padding:4px 6px}
+.meas b{display:block;font:600 10.5px "Segoe UI",var(--body);color:#9aa4ae}
+.taskbar{display:flex;align-items:center;gap:10px;background:rgba(20,24,30,.92);padding:5px 10px;font:12px "Segoe UI",var(--body);color:#dfe4e9}
+.taskbar .start{width:22px;height:22px;display:grid;grid-template-columns:1fr 1fr;gap:2px}
+.taskbar .start span{background:#6cb6ff}
+.taskbar .tk{background:#2c333c;border-bottom:2px solid #6cb6ff;padding:3px 10px}
+.taskbar .clock{margin-left:auto;font-variant-numeric:tabular-nums}
+
+/* ---------- lab sheet ---------- */
+.sheet{display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,.9fr);gap:14px;align-items:start}
+@media (max-width:980px){.sheet{grid-template-columns:1fr}}
+svg.sch{width:100%;height:auto;display:block}
+/* schematic <-> board linking */
+.sch .hl{fill:#ffd84d;opacity:0;transition:opacity 120ms}
+.sch .hl.on{opacity:.55}
+.sch .hit{fill:transparent;cursor:pointer}
+.minisch{position:absolute;top:12px;left:14px;z-index:5;width:262px;background:var(--surface);border-radius:var(--r-lg);box-shadow:var(--shadow-border),0 8px 24px rgba(10,20,35,.28);padding:6px 8px 4px}
+.minisch .mh{display:flex;align-items:center;justify-content:space-between;gap:12px;white-space:nowrap;font:600 10.5px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:0 2px}
+.minisch .mh button{padding:1px 6px;font:500 11px var(--sans)}
+.minisch .mhint{font:11px var(--sans);color:var(--faint);padding:0 2px 2px}
+.minisch.min{width:max-content;padding:5px 6px 5px 10px}
+.minisch.min svg,.minisch.min .mhint{display:none}
+.ws{display:grid;gap:7px}
+.q{display:grid;grid-template-columns:64px 1fr auto;gap:8px;align-items:center}
+.q .lab{font:600 14px var(--mono);color:var(--ink)}
+.q input{width:100%}
+.unit{font-size:12px;color:var(--muted)}
+.mark{font:600 12px var(--body);padding:2px 8px;border-radius:999px;white-space:nowrap}
+.mark.ok{background:color-mix(in oklab,var(--good) 14%,transparent);color:var(--good)}
+.mark.no{background:color-mix(in oklab,var(--bad) 14%,transparent);color:var(--bad)}
+.mark.half{background:color-mix(in oklab,var(--warn) 16%,transparent);color:var(--warn)}
+.ans{grid-column:2/4;font:13px var(--mono);color:var(--muted);display:none}
+.reveal .ans{display:block}
+.steps{margin:0;padding-left:20px;color:var(--muted);font-size:14px}
+.steps li{margin:4px 0}.steps b{color:var(--ink)}
+details summary{cursor:pointer;color:var(--accent);font-size:14px}
+details p{font-size:13px;color:var(--muted);margin:6px 0}
+.score{font:600 15px var(--mono)}
+.pxlogo{image-rendering:pixelated}
+</style>
+</head>
+<body>
+<script>
+/* ===== Visitor tracking (GoatCounter: free, no cookies) =====
+   1. Sign up at https://www.goatcounter.com and pick a code, e.g. "ele211sim"
+   2. Put that code below. Leave it empty to turn tracking off.
+   3. To show the visit count on the page: GoatCounter Settings → tick
+      "Allow adding visitor counts on your website". */
+window.ANALYTICS={goatcounter:"3hsannn",showCount:true};
+</script>
+<div class="app">
+<header class="topbar"><div class="topbar-in">
+  <div class="brand"><a class="brand-mark" href="../index.html" aria-label="ELVISim overview"><svg width="34" height="34" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true" class="pxlogo"><rect x="2" y="0" width="12" height="1" fill="#1d2733"/><rect x="1" y="1" width="1" height="1" fill="#1d2733"/><rect x="2" y="1" width="12" height="1" fill="#5DB34A"/><rect x="14" y="1" width="1" height="1" fill="#1d2733"/><rect x="0" y="2" width="1" height="1" fill="#1d2733"/><rect x="1" y="2" width="14" height="1" fill="#5DB34A"/><rect x="15" y="2" width="1" height="1" fill="#1d2733"/><rect x="0" y="3" width="1" height="1" fill="#1d2733"/><rect x="1" y="3" width="14" height="1" fill="#F6C12E"/><rect x="15" y="3" width="1" height="1" fill="#1d2733"/><rect x="0" y="4" width="1" height="1" fill="#1d2733"/><rect x="1" y="4" width="14" height="1" fill="#F6C12E"/><rect x="15" y="4" width="1" height="1" fill="#1d2733"/><rect x="0" y="5" width="1" height="1" fill="#1d2733"/><rect x="1" y="5" width="5" height="1" fill="#F08A24"/><rect x="6" y="5" width="1" height="1" fill="#ffffff"/><rect x="7" y="5" width="8" height="1" fill="#F08A24"/><rect x="15" y="5" width="1" height="1" fill="#1d2733"/><rect x="0" y="6" width="1" height="1" fill="#1d2733"/><rect x="1" y="6" width="4" height="1" fill="#F08A24"/><rect x="5" y="6" width="1" height="1" fill="#ffffff"/><rect x="6" y="6" width="1" height="1" fill="#1d2733"/><rect x="7" y="6" width="1" height="1" fill="#ffffff"/><rect x="8" y="6" width="7" height="1" fill="#F08A24"/><rect x="15" y="6" width="1" height="1" fill="#1d2733"/><rect x="0" y="7" width="1" height="1" fill="#1d2733"/><rect x="1" y="7" width="3" height="1" fill="#DC3D3A"/><rect x="4" y="7" width="1" height="1" fill="#ffffff"/><rect x="5" y="7" width="1" height="1" fill="#1d2733"/><rect x="6" y="7" width="1" height="1" fill="#DC3D3A"/><rect x="7" y="7" width="1" height="1" fill="#1d2733"/><rect x="8" y="7" width="1" height="1" fill="#ffffff"/><rect x="9" y="7" width="6" height="1" fill="#DC3D3A"/><rect x="15" y="7" width="1" height="1" fill="#1d2733"/><rect x="0" y="8" width="1" height="1" fill="#1d2733"/><rect x="1" y="8" width="3" height="1" fill="#ffffff"/><rect x="4" y="8" width="1" height="1" fill="#1d2733"/><rect x="5" y="8" width="3" height="1" fill="#DC3D3A"/><rect x="8" y="8" width="1" height="1" fill="#1d2733"/><rect x="9" y="8" width="1" height="1" fill="#ffffff"/><rect x="10" y="8" width="3" height="1" fill="#DC3D3A"/><rect x="13" y="8" width="2" height="1" fill="#ffffff"/><rect x="15" y="8" width="1" height="1" fill="#1d2733"/><rect x="0" y="9" width="4" height="1" fill="#1d2733"/><rect x="4" y="9" width="5" height="1" fill="#DC3D3A"/><rect x="9" y="9" width="1" height="1" fill="#1d2733"/><rect x="10" y="9" width="1" height="1" fill="#ffffff"/><rect x="11" y="9" width="1" height="1" fill="#DC3D3A"/><rect x="12" y="9" width="1" height="1" fill="#ffffff"/><rect x="13" y="9" width="3" height="1" fill="#1d2733"/><rect x="0" y="10" width="1" height="1" fill="#1d2733"/><rect x="1" y="10" width="9" height="1" fill="#8E4A9C"/><rect x="10" y="10" width="1" height="1" fill="#1d2733"/><rect x="11" y="10" width="1" height="1" fill="#ffffff"/><rect x="12" y="10" width="1" height="1" fill="#1d2733"/><rect x="13" y="10" width="2" height="1" fill="#8E4A9C"/><rect x="15" y="10" width="1" height="1" fill="#1d2733"/><rect x="0" y="11" width="1" height="1" fill="#1d2733"/><rect x="1" y="11" width="10" height="1" fill="#8E4A9C"/><rect x="11" y="11" width="1" height="1" fill="#1d2733"/><rect x="12" y="11" width="3" height="1" fill="#8E4A9C"/><rect x="15" y="11" width="1" height="1" fill="#1d2733"/><rect x="0" y="12" width="1" height="1" fill="#1d2733"/><rect x="1" y="12" width="14" height="1" fill="#2A9AD6"/><rect x="15" y="12" width="1" height="1" fill="#1d2733"/><rect x="0" y="13" width="1" height="1" fill="#1d2733"/><rect x="1" y="13" width="14" height="1" fill="#2A9AD6"/><rect x="15" y="13" width="1" height="1" fill="#1d2733"/><rect x="1" y="14" width="1" height="1" fill="#1d2733"/><rect x="2" y="14" width="12" height="1" fill="#2A9AD6"/><rect x="14" y="14" width="1" height="1" fill="#1d2733"/><rect x="2" y="15" width="12" height="1" fill="#1d2733"/></svg></a>
+    <h1><a href="../index.html">ELVISim</a><small>ELE 211L · NI ELVIS II+</small></h1></div>
+  <nav class="nav" role="tablist" aria-label="Views">
+    <button role="tab" id="mt-bench" aria-selected="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h.01M11 8h.01M15 8h.01M7 12h.01M11 12h.01M15 12h.01M7 16h.01M11 16h.01M15 16h.01" stroke-width="2.4" stroke-linecap="round"/></svg>Lab bench<kbd>1</kbd></button>
+    <button role="tab" id="mt-pc" aria-selected="false"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/><path d="M6 12l3-4 3 3 3-5 3 6" stroke-linejoin="round"/></svg>Computer screen<kbd>2</kbd></button>
+    <button role="tab" id="mt-sheet" aria-selected="false"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h4"/></svg>Lab sheet<kbd>3</kbd></button>
+  </nav>
+  <div class="spacer"></div>
+  <div class="field"><span>Experiment</span>
+    <span class="segs" role="group" aria-label="Experiment part">
+      <button data-part="dc" aria-pressed="true">1 · DC</button>
+      <button data-part="tr" aria-pressed="false">2 · Transient</button>
+      <button data-part="ac" aria-pressed="false">3 · AC</button>
+    </span></div>
+  <div class="field"><span>Parts</span>
+    <span class="segs" role="group" aria-label="Component values">
+      <button id="bIdeal" aria-pressed="true">Nominal</button>
+      <button id="bReal" aria-pressed="false">Real ±tol</button>
+    </span>
+    <button id="bNew" class="iconbtn" hidden aria-label="Draw new parts"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7M20 4v7h-7"/></svg></button></div>
+</div></header>
+<main>
+  <section id="v-bench" style="display:grid;gap:12px">
+    <div class="toolbar">
+      <div class="tgroup">
+        <span class="segs" role="group" aria-label="View">
+          <button id="v3d" aria-pressed="true">3D</button>
+          <button id="vflat" aria-pressed="false">Flat</button>
+        </span>
+        <span class="tsep"></span>
+        <span class="field"><span>Wire</span>
+          <input type="hidden" id="wColor" value="auto">
+          <span class="swatches" role="group" aria-label="Wire colour">
+            <button class="sw auto" data-sw="auto" aria-pressed="true" aria-label="Automatic colour"></button>
+            <button class="sw" data-sw="#d93a3a" style="background:#d93a3a" aria-pressed="false" aria-label="Red"></button>
+            <button class="sw" data-sw="#222" style="background:#222" aria-pressed="false" aria-label="Black"></button>
+            <button class="sw" data-sw="#2f9e44" style="background:#2f9e44" aria-pressed="false" aria-label="Green"></button>
+            <button class="sw" data-sw="#e6b800" style="background:#e6b800" aria-pressed="false" aria-label="Yellow"></button>
+            <button class="sw" data-sw="#2f6fd6" style="background:#2f6fd6" aria-pressed="false" aria-label="Blue"></button>
+            <button class="sw" data-sw="#f0f0f0" style="background:#f0f0f0" aria-pressed="false" aria-label="White"></button>
+          </span></span>
+        <span class="tsep"></span>
+        <details class="help"><summary><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6M12 17h.01" stroke-linecap="round"/></svg>Controls</summary>
+          <div class="helpcard">
+            <div><b>Wire:</b> drag from a hole or header pin to another hole.</div>
+            <div><b>Parts:</b> drag one out of the drawer. It lands spanning 4 rows; drag a lead to move it.</div>
+            <div><b>Probes:</b> drag the probe tips. Drag the red lead's plug between <b>VΩ</b> and <b>A</b>.</div>
+            <div><b>Delete a wire:</b> click it, then <kbd>Delete</kbd>, or double-click it.</div>
+            <div><b>Inspect:</b> hover any hole to see its node and DC voltage.</div>
+            <div><b>Views:</b> <kbd>1</kbd> bench · <kbd>2</kbd> computer · <kbd>3</kbd> lab sheet · <kbd>V</kbd> 3D/flat</div>
+          </div></details>
+      </div>
+      <div class="tgroup">
+        <button id="delSel" class="ghost">Delete selected</button>
+        <button id="clrW" class="ghost">Remove wires</button>
+        <button id="resetAll" class="ghost">Reset</button>
+        <span class="tsep"></span>
+        <label for="guideSel" class="sr-only">Guided setup</label>
+        <select id="guideSel" aria-label="Guided setup" style="font-family:var(--sans);font-weight:500">
+          <option value="">Guided setup…</option>
+          <optgroup label="Part 1 · DC"><option value="V1">Measure V1 (voltage)</option><option value="I1">Measure I1 (current)</option><option value="I2">Measure I2 (current)</option><option value="I3">Measure I3 (current)</option><option value="Voc">Measure Voc</option><option value="Isc">Measure Isc</option><option value="Rth">Measure Rth</option></optgroup>
+          <optgroup label="Part 2 · Transient"><option value="tau">Measure τ</option></optgroup>
+          <optgroup label="Part 3 · AC"><option value="ac">Measure magnitude and phase</option></optgroup>
+        </select>
+        <button id="autoB">Auto-build</button>
+        <button class="primary has-icon" id="chkC"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" stroke-linecap="round" stroke-linejoin="round"/></svg>Check circuit</button>
+      </div>
+    </div>
+    <div id="stage" class="tilt"><div class="minisch" id="miniWrap"><div class="mh"><span>Schematic</span><button class="ghost" id="miniT" aria-expanded="true">Hide</button></div><svg class="sch" id="schMini" viewBox="-30 0 720 300" aria-label="Schematic, linked to the board"></svg><div class="mhint">Hover a part or node here or on the board</div></div><div id="tw"><svg id="bb" viewBox="0 0 1500 1050" aria-label="NI ELVIS II+ workstation with prototyping board"></svg></div></div>
+    <div class="panel guide" id="guide" hidden><div class="ghead"><h3 id="gTitle">Guided setup</h3><button class="ghost" id="gClose">Hide</button></div><ol class="gsteps" id="gSteps"></ol><div class="gexp" id="gExp"></div></div>
+    <div class="inspector">
+      <div class="panel"><h3>Inspector</h3><div class="status" id="hover">Hover over a hole to see what it's connected to.</div><div class="warns" id="warns"></div></div>
+      <div class="panel"><h3>Circuit check</h3><div id="checkOut"><span class="empty">Press Check circuit to compare your wiring with the schematic.</span></div></div>
+    </div>
+  </section>
+
+  <!-- ================= COMPUTER ================= -->
+  <section id="v-pc" hidden>
+    <div class="monitor">
+      <div class="screen">
+        <div class="launcher">
+          <span class="lbrand">NI ELVIS<span>mx</span> Instrument Launcher</span>
+          <span class="ltile on"><i>DMM</i>Multimeter</span>
+          <span class="ltile on"><i>Scope</i>Oscilloscope</span>
+          <span class="ltile on"><i>FGEN</i>Func Gen</span>
+          <span class="ltile"><i>VPS</i>Var Power</span>
+          <span class="ltile"><i>Bode</i>Bode</span>
+          <span class="ltile"><i>DSA</i>Dyn Signal</span>
+          <span class="ltile"><i>ARB</i>Arb Wave</span>
+          <span class="ltile"><i>DigIn</i>Dig Reader</span>
+          <span class="ltile"><i>2-W</i>2-Wire I-V</span>
+        </div>
+        <div class="desk">
+          <div style="display:grid;gap:12px">
+            <!-- DMM -->
+            <div class="win">
+              <div class="tbar"><span>Digital Multimeter – NI ELVISmx</span><span class="wb"><span></span><span></span><span></span></span></div>
+              <div class="body">
+                <div class="lcd2"><small><span id="dmmModeTxt">DC Voltage</span><span id="dmmRun">● Running</span></small><span id="dmmVal">0.000 V</span></div>
+                <div class="grp"><span class="gl">Measurement settings</span>
+                  <div class="mbtns">
+                    <button class="mb" data-dmm="V" aria-pressed="true">V⎓<small>DC Voltage</small></button>
+                    <button class="mb" data-dmm="VAC" aria-pressed="false">V~<small>AC Voltage</small></button>
+                    <button class="mb" data-dmm="A" aria-pressed="false">A⎓<small>DC Current</small></button>
+                    <button class="mb" data-dmm="AAC" aria-pressed="false">A~<small>AC Current</small></button>
+                    <button class="mb" data-dmm="R" aria-pressed="false">Ω<small>Resistance</small></button>
+                  </div>
+                  <div class="kv2"><label>Mode</label><span style="font-size:12px">Auto range</span></div>
+                </div>
+                <div class="grp"><span class="gl">Banana jack connections</span><div class="hint2" id="dmmConn"></div></div>
+                <div class="hint2" id="dmmWarn" style="color:#ffb3b3;min-height:1.2em"></div>
+                <div class="sfpbtns"><button id="dmmRunB" aria-pressed="true">Run</button><button id="dmmStopB" aria-pressed="false">Stop</button><button>Help</button></div>
+              </div>
+            </div>
+            <!-- FGEN -->
+            <div class="win">
+              <div class="tbar"><span>Function Generator – NI ELVISmx</span><span class="wb"><span></span><span></span><span></span></span></div>
+              <div class="body">
+                <div class="freqbig"><span id="fgBig">1000.00</span> <span style="font-size:16px;color:#7d8995">Hz</span></div>
+                <div class="grp"><span class="gl">Waveform settings</span>
+                  <div class="wbtns" role="group" aria-label="Waveform">
+                    <button class="wbtn" data-wave="sin" aria-label="Sine" aria-pressed="false"><svg width="40" height="20" viewBox="0 0 40 20"><path d="M2,10 Q8,-4 14,10 T26,10 T38,10" fill="none" stroke="#fff" stroke-width="2"/></svg></button>
+                    <button class="wbtn" data-wave="tri" aria-label="Triangle" aria-pressed="false"><svg width="40" height="20" viewBox="0 0 40 20"><path d="M2,10 L8,3 L20,17 L32,3 L38,10" fill="none" stroke="#fff" stroke-width="2"/></svg></button>
+                    <button class="wbtn" data-wave="sq" aria-label="Square" aria-pressed="true"><svg width="40" height="20" viewBox="0 0 40 20"><path d="M2,16 L2,4 L14,4 L14,16 L26,16 L26,4 L38,4" fill="none" stroke="#fff" stroke-width="2"/></svg></button>
+                  </div>
+                  <div class="kv2"><label for="fgF">Frequency</label><div class="row" style="flex-wrap:nowrap;gap:6px"><input type="number" id="fgF" value="1000" min="1" step="any"><span class="hint2">Hz</span></div></div>
+                  <div class="kv2"><label for="fgA">Amplitude</label><div class="row" style="flex-wrap:nowrap;gap:6px"><input type="number" id="fgA" value="2" min="0" max="20" step="any"><span class="hint2">Vpp</span></div></div>
+                  <div class="kv2"><label for="fgO">DC Offset</label><div class="row" style="flex-wrap:nowrap;gap:6px"><input type="number" id="fgO" value="0" min="-5" max="5" step="any"><span class="hint2">V</span></div></div>
+                  <div class="kv2"><label>Duty cycle</label><span style="font-size:12px">50 %</span></div>
+                </div>
+                <div class="kv2"><label>Signal route</label><span style="font-size:12px">Prototyping board (FGEN, pin 33)</span></div>
+                <div class="sfpbtns"><button id="fgRunB" aria-pressed="true">Run</button><button id="fgStopB" aria-pressed="false">Stop</button><button>Help</button></div>
+              </div>
+            </div>
+          </div>
+          <!-- SCOPE -->
+          <div class="win">
+            <div class="tbar"><span>Oscilloscope – NI ELVISmx</span><span class="wb"><span></span><span></span><span></span></span></div>
+            <div class="body">
+              <div class="scopegrid">
+                <div style="display:grid;gap:8px">
+                  <canvas id="scr" width="1000" height="800" aria-label="Oscilloscope display. Drag the cursors."></canvas>
+                  <div class="meas" id="meas"></div>
+                </div>
+                <div style="display:grid;gap:10px;align-content:start">
+                  <div class="grp"><span class="gl" style="color:#ffd34d">Channel 0 settings</span>
+                    <div class="kv2"><label>Source</label><span style="font-size:12px">SCOPE CH 0</span></div>
+                    <div class="kv2"><label for="en0">Enabled</label><input type="checkbox" id="en0" checked></div>
+                    <div class="kv2"><label for="v0">Scale</label><select id="v0"></select></div>
+                    <div class="kv2"><label for="cp0">Coupling</label><select id="cp0"><option>DC</option><option>AC</option></select></div>
+                  </div>
+                  <div class="grp"><span class="gl" style="color:#5fd4ff">Channel 1 settings</span>
+                    <div class="kv2"><label>Source</label><span style="font-size:12px">SCOPE CH 1</span></div>
+                    <div class="kv2"><label for="en1">Enabled</label><input type="checkbox" id="en1" checked></div>
+                    <div class="kv2"><label for="v1">Scale</label><select id="v1"></select></div>
+                    <div class="kv2"><label for="cp1">Coupling</label><select id="cp1"><option>DC</option><option>AC</option></select></div>
+                  </div>
+                  <div class="grp"><span class="gl">Timebase</span>
+                    <div class="kv2"><label for="tb">Time/div</label><select id="tb"></select></div>
+                  </div>
+                  <div class="grp"><span class="gl">Trigger</span>
+                    <div class="kv2"><label for="trT">Type</label><select id="trT"><option value="imm" selected>Immediate</option><option value="edge">Edge</option></select></div>
+                    <div class="kv2 edgeOnly"><label for="trS">Source</label><select id="trS"><option value="0">Chan 0 Source</option><option value="1">Chan 1 Source</option></select></div>
+                    <div class="kv2 edgeOnly"><label for="trSl">Slope</label><select id="trSl"><option value="rise">Rising ↗</option><option value="fall">Falling ↘</option></select></div>
+                    <div class="kv2 edgeOnly"><label for="trL">Level (V)</label><input type="number" id="trL" value="0" step="0.1"></div>
+                    <div class="hint2" id="trHint">Immediate: the scope doesn't sync to the signal, so the trace drifts. Choose Edge for a stable display.</div>
+                  </div>
+                  <div class="grp"><span class="gl">Cursors</span>
+                    <div class="kv2"><label for="curOn">Cursors On</label><input type="checkbox" id="curOn" checked></div>
+                    <div class="kv2"><label for="c1Ch">C1 channel</label><select id="c1Ch"><option value="0">CH 0</option><option value="1">CH 1</option></select></div>
+                    <div class="kv2"><label for="c2Ch">C2 channel</label><select id="c2Ch"><option value="1">CH 1</option><option value="0">CH 0</option></select></div>
+                    <div class="row" style="gap:4px"><span class="hint2">C1</span><button class="wbtn" data-nudge="0,-1" aria-label="C1 left">◀</button><button class="wbtn" data-nudge="0,1" aria-label="C1 right">▶</button><span class="hint2" style="margin-left:4px">C2</span><button class="wbtn" data-nudge="1,-1" aria-label="C2 left">◀</button><button class="wbtn" data-nudge="1,1" aria-label="C2 right">▶</button></div>
+                  </div>
+                  <div class="sfpbtns"><button id="autoS">Autoscale</button><button id="scRunB" aria-pressed="true">Run</button><button id="scStopB" aria-pressed="false">Stop</button></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="taskbar"><span class="start"><span></span><span></span><span></span><span></span></span><span class="tk">NI ELVISmx Instrument Launcher</span><span class="tk">Digital Multimeter</span><span class="tk">Oscilloscope</span><span class="tk">Function Generator</span><span class="clock" id="clock"></span></div>
+      </div>
+      <div class="chin">LAB PC</div>
+    </div>
+  </section>
+
+  <!-- ================= LAB SHEET ================= -->
+  <section id="v-sheet" class="sheet" hidden>
+    <div style="display:grid;gap:14px">
+      <section class="panel"><h2 id="schTitle">Schematic</h2><svg class="sch" id="sch" viewBox="-30 0 720 300" aria-label="Schematic"></svg></section>
+      <section class="panel" id="howPanel"></section>
+    </div>
+    <section class="panel" id="wsPanel"></section>
+  </section>
+</main>
+<div class="credits">Prompted, designed and built by <b>Ehsan Fijhas</b><span aria-hidden="true">·</span>Built with <b>Claude Opus 5.5</b><span aria-hidden="true">·</span><a class="toplink" href="../build-log/index.html">How I built it</a><span aria-hidden="true">·</span><a class="toplink" href="../index.html">About ELVISim</a></div>
+<footer class="statusbar"><div class="sbwrap"><div class="pcstrip" id="pcstrip"></div><span class="pill visits" id="visits" hidden></span></div></footer>
+</div>
+
+<script>
+(()=>{
+const $=id=>document.getElementById(id);
+const esc=t=>String(t).replace(/&/g,"&amp;").replace(/</g,"&lt;");
+// ================= component values =================
+const NOM={R1:510,R2:680,R3:1000,R4:910,R5:750,R6:390,RL:2400,C:1e-6};
+let P={...NOM};
+const randomize=()=>{const r=(x,t)=>x*(1+(Math.random()*2-1)*t);P={};for(const k in NOM)P[k]=r(NOM[k],k==="C"?.10:.05);};
+
+// ================= geometry (viewBox 1500 x 1050) =================
+const VBW=1500,VBH=1050, ROWS=32, ROW0=180, PITCH=20;
+const rowY=i=>ROW0+i*PITCH;
+const RAILX=[420,690,960,1230], BLKX=[470,740,1010];
+const COLS="abcdefghij";
+const colX=(b,c)=>{const j=COLS.indexOf(c);return BLKX[b]+10+(j<5?j*20:110+(j-5)*20);};
+const PTS=new Map();
+for(let b=0;b<3;b++) for(const c of COLS) for(let i=0;i<ROWS;i++)
+  PTS.set(`h${b}${c}${i}`,{x:colX(b,c),y:rowY(i),g:`b${b}${COLS.indexOf(c)<5?"L":"R"}${i}`,label:`block ${b+1}, row ${i+1} (${COLS.indexOf(c)<5?"a–e":"f–j"})`});
+RAILX.forEach((x0,k)=>{for(let i=0;i<ROWS;i++){if(i%6===5)continue;
+  PTS.set(`r${k}p${i}`,{x:x0+16,y:rowY(i),g:`r${k}p`,label:`power rail ${k+1} (red +)`});
+  PTS.set(`r${k}m${i}`,{x:x0+30,y:rowY(i),g:`r${k}m`,label:`power rail ${k+1} (blue −)`});}});
+const HDRN=["AI 0+","AI 0−","AI 1+","AI 1−","AI 2+","AI 2−","AI 3+","AI 3−","AI SENSE","AI GND","PFI 0","PFI 1","PFI 2","PFI 5","PFI 6","PFI 7","BASE","DUT+","DUT−","AO 0","AO 1","AO GND","FGEN","SYNC","AM","FM","BANANA A","BANANA B","+15V","−15V","GROUND","+5V"];
+const PINNO={"FGEN":33,"SYNC":34,"+15V":51,"−15V":52,"GROUND":53,"+5V":59};
+const HID={};HDRN.forEach((n,i)=>{const id="H"+i;HID[n]=id;PTS.set(id,{x:392,y:rowY(i),g:id,label:`header pin ${n}${PINNO[n]?` (pin ${PINNO[n]})`:" (not used in this lab)"}`,hdr:n});});
+const JACKS={J_V:{x:205,y:540,label:"DMM VΩ jack"},J_COM:{x:205,y:610,label:"DMM COM jack"},J_A:{x:205,y:680,label:"DMM A jack"},
+  J_S0:{x:205,y:330,label:"Scope CH 0 (red clip)",nosnap:1},J_S0G:{x:205,y:330,label:"Scope CH 0 ground clip",nosnap:1},
+  J_S1:{x:205,y:410,label:"Scope CH 1 (red clip)",nosnap:1},J_S1G:{x:205,y:410,label:"Scope CH 1 ground clip",nosnap:1}};
+for(const id in JACKS) PTS.set(id,{...JACKS[id],g:id});
+const ALLP=[...PTS.entries()].map(([id,p])=>({id,...p}));
+const SNAP=ALLP.filter(p=>!p.nosnap);
+function nearest(x,y,max=11){let best=null,bd=max*max;for(const p of SNAP){const d=(p.x-x)**2+(p.y-y)**2;if(d<bd){bd=d;best=p.id;}}return best;}
+
+// ================= bench state =================
+let parts,wires,power,dmmMode,selected=null,wireSeq=0,part="dc";
+const PARTDEF=["R1","R2","R3","R4","R5","R6","RL","C"];
+function freshParts(){return PARTDEF.map((id,i)=>({id,k:id==="C"?"C":"R",ends:[{x:250+i*140,y:965,pt:null},{x:350+i*140,y:965,pt:null}]}));}
+function freshLeads(){return[
+  {id:"L_red",lead:"dmm",color:"#d32f2f",ends:[{pt:"J_V"},{x:60,y:500,pt:null}]},
+  {id:"L_blk",lead:"dmm",color:"#1b1b1b",ends:[{pt:"J_COM"},{x:90,y:575,pt:null}]},
+  {id:"L_s0",lead:"scope",color:"#d32f2f",sleeve:"#f2c230",ends:[{pt:"J_S0",fixed:1},{x:55,y:280,pt:null}]},
+  {id:"L_s0g",lead:"clip",color:"#1b1b1b",ends:[{pt:"J_S0G",fixed:1},{x:90,y:300,pt:null}]},
+  {id:"L_s1",lead:"scope",color:"#d32f2f",sleeve:"#4fc3f7",ends:[{pt:"J_S1",fixed:1},{x:55,y:380,pt:null}]},
+  {id:"L_s1g",lead:"clip",color:"#1b1b1b",ends:[{pt:"J_S1G",fixed:1},{x:90,y:400,pt:null}]}];}
+function resetBench(){parts=freshParts();wires=freshLeads();power=true;selected=null;}
+dmmMode="V";resetBench();
+const endPos=e=>e.pt?{x:PTS.get(e.pt).x,y:PTS.get(e.pt).y}:{x:e.x,y:e.y};
+
+// ================= static drawing =================
+const BANDC=["#111","#7a4a1e","#d22","#f07c00","#f2d200","#2a9d3a","#2b5fd9","#8e3bc2","#8a8a8a","#f4f4f4"];
+function bands(v){const e=Math.floor(Math.log10(v))-1;return[Math.floor(v/10**(e+1)),Math.round(v/10**e)%10,e];}
+const svg=$("bb");
+function knob(x,y,r,label){return `<g><circle cx="${x}" cy="${y+3}" r="${r+3}" fill="rgba(0,0,0,.35)"/><circle cx="${x}" cy="${y}" r="${r}" fill="url(#knob)" stroke="#111" stroke-width="1.5"/><circle cx="${x}" cy="${y}" r="${r*.72}" fill="url(#knobTop)"/><line x1="${x}" y1="${y-r*.7}" x2="${x}" y2="${y-r*.3}" stroke="#ddd" stroke-width="3" stroke-linecap="round"/><text x="${x}" y="${y+r+18}" text-anchor="middle" class="hs">${label}</text></g>`;}
+function bnc(x,y){return `<circle cx="${x}" cy="${y+2}" r="19" fill="rgba(0,0,0,.25)"/><circle cx="${x}" cy="${y}" r="18" fill="url(#metal)" stroke="#6d737a"/><circle cx="${x}" cy="${y}" r="11" fill="#2a2d31" stroke="#888"/><circle cx="${x}" cy="${y}" r="3" fill="#d9c27a"/><rect x="${x-21}" y="${y-3}" width="5" height="6" fill="#9aa1a8"/><rect x="${x+16}" y="${y-3}" width="5" height="6" fill="#9aa1a8"/>`;}
+function banana(x,y,col){return `<circle cx="${x}" cy="${y+3}" r="20" fill="rgba(0,0,0,.25)"/><circle cx="${x}" cy="${y}" r="19" fill="${col}" stroke="rgba(0,0,0,.5)"/><circle cx="${x-5}" cy="${y-5}" r="9" fill="rgba(255,255,255,.18)"/><circle cx="${x}" cy="${y}" r="8" fill="url(#metal)"/><circle cx="${x}" cy="${y}" r="4" fill="#111"/>`;}
+function drawStatic(){
+  let s=`<defs>
+  <linearGradient id="house" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4f5f6"/><stop offset=".6" stop-color="#e3e5e8"/><stop offset="1" stop-color="#c9ccd1"/></linearGradient>
+  <linearGradient id="pcb" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2563a9"/><stop offset="1" stop-color="#1b4c88"/></linearGradient>
+  <linearGradient id="bbw" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#f7f6f1"/><stop offset=".5" stop-color="#ffffff"/><stop offset="1" stop-color="#e9e7df"/></linearGradient>
+  <radialGradient id="knob" cx=".4" cy=".35" r=".8"><stop offset="0" stop-color="#5a5f66"/><stop offset="1" stop-color="#111316"/></radialGradient>
+  <radialGradient id="knobTop" cx=".4" cy=".35" r=".8"><stop offset="0" stop-color="#3c4046"/><stop offset="1" stop-color="#16181b"/></radialGradient>
+  <radialGradient id="metal" cx=".35" cy=".3" r=".9"><stop offset="0" stop-color="#ffffff"/><stop offset=".5" stop-color="#b9bfc6"/><stop offset="1" stop-color="#6b7178"/></radialGradient>
+  <linearGradient id="rbody" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b39b6c"/><stop offset=".35" stop-color="#f0dcb0"/><stop offset="1" stop-color="#9d8558"/></linearGradient>
+  <linearGradient id="cbody" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b8961f"/><stop offset=".35" stop-color="#f6d86a"/><stop offset="1" stop-color="#a5851a"/></linearGradient>
+  <linearGradient id="drawer" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3b3f45"/><stop offset="1" stop-color="#26292d"/></linearGradient>
+  <linearGradient id="rkBezel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a3e44"/><stop offset="1" stop-color="#111316"/></linearGradient>
+  <linearGradient id="rkRaisedTop" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1c1f23"/><stop offset=".55" stop-color="#3c424a"/><stop offset="1" stop-color="#5a616b"/></linearGradient>
+  <linearGradient id="rkRaisedBot" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#1c1f23"/><stop offset=".55" stop-color="#3c424a"/><stop offset="1" stop-color="#5a616b"/></linearGradient>
+  <linearGradient id="rkSunk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0c0d0f"/><stop offset="1" stop-color="#1b1e22"/></linearGradient>
+  <radialGradient id="ledG" cx=".4" cy=".35" r=".7"><stop offset="0" stop-color="#d9ffe6"/><stop offset=".45" stop-color="#3ddc7a"/><stop offset="1" stop-color="#14833f"/></radialGradient>
+  <radialGradient id="ledA" cx=".4" cy=".35" r=".7"><stop offset="0" stop-color="#fff4cc"/><stop offset=".45" stop-color="#ffc42e"/><stop offset="1" stop-color="#b07800"/></radialGradient>
+  <radialGradient id="ledOff" cx=".4" cy=".35" r=".7"><stop offset="0" stop-color="#6b6f75"/><stop offset="1" stop-color="#2a2c30"/></radialGradient>
+  <filter id="glow" x="-150%" y="-150%" width="400%" height="400%"><feGaussianBlur stdDeviation="4"/></filter>
+  <filter id="sh" x="-20%" y="-20%" width="140%" height="160%"><feDropShadow dx="0" dy="14" stdDeviation="14" flood-color="#000" flood-opacity=".55"/></filter>
+  </defs>
+  <style>.hs{fill:#2d3238;font:700 12px 'Public Sans',sans-serif;letter-spacing:.04em}.hm{fill:#4b525a;font:600 10px 'Public Sans',sans-serif}.pk{fill:#eaf1fb;font:600 11px 'Public Sans',sans-serif}.pks{fill:#cfdcef;font:500 9.5px 'Public Sans',sans-serif}.hole{fill:#4a4a48}</style>`;
+  // housing
+  s+=`<rect x="110" y="20" width="1370" height="855" rx="34" fill="url(#house)" filter="url(#sh)"/>`;
+  s+=`<rect x="118" y="28" width="1354" height="839" rx="28" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="2"/>`;
+  s+=`<g transform="translate(150,46)"><path d="M0,30 L14,4 L22,18 L30,4 L44,30 Z" fill="#1f6fc5"/><text x="54" y="16" style="font:800 16px 'Public Sans',sans-serif;fill:#1d2b3a">NATIONAL</text><text x="54" y="33" style="font:800 16px 'Public Sans',sans-serif;fill:#1d2b3a">INSTRUMENTS</text></g>`;
+  s+=`<text x="1440" y="62" text-anchor="end" style="font:700 22px 'Public Sans',sans-serif;fill:#1f4f8f">NI ELVIS II<tspan font-size="16" dy="-8">+</tspan></text><text x="1440" y="82" text-anchor="end" style="font:500 12px 'Public Sans',sans-serif;fill:#4b525a">100 MS/s Oscilloscope</text>`;
+  // left panel
+  const box=(y,h,t)=>`<rect x="128" y="${y}" width="160" height="${h}" rx="6" fill="none" stroke="#5d646c" stroke-width="1.5"/><text x="140" y="${y+18}" class="hs">${t}</text>`;
+  s+=box(130,125,"FGEN / TRIG")+bnc(205,175)+`<text x="236" y="179" class="hm">FGEN</text>`+bnc(205,225)+`<text x="236" y="229" class="hm">TRIG</text>`;
+  s+=box(270,180,"SCOPE")+bnc(205,330)+`<text x="236" y="334" class="hm">CH 0</text>`+bnc(205,410)+`<text x="236" y="414" class="hm">CH 1</text>`;
+  s+=box(465,280,"DMM")+banana(205,540,"#c62828")+`<text x="236" y="536" class="hm">V Ω</text><text x="236" y="549" class="hm">⊣⊢</text>`+banana(205,610,"#1c1c1c")+`<text x="236" y="614" class="hm">COM</text>`+banana(205,680,"#c62828")+`<text x="236" y="676" class="hm">A</text><text x="236" y="690" class="hm">2A MAX</text>`;
+  s+=`<text x="140" y="728" class="hm">60 VDC / 20 Vrms MAX</text>`;
+  s+=box(760,70,"FUSE")+`<rect x="180" y="792" width="60" height="22" rx="10" fill="#26292d"/><rect x="196" y="798" width="28" height="10" rx="4" fill="#999"/>`;
+  // right panel
+  s+=`<rect x="1302" y="108" width="160" height="134" rx="6" fill="none" stroke="#5d646c" stroke-width="1.5"/><text x="1314" y="128" class="hs" style="font-size:10.5px">PROTOTYPING BOARD</text><text x="1314" y="142" class="hs" style="font-size:10.5px">POWER</text>`;
+  s+=`<g id="pwrSlot"></g>`;
+  s+=`<rect x="1302" y="256" width="160" height="186" rx="6" fill="none" stroke="#5d646c" stroke-width="1.5"/><text x="1314" y="276" class="hs" style="font-size:10.5px">VARIABLE POWER</text><text x="1314" y="290" class="hs" style="font-size:10.5px">SUPPLIES</text>`;
+  s+=`<circle cx="1319" cy="308" r="4.5" fill="#555"/><text x="1329" y="312" class="hm">MANUAL MODE</text>`+knob(1342,370,21,"SUPPLY −")+knob(1422,370,21,"SUPPLY +");
+  s+=`<rect x="1302" y="488" width="160" height="322" rx="6" fill="none" stroke="#5d646c" stroke-width="1.5"/><text x="1314" y="508" class="hs" style="font-size:10.5px">FUNCTION</text><text x="1314" y="522" class="hs" style="font-size:10.5px">GENERATOR</text>`;
+  s+=`<circle cx="1319" cy="544" r="4.5" fill="#555"/><text x="1329" y="548" class="hm">MANUAL MODE</text>`+knob(1382,612,32,"FREQUENCY")+knob(1382,718,26,"AMPLITUDE");
+  s+=`<text x="1382" y="790" text-anchor="middle" class="hm">Manual mode off:</text><text x="1382" y="802" text-anchor="middle" class="hm">use the PC</text>`;
+  // protoboard
+  s+=`<rect x="300" y="100" width="990" height="760" rx="10" fill="url(#pcb)" stroke="#0f2f57" stroke-width="2"/>`;
+  s+=`<text x="795" y="126" text-anchor="middle" class="pk" style="font-size:13px;letter-spacing:.12em">NI ELVIS II SERIES PROTOTYPING BOARD</text>`;
+  s+=`<text x="1270" y="846" text-anchor="end" class="pks">⚠ 60 VDC or 20 Vrms MAX</text>`;
+  // header
+  s+=`<rect x="314" y="${ROW0-16}" width="94" height="${ROWS*PITCH+12}" rx="4" fill="url(#bbw)" stroke="#c9c5b8"/>`;
+  HDRN.forEach((n,i)=>{const y=rowY(i),fn=n in PINNO;s+=`<text x="384" y="${y+3.5}" text-anchor="end" style="font:${fn?700:500} ${fn?10.5:9.5}px 'Public Sans',sans-serif;fill:${fn?"#1b3f73":"#8a8576"}">${n}</text><rect x="388" y="${y-4}" width="8" height="8" rx="1.5" class="hole"/>`;});
+  // rails + blocks
+  RAILX.forEach(x0=>{s+=`<rect x="${x0+2}" y="${ROW0-16}" width="44" height="${ROWS*PITCH+12}" rx="4" fill="url(#bbw)" stroke="#c9c5b8"/><line x1="${x0+8}" x2="${x0+8}" y1="${ROW0-10}" y2="${rowY(ROWS-1)+8}" stroke="#d32f2f" stroke-width="2.5"/><line x1="${x0+38}" x2="${x0+38}" y1="${ROW0-10}" y2="${rowY(ROWS-1)+8}" stroke="#1f5fd1" stroke-width="2.5"/><circle cx="${x0+15}" cy="${ROW0-26}" r="7" fill="#d32f2f" stroke="#fff" stroke-width="1.5"/><text x="${x0+15}" y="${ROW0-26}" dy=".36em" text-anchor="middle" style="font:800 12px 'Public Sans',sans-serif;fill:#fff">+</text><circle cx="${x0+31}" cy="${ROW0-26}" r="7" fill="#1f5fd1" stroke="#fff" stroke-width="1.5"/><text x="${x0+31}" y="${ROW0-26}" dy=".36em" text-anchor="middle" style="font:800 12px 'Public Sans',sans-serif;fill:#fff">−</text><circle cx="${x0+15}" cy="${rowY(ROWS-1)+26}" r="7" fill="#d32f2f" stroke="#fff" stroke-width="1.5"/><text x="${x0+15}" y="${rowY(ROWS-1)+26}" dy=".36em" text-anchor="middle" style="font:800 12px 'Public Sans',sans-serif;fill:#fff">+</text><circle cx="${x0+31}" cy="${rowY(ROWS-1)+26}" r="7" fill="#1f5fd1" stroke="#fff" stroke-width="1.5"/><text x="${x0+31}" y="${rowY(ROWS-1)+26}" dy=".36em" text-anchor="middle" style="font:800 12px 'Public Sans',sans-serif;fill:#fff">−</text>`;});
+  BLKX.forEach((bx,b)=>{s+=`<rect x="${bx}" y="${ROW0-16}" width="220" height="${ROWS*PITCH+12}" rx="4" fill="url(#bbw)" stroke="#c9c5b8"/><rect x="${bx+100}" y="${ROW0-16}" width="10" height="${ROWS*PITCH+12}" fill="#dedad0"/>`;
+    for(const c of COLS) s+=`<text x="${colX(b,c)}" y="${ROW0-6}" text-anchor="middle" style="font:500 9px 'Public Sans',sans-serif;fill:#9a9486">${c}</text>`;
+    for(let i=0;i<ROWS;i++) if(i===0||(i+1)%5===0) s+=`<text x="${bx+105}" y="${rowY(i)+3}" text-anchor="middle" style="font:500 8.5px 'Public Sans',sans-serif;fill:#9a9486">${i+1}</text>`;});
+  for(const p of ALLP){if(p.id[0]==="J"||p.id[0]==="H")continue;s+=`<rect x="${p.x-3.5}" y="${p.y-3.5}" width="7" height="7" rx="1" class="hole"/>`;}
+  // component drawer
+  s+=`<rect x="160" y="900" width="1290" height="125" rx="10" fill="url(#drawer)" stroke="#4a4f56"/><rect x="170" y="910" width="1270" height="105" rx="6" fill="#1d2024" stroke="#33373d"/>`;
+  s+=`<text x="180" y="1040" style="font:600 12px 'Public Sans',sans-serif;fill:#9aa3ad;letter-spacing:.1em">COMPONENT DRAWER</text>`;
+  PARTDEF.forEach((id,i)=>{s+=`<rect x="${235+i*140}" y="925" width="130" height="80" rx="6" fill="#262a2f" stroke="#33373d"/>`;});
+  s+=`<g id="dyn"></g><g id="hl"></g>`;
+  svg.innerHTML=s;
+}
+drawStatic();
+const dyn=$("dyn"),hl=$("hl");
+
+// ================= dynamic drawing =================
+function wirePath(a,b){const mx=(a.x+b.x)/2,my=(a.y+b.y)/2,dx=b.x-a.x,dy=b.y-a.y,L=Math.hypot(dx,dy)||1,bow=Math.min(36,L*.16);return `M${a.x},${a.y} Q${mx-dy/L*bow},${my+dx/L*bow*(dx>0?-1:1)*-1-Math.abs(dx/L)*bow*0} ${b.x},${b.y}`;}
+function cablePath(a,b){return `M${a.x},${a.y} C${a.x-90},${a.y+30} ${b.x},${b.y+140} ${b.x},${b.y+28}`;}
+function render(preview){
+  let s="";
+  // parts (shadow, leads, body)
+  for(const p of parts){
+    const a=endPos(p.ends[0]),b=endPos(p.ends[1]);const mx=(a.x+b.x)/2,my=(a.y+b.y)/2,ang=Math.atan2(b.y-a.y,b.x-a.x)*180/Math.PI;
+    s+=`<line x1="${a.x+3}" y1="${a.y+6}" x2="${b.x+3}" y2="${b.y+6}" stroke="rgba(0,0,0,.28)" stroke-width="3"/>`;
+    s+=`<line x1="${a.x}" y1="${a.y}" x2="${b.x}" y2="${b.y}" stroke="#c3c8ce" stroke-width="2.4" stroke-linecap="round"/>`;
+    s+=`<g data-k="body" data-p="${p.id}" transform="translate(${mx},${my}) rotate(${ang})" style="cursor:grab">`;
+    if(LINK===p.id)s+=`<rect x="-33" y="-16" width="66" height="32" rx="14" fill="rgba(255,216,77,.45)" stroke="#ffd84d" stroke-width="3" style="pointer-events:none"/>`;
+    s+=`<rect x="-23" y="-3" width="${p.k==="R"?48:34}" height="18" rx="8" fill="rgba(0,0,0,.3)" transform="translate(${p.k==="R"?2:7},2)"/>`;
+    if(p.k==="R"){const [d1,d2,m]=bands(NOM[p.id]);
+      s+=`<rect x="-24" y="-8" width="48" height="16" rx="7" fill="url(#rbody)" stroke="#7d6a45" stroke-width=".8"/>`;
+      [[-15,d1],[-8,d2],[-1,m]].forEach(([x,d])=>s+=`<rect x="${x}" y="-8" width="4" height="16" fill="${BANDC[d]}" opacity=".95"/>`);
+      s+=`<rect x="12" y="-8" width="4" height="16" fill="#c9a43a"/><rect x="-22" y="-6" width="44" height="3" rx="1.5" fill="rgba(255,255,255,.35)"/>`;
+    } else {s+=`<rect x="-16" y="-11" width="32" height="22" rx="5" fill="url(#cbody)" stroke="#866b10"/><text x="0" y="4" text-anchor="middle" style="font:700 9px 'Public Sans',sans-serif" fill="#4a3a07">105</text>`;}
+    s+=`</g>`;
+    s+=`<text x="${mx}" y="${my-15}" text-anchor="middle" style="font:700 11px 'Public Sans',sans-serif;pointer-events:none" fill="#fff" stroke="#0b1d36" stroke-width="3" paint-order="stroke">${p.id==="C"?"C 1µF":p.id}</text>`;
+    if(!p.ends[0].pt&&!p.ends[1].pt&&my>900){const v=NOM[p.id];s+=`<text x="${mx}" y="${my+27}" text-anchor="middle" style="font:500 11px 'Public Sans',sans-serif;pointer-events:none" fill="#aab4c0">${p.id==="C"?"ceramic":v>=1000?(v/1000)+" kΩ":v+" Ω"}</text>`;}
+    p.ends.forEach((e,i)=>{const q=endPos(e);s+=`<circle cx="${q.x}" cy="${q.y}" r="${e.pt?3.2:4}" fill="${e.pt?"#c0c4ca":"#f2a93b"}"/><circle data-k="pend" data-p="${p.id}" data-i="${i}" cx="${q.x}" cy="${q.y}" r="9" fill="transparent" style="cursor:move"/>`;});
+  }
+  // jumper wires
+  for(const w of wires){ if(w.lead) continue;
+    const a=endPos(w.ends[0]),b=endPos(w.ends[1]),d=wirePath(a,b),sel=selected===w.id;
+    s+=`<path d="${d}" transform="translate(3,6)" fill="none" stroke="rgba(0,0,0,.3)" stroke-width="5" stroke-linecap="round" style="pointer-events:none"/>`;
+    if(sel) s+=`<path d="${d}" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round" opacity=".75"/>`;
+    s+=`<path d="${d}" fill="none" stroke="${w.color}" stroke-width="4.5" stroke-linecap="round" data-k="wire" data-w="${w.id}" style="cursor:pointer"/>`;
+    s+=`<path d="${d}" fill="none" stroke="rgba(255,255,255,.35)" stroke-width="1.3" style="pointer-events:none"/>`;
+    w.ends.forEach((e,i)=>{const q=endPos(e);s+=`<circle cx="${q.x}" cy="${q.y}" r="3.6" fill="#d0d4d9"/><circle data-k="wend" data-w="${w.id}" data-i="${i}" cx="${q.x}" cy="${q.y}" r="8" fill="transparent" style="cursor:move"/>`;});
+  }
+  if(preview) s+=`<path d="${wirePath(preview.a,preview.b)}" fill="none" stroke="${preview.color}" stroke-width="4.5" stroke-dasharray="7 6" stroke-linecap="round" style="pointer-events:none"/>`;
+  // test leads on top
+  for(const w of wires){ if(!w.lead) continue;
+    const a=endPos(w.ends[0]),b=endPos(w.ends[1]),d=cablePath(a,b),thick=w.lead==="clip"?4:6;
+    s+=`<path d="${d}" transform="translate(4,8)" fill="none" stroke="rgba(0,0,0,.3)" stroke-width="${thick+2}" stroke-linecap="round" style="pointer-events:none"/>`;
+    s+=`<path d="${d}" fill="none" stroke="${w.color==="#1b1b1b"?"#141414":w.color}" stroke-width="${thick}" stroke-linecap="round" style="pointer-events:none"/>`;
+    if(w.lead==="dmm"){ // banana plug at jack + probe at tip
+      s+=`<circle cx="${a.x}" cy="${a.y}" r="11" fill="${w.color}" stroke="#000" stroke-width="1"/><circle cx="${a.x-3}" cy="${a.y-3}" r="4" fill="rgba(255,255,255,.3)"/>`;
+      s+=`<rect x="${b.x-5}" y="${b.y+6}" width="10" height="26" rx="4" fill="${w.color}" stroke="#000" stroke-width=".8"/><rect x="${b.x-7}" y="${b.y+6}" width="14" height="4" rx="2" fill="${w.color}"/><line x1="${b.x}" y1="${b.y}" x2="${b.x}" y2="${b.y+6}" stroke="#ddd" stroke-width="2"/>`;
+    } else if(w.lead==="scope"){
+      s+=`<rect x="${b.x-6}" y="${b.y+4}" width="12" height="24" rx="3" fill="${w.color}" stroke="#000" stroke-width=".8"/><rect x="${b.x-6}" y="${b.y+20}" width="12" height="6" fill="${w.sleeve}"/><path d="M${b.x-4},${b.y+5} L${b.x},${b.y-2} L${b.x+4},${b.y+5}" fill="none" stroke="#bbb" stroke-width="2"/>`;
+    } else {
+      s+=`<rect x="${b.x-5}" y="${b.y+4}" width="10" height="20" rx="3" fill="#1a1a1a" stroke="#555" stroke-width=".8"/><path d="M${b.x-4},${b.y+5} L${b.x},${b.y-2} L${b.x+4},${b.y+5}" fill="none" stroke="#bbb" stroke-width="2"/>`;
+    }
+    w.ends.forEach((e,i)=>{if(e.fixed)return;const q=endPos(e);s+=`<circle data-k="wend" data-w="${w.id}" data-i="${i}" cx="${q.x}" cy="${q.y+(i===1?10:0)}" r="${i===1?14:13}" fill="transparent" style="cursor:move"/>`;});
+  }
+  dyn.innerHTML=s;
+  // power switch
+  const X=1320,Y=158,W=46,H=64,on=power,act=power&&fgRun;
+  const half=(top,raised)=>{const y=top?Y+6:Y+H/2,h=H/2-6,cxh=X+W/2;
+    if(raised){ // raised half bulges toward the viewer: wider, lighter, casts a shadow on the other half
+      const far=top?y:y+h, near=top?y+h:y;
+      return `<path d="M${X+5},${near} L${X+W-5},${near} L${X+W-3},${far} L${X+3},${far} Z" fill="url(#${top?"rkRaisedTop":"rkRaisedBot"})" stroke="#0a0b0d" stroke-width="1"/>
+      <line x1="${X+4}" x2="${X+W-4}" y1="${far+(top?1.5:-1.5)}" y2="${far+(top?1.5:-1.5)}" stroke="rgba(255,255,255,.35)" stroke-width="1.5"/>
+      <text x="${cxh}" y="${y+h/2+5}" text-anchor="middle" style="font:700 14px 'Public Sans',sans-serif;fill:#f1f3f5">${top?"I":"O"}</text>`;}
+    return `<rect x="${X+6}" y="${y+(top?1:0)}" width="${W-12}" height="${h-1}" rx="2" fill="url(#rkSunk)"/>
+      <rect x="${X+6}" y="${top?y+h-7:y}" width="${W-12}" height="7" fill="rgba(0,0,0,.55)"/>
+      <text x="${cxh}" y="${y+h/2+5}" text-anchor="middle" style="font:700 13px 'Public Sans',sans-serif;fill:#7d838b">${top?"I":"O"}</text>`;};
+  const led=(cy,lit,grad,label)=>`${lit?`<circle cx="1393" cy="${cy}" r="9" fill="${grad==="ledG"?"#3ddc7a":"#ffc42e"}" opacity=".55" filter="url(#glow)"/>`:""}<circle cx="1393" cy="${cy}" r="6" fill="url(#${lit?grad:"ledOff"})" stroke="#1a1b1d" stroke-width="1"/><circle cx="1391" cy="${cy-2}" r="1.7" fill="rgba(255,255,255,${lit?.85:.25})"/><text x="1405" y="${cy+3.5}" class="hm" style="font-size:10px">${label}</text>`;
+  $("pwrSlot").innerHTML=`<g data-k="power" role="switch" aria-checked="${on}" aria-label="Prototyping board power" style="cursor:pointer">
+    <rect x="${X-3}" y="${Y-3}" width="${W+6}" height="${H+8}" rx="9" fill="rgba(0,0,0,.25)" transform="translate(1,3)"/>
+    <rect x="${X-3}" y="${Y-3}" width="${W+6}" height="${H+6}" rx="9" fill="url(#rkBezel)" stroke="#0a0b0d"/>
+    <rect x="${X+2}" y="${Y+2}" width="${W-4}" height="${H-4}" rx="5" fill="#070809"/>
+    ${half(true,!on)}${half(false,on)}
+    <line x1="${X+4}" x2="${X+W-4}" y1="${Y+H/2}" y2="${Y+H/2}" stroke="#000" stroke-width="1.2"/>
+  </g>${led(176,on,"ledG","READY")}${led(206,act,"ledA","ACTIVE")}`;
+}
+
+
+// ---------- rocker switch click (Web Audio, synthesised) ----------
+let AC=null;
+function clickSound(on){try{
+  AC=AC||new (window.AudioContext||window.webkitAudioContext)();if(AC.state==="suspended")AC.resume();
+  const t=AC.currentTime,out=AC.createGain();out.gain.value=0.9;out.connect(AC.destination);
+  const tick=(at,freq,amp,len)=>{const n=Math.floor(AC.sampleRate*len),buf=AC.createBuffer(1,n,AC.sampleRate),d=buf.getChannelData(0);
+    for(let i=0;i<n;i++)d[i]=(Math.random()*2-1)*Math.exp(-i/(n*0.18));
+    const src=AC.createBufferSource();src.buffer=buf;const bp=AC.createBiquadFilter();bp.type="bandpass";bp.frequency.value=freq;bp.Q.value=1.4;
+    const g=AC.createGain();g.gain.value=amp;src.connect(bp);bp.connect(g);g.connect(out);src.start(at);};
+  // first contact, then the main snap a few ms later (mechanical double click)
+  tick(t,on?3200:2600,0.35,0.012);tick(t+0.018,on?2200:1800,1.0,0.03);
+  // low body thump
+  const o=AC.createOscillator(),og=AC.createGain();o.type="sine";
+  o.frequency.setValueAtTime(on?190:150,t+0.018);o.frequency.exponentialRampToValueAtTime(55,t+0.09);
+  og.gain.setValueAtTime(0.0001,t+0.016);og.gain.exponentialRampToValueAtTime(0.5,t+0.022);og.gain.exponentialRampToValueAtTime(0.0001,t+0.11);
+  o.connect(og);og.connect(out);o.start(t+0.016);o.stop(t+0.12);
+}catch(e){}}
+// ================= pointer → svg (handles 3D tilt) =================
+const TILT={on:true,a:22*Math.PI/180,d:2600};
+function svgPt(e){
+  const st=$("stage"),tw=$("tw"),r=st.getBoundingClientRect(),W=tw.offsetWidth,H=tw.offsetHeight;
+  const cx=r.left+tw.offsetLeft-st.scrollLeft+W/2,cy=r.top+tw.offsetTop-st.scrollTop+H/2;
+  let X=e.clientX-cx,Y=e.clientY-cy,x=X,y=Y;
+  if(TILT.on){const s=Math.sin(TILT.a),c=Math.cos(TILT.a);y=Y/(c+Y*s/TILT.d);x=X*(1-y*s/TILT.d);}
+  return {x:(x+W/2)*VBW/W,y:(y+H/2)*VBH/H};
+}
+let drag=null;
+const autoColor=pt=>{const c=$("wColor").value;if(c!=="auto")return c;const n=PTS.get(pt)?.hdr,g=PTS.get(pt)?.g||"";
+  return n==="+15V"||n==="+5V"||/p$/.test(g)?"#d93a3a":n==="GROUND"||/m$/.test(g)?"#222":n==="FGEN"?"#e6b800":n==="−15V"?"#2f6fd6":"#2f9e44";};
+svg.addEventListener("pointerdown",e=>{
+  const P0=svgPt(e),t=e.target.closest("[data-k]"),k=t?.dataset.k;
+  if(k==="power"){power=!power;clickSound(power);recompute();return;}
+  if(k==="wend"){const w=wires.find(x=>x.id===t.dataset.w);drag={type:"wend",w,i:+t.dataset.i};}
+  else if(k==="pend"){drag={type:"pend",p:parts.find(x=>x.id===t.dataset.p),i:+t.dataset.i};}
+  else if(k==="body"){const p=parts.find(x=>x.id===t.dataset.p);drag={type:"body",p,start:P0,orig:p.ends.map(endPos)};}
+  else if(k==="wire"){selected=t.dataset.w;render();return;}
+  else{const pt=nearest(P0.x,P0.y,10);if(pt&&pt[0]!=="J"){drag={type:"new",from:pt,color:autoColor(pt)};}else{selected=null;render();return;}}
+  svg.setPointerCapture(e.pointerId);e.preventDefault();
+});
+svg.addEventListener("pointermove",e=>{
+  const P0=svgPt(e);
+  if(!drag){const tp=e.target.closest("[data-p]");if(tp){setLink(tp.dataset.p);hl.innerHTML="";}else{hover(P0);}return;}
+  if(drag.type==="new"){render({a:PTS.get(drag.from),b:P0,color:drag.color});return;}
+  if(drag.type==="wend"){const en=drag.w.ends[drag.i];en.pt=null;en.x=P0.x;en.y=P0.y;}
+  if(drag.type==="pend"){const en=drag.p.ends[drag.i];en.pt=null;en.x=P0.x;en.y=P0.y;}
+  if(drag.type==="body"){const dx=P0.x-drag.start.x,dy=P0.y-drag.start.y;drag.p.ends.forEach((en,i)=>{en.pt=null;en.x=drag.orig[i].x+dx;en.y=drag.orig[i].y+dy;});}
+  render();
+});
+svg.addEventListener("pointerup",e=>{
+  if(!drag)return;const P0=svgPt(e);
+  if(drag.type==="new"){const to=nearest(P0.x,P0.y,12);if(to&&to!==drag.from&&to[0]!=="J")wires.push({id:"w"+(++wireSeq),color:drag.color,ends:[{pt:drag.from},{pt:to}]});}
+  if(drag.type==="wend"){const en=drag.w.ends[drag.i];let to=nearest(en.x,en.y,drag.w.lead&&drag.i===0?24:12);
+    if(drag.w.lead&&drag.i===0){if(to!=="J_V"&&to!=="J_A"&&to!=="J_COM")to=null;} // plug end only into DMM jacks
+    else if(to&&to[0]==="J")to=null;
+    if(to)en.pt=to; else if(drag.w.lead&&drag.i===0){en.pt=drag.w.id==="L_red"?"J_V":"J_COM";}
+    else if(!drag.w.lead)wires=wires.filter(x=>x!==drag.w);}
+  if(drag.type==="pend"){const en=drag.p.ends[drag.i],to=nearest(en.x,en.y,12);if(to&&to[0]!=="J")en.pt=to;}
+  if(drag.type==="body"){const E=drag.p.ends,cxm=(E[0].x+E[1].x)/2,cym=(E[0].y+E[1].y)/2,fromTray=drag.orig[0].y>880,c=nearest(cxm,cym,14),m=c&&/^h(\d)([a-j])(\d+)$/.exec(c);
+    if(fromTray&&m){let i=Math.min(Math.max(+m[3],2),ROWS-3);E[0].pt=`h${m[1]}${m[2]}${i-2}`;E[1].pt=`h${m[1]}${m[2]}${i+2}`;}
+    else E.forEach(en=>{const to=nearest(en.x,en.y,12);if(to&&to[0]!=="J")en.pt=to;});}
+  drag=null;recompute();
+});
+svg.addEventListener("dblclick",e=>{const t=e.target.closest('[data-k="wire"]');if(t){wires=wires.filter(w=>w.id!==t.dataset.w);selected=null;recompute();}});
+document.addEventListener("keydown",e=>{if((e.key==="Delete"||e.key==="Backspace")&&selected&&!/INPUT|SELECT/.test(document.activeElement.tagName)){wires=wires.filter(w=>w.id!==selected);selected=null;recompute();e.preventDefault();}});
+$("delSel").onclick=()=>{if(selected){wires=wires.filter(w=>w.id!==selected);selected=null;recompute();}};
+$("clrW").onclick=()=>{wires=wires.filter(w=>w.lead);selected=null;recompute();};
+$("resetAll").onclick=()=>{resetBench();$("checkOut").innerHTML='<span class="empty">Press Check circuit to compare your wiring with the schematic.</span>';$("checkOut").dataset.live="";recompute();};
+$("v3d").onclick=()=>{TILT.on=true;$("stage").classList.add("tilt");$("v3d").setAttribute("aria-pressed","true");$("vflat").setAttribute("aria-pressed","false");};
+$("vflat").onclick=()=>{TILT.on=false;$("stage").classList.remove("tilt");$("v3d").setAttribute("aria-pressed","false");$("vflat").setAttribute("aria-pressed","true");};
+
+function hover(P0){
+  const pt=nearest(P0.x,P0.y,9);hl.innerHTML="";
+  if(!pt){setLink(null);$("hover").innerHTML="Hover over a hole to see what it's connected to.";return;}
+  const N=NETS,net=N.find(pt);let s="";
+  for(const p of ALLP) if(!p.nosnap&&N.find(p.id)===net) s+=`<circle cx="${p.x}" cy="${p.y}" r="6.5" fill="none" stroke="#5bd18b" stroke-width="2.2" style="pointer-events:none"/>`;
+  hl.innerHTML=s;
+  const on=[];
+  parts.forEach(p=>p.ends.forEach(e=>{if(e.pt&&N.find(e.pt)===net)on.push(p.id);}));
+  for(const id of ALLP) if(id.hdr&&id.id!==pt&&N.find(id.id)===net) on.push(id.hdr);
+  for(const id in JACKS) if(N.find(id)===net&&id!==pt) on.push(JACKS[id].label);
+  setLink(nodeOfNet(net));
+  const V=SIM.dc&&power&&!SIM.bad?SIM.dc(net):null;
+  $("hover").innerHTML=`<b>${esc(PTS.get(pt).label)}</b> · connected to: ${on.length?esc([...new Set(on)].join(", ")):"nothing"}${V!==null?` · DC node voltage ${V.toFixed(3)} V`:""}`;
+}
+
+// ================= netlist & solver =================
+function UF(){const p={};const f=x=>{if(p[x]===undefined)p[x]=x;while(p[x]!==x){p[x]=p[p[x]];x=p[x];}return x;};return{find:f,union:(a,b)=>{const A=f(a),B=f(b);if(A!==B)p[A]=B;}};}
+let NETS;
+function buildNets(){const u=UF(),first={};
+  for(const p of ALLP){if(first[p.g])u.union(p.id,first[p.g]);else first[p.g]=p.id;}
+  for(const w of wires) if(w.ends[0].pt&&w.ends[1].pt) u.union(w.ends[0].pt,w.ends[1].pt);
+  return u;}
+const SRC={[HID["GROUND"]]:"gnd",[HID["AI GND"]]:"gnd",[HID["AO GND"]]:"gnd",J_S0G:"gnd",J_S1G:"gnd",[HID["+15V"]]:"p15",[HID["−15V"]]:"m15",[HID["+5V"]]:"p5",[HID["FGEN"]]:"fgen"};
+const SRCNAME={gnd:"GROUND",p15:"+15 V supply",m15:"−15 V supply",p5:"+5 V supply",fgen:"FGEN"};
+const LIMIT={p15:.5,m15:.5,p5:1,fgen:.1};
+let fgRun=true,dmmRun=true,scRun=true;
+function model(){
+  const N=NETS=buildNets(),f=x=>N.find(x),els=[],fixed={},shorts=[];
+  for(const p of parts) if(p.ends[0].pt&&p.ends[1].pt) els.push({t:p.k,id:p.id,n1:f(p.ends[0].pt),n2:f(p.ends[1].pt),v:P[p.id]});
+  els.push({t:"R",id:"DMM shunt",n1:f("J_A"),n2:f("J_COM"),v:0.1});
+  for(const pin in SRC){const key=SRC[pin];if(key!=="gnd"&&!power)continue;const n=f(pin);
+    if(fixed[n]&&fixed[n]!==key)shorts.push(`${SRCNAME[fixed[n]]} is shorted to ${SRCNAME[key]}`);else fixed[n]=key;}
+  const interest=["J_V","J_COM","J_A","J_S0","J_S1"].map(f);
+  const unk=[...new Set([...els.flatMap(e=>[e.n1,e.n2]),...interest])].filter(n=>!(n in fixed));
+  return{els,fixed,shorts,unk,f};
+}
+function gauss(A,b){A=A.map(r=>r.slice());b=b.slice();const n=b.length;
+  for(let i=0;i<n;i++){let m=i;for(let k=i+1;k<n;k++)if(Math.abs(A[k][i])>Math.abs(A[m][i]))m=k;[A[i],A[m]]=[A[m],A[i]];[b[i],b[m]]=[b[m],b[i]];
+    for(let k=i+1;k<n;k++){const q=A[k][i]/A[i][i];if(!q)continue;for(let j=i;j<n;j++)A[k][j]-=q*A[i][j];b[k]-=q*b[i];}}
+  const x=Array(n).fill(0);for(let i=n-1;i>=0;i--){let s=b[i];for(let j=i+1;j<n;j++)s-=A[i][j]*x[j];x[i]=s/A[i][i];}return x;}
+const GMIN=1e-9;
+function solveDC(M,fv,inject={}){
+  const idx={};M.unk.forEach((n,i)=>idx[n]=i);const n=M.unk.length;
+  const G=Array.from({length:n},()=>Array(n).fill(0)),b=Array(n).fill(0);
+  for(let i=0;i<n;i++)G[i][i]+=GMIN;
+  const val=x=>x in M.fixed?fv(M.fixed[x]):0;
+  for(const e of M.els){if(e.t==="C")continue;const g=1/e.v;
+    for(const [x,y] of [[e.n1,e.n2],[e.n2,e.n1]]){if(!(x in idx))continue;G[idx[x]][idx[x]]+=g;if(y in idx)G[idx[x]][idx[y]]-=g;else b[idx[x]]+=g*val(y);}}
+  for(const k in inject) if(k in idx) b[idx[k]]+=inject[k];
+  const v=n?gauss(G,b):[];return x=>x in idx?v[idx[x]]:val(x);
+}
+// FGEN state
+let FG={w:"sq",f:1000,A:2,o:0};
+function gen(){return{w:FG.w,f:Math.max(1,FG.f||1),A:Math.max(0,FG.A||0)/2*(fgRun?1:0),o:fgRun?FG.o||0:0,T:1/Math.max(1,FG.f||1)};}
+function fgenAt(g,t){const ph=((t%g.T)+g.T)%g.T/g.T;
+  if(g.w==="sq")return g.o+(ph<.5?g.A:-g.A);if(g.w==="sin")return g.o+g.A*Math.sin(2*Math.PI*ph);
+  return g.o+(ph<.25?4*ph:ph<.75?2-4*ph:4*ph-4)*g.A;}
+const DCV={gnd:0,p15:15,m15:-15,p5:5};
+
+let SIM={},DM={text:"0.000 V",warn:""},STATUS=[],LASTM=null;
+function recompute(){
+  const M=model(),g=gen();LASTM=M;STATUS=[];SIM={bad:false};
+  if(!power)STATUS.push("Prototyping board power is OFF: supplies and FGEN are off.");
+  if(M.shorts.length){SIM.bad=true;M.shorts.forEach(s=>STATUS.push("!"+s+". The supply current limit trips."));}
+  const V=solveDC(M,k=>k==="fgen"?g.o:DCV[k]);SIM.dc=V;
+  if(!SIM.bad){const I={};for(const e of M.els){if(e.t==="C")continue;const i=(V(e.n1)-V(e.n2))/e.v,k1=M.fixed[e.n1],k2=M.fixed[e.n2];
+      if(k1&&k1!=="gnd")I[k1]=(I[k1]||0)+i;if(k2&&k2!=="gnd")I[k2]=(I[k2]||0)-i;}
+    for(const k in I)if(Math.abs(I[k])>LIMIT[k]){SIM.bad=true;STATUS.push(`!${SRCNAME[k]} overloaded (${Math.abs(I[k]).toFixed(1)} A demanded). Look for a short or an ammeter across a source.`);}}
+  updateDMM(M,V);render();scheduleSim(M);updateStrip();
+  $("warns").innerHTML=STATUS.map(m=>`<div style="color:${m[0]==="!"?"var(--bad)":"var(--muted)"}">${m[0]==="!"?"⚠ ":""}${esc(m.replace(/^!/,""))}</div>`).join("");
+  if($("checkOut").dataset.live==="1")runCheck();
+}
+function fmt(x,u){if(!isFinite(x))return"OVL";const a=Math.abs(x);if(a>=1e5)return"OVL";const d=a>=1000?0:a>=100?1:a>=10?2:3;return(x<-5e-7?"−":"")+a.toFixed(d)+" "+u;}
+const rms=a=>{let m=0;for(const v of a)m+=v;m/=a.length;let s=0;for(const v of a)s+=(v-m)**2;return Math.sqrt(s/a.length);};
+function updateDMM(M,V){
+  if(!dmmRun)return;
+  const nV=M.f("J_V"),nC=M.f("J_COM"),nA=M.f("J_A");DM={text:"",warn:""};
+  const redIn=wires.find(w=>w.id==="L_red").ends[0].pt,blkIn=wires.find(w=>w.id==="L_blk").ends[0].pt;
+  if(blkIn!=="J_COM")DM.warn="The black lead belongs in COM.";
+  if(SIM.bad){DM.text=dmmMode[0]==="A"?"OVL":"– – –";DM.warn="Fix the short or overload first.";}
+  else if(dmmMode==="V"){DM.text=fmt(V(nV)-V(nC),"V");if(redIn==="J_A")DM.warn="Red lead is in the A jack: it shorts whatever you touch. Use VΩ for volts.";}
+  else if(dmmMode==="A"){DM.text=fmt((V(nA)-V(nC))/0.1*1e3,"mA");if(redIn!=="J_A")DM.warn="For current, move the red lead's plug to the A jack.";}
+  else if(dmmMode==="VAC"||dmmMode==="AAC"){if(TRACE&&TRACE.sV){const d=TRACE.sV.map((v,i)=>dmmMode==="VAC"?v-TRACE.sC[i]:(TRACE.sA[i]-TRACE.sC[i])/0.1*1e3);DM.text=fmt(rms(d),dmmMode==="VAC"?"V":"mA");}else DM.text="…";
+    if(dmmMode==="AAC"&&redIn!=="J_A")DM.warn="For current, move the red lead's plug to the A jack.";}
+  else{const live=power&&[HID["+15V"],HID["−15V"],HID["+5V"],HID["FGEN"]].some(pin=>{const n=M.f(pin);return M.els.some(e=>e.n1===n||e.n2===n);});
+    if(live){DM.text="Err";DM.warn="Circuit is powered. Remove the supply (replace it with a short) before measuring Ω.";}
+    else{const Vz=solveDC(M,()=>0,{[nV]:1e-3,[nC]:-1e-3}),R=(Vz(nV)-Vz(nC))/1e-3;DM.text=R>2e7?"OL":R>=1000?fmt(R/1000,"kΩ"):fmt(R,"Ω");if(redIn==="J_A")DM.warn="Red lead must be in VΩ for resistance.";}}
+  $("dmmVal").textContent=DM.text;$("dmmWarn").textContent=DM.warn;
+  $("dmmModeTxt").textContent={V:"DC Voltage",VAC:"AC Voltage (rms)",A:"DC Current",AAC:"AC Current (rms)",R:"Resistance"}[dmmMode];
+  $("dmmConn").innerHTML=dmmMode[0]==="A"?"Connect the <b>red</b> lead to <b>A</b> and the black lead to <b>COM</b>. Insert the meter in series.":"Connect the <b>red</b> lead to <b>VΩ</b> and the black lead to <b>COM</b>.";
+}
+function updateStrip(){
+  const g=gen(),w={sq:"Square",sin:"Sine",tri:"Triangle"}[FG.w];
+  const pp=a=>{if(!a)return"–";let mx=-1e9,mn=1e9;for(const v of a){if(v>mx)mx=v;if(v<mn)mn=v;}return(mx-mn).toFixed(2);};
+  const pill=power?'<span class="pill on"><i></i>Power on</span>':'<span class="pill off"><i></i>Power off</span>';
+  const modeName={V:"DC V",VAC:"AC V",A:"DC A",AAC:"AC A",R:"Ω"}[dmmMode];
+  $("pcstrip").innerHTML=`${pill}<div class="ro2 dmm"><span class="lab">Multimeter</span><span class="mode">${modeName}</span><span class="val">${esc(DM.text)}</span></div>
+  <div class="ro2"><span class="lab">Func gen</span>${fgRun?`<span class="mode">${w}</span><span class="val">${FG.f} Hz</span><span class="sub">${FG.A} Vpp · ${FG.o} V offset</span>`:`<span class="sub">Stopped</span>`}</div>
+  <div class="ro2"><span class="lab">Scope</span><span class="ch"><b style="color:var(--ch0)">CH0</b><span class="val">${pp(TRACE?.s0)}</span><span class="sub">Vpp</span></span><span class="ch"><b style="color:var(--ch1)">CH1</b><span class="val">${pp(TRACE?.s1)}</span><span class="sub">Vpp</span></span></div>
+  ${DM.warn?`<div class="ro2 warn">${esc(DM.warn)}</div>`:""}`;
+}
+
+// transient sim (backward Euler)
+let simTimer=null,TRACE=null;
+function scheduleSim(M){clearTimeout(simTimer);simTimer=setTimeout(()=>{TRACE=simulate(M);trigCache=null;if(dmmMode==="VAC"||dmmMode==="AAC")updateDMM(M,SIM.dc);updateStrip();},30);}
+function simulate(M){
+  const g=gen(),nets=["J_S0","J_S1","J_V","J_COM","J_A"].map(M.f);
+  // adaptive step: resolve the smallest RC time constant in the circuit (R seen by each capacitor × C)
+  let tauMin=Infinity;
+  if(!SIM.bad) for(const e of M.els) if(e.t==="C"){const Vz=solveDC(M,()=>0,{[e.n1]:1,[e.n2]:-1}),R=Math.abs(Vz(e.n1)-Vz(e.n2));if(R>0&&R<1e8)tauMin=Math.min(tauMin,R*e.v);}
+  const N=Math.min(120000,Math.max(1600,Math.ceil(g.T/(tauMin/40)))),dt=g.T/N,K=g.T>20*tauMin?2:6;
+  const out={T:g.T,bad:SIM.bad};const arrs=nets.map(()=>new Float64Array(N));
+  [out.s0,out.s1,out.sV,out.sC,out.sA]=arrs;
+  if(SIM.bad)return out;
+  const idx={};M.unk.forEach((x,i)=>idx[x]=i);const n=M.unk.length;
+  const caps=M.els.filter(e=>e.t==="C"),res=M.els.filter(e=>e.t==="R");
+  const V=solveDC(M,k=>k==="fgen"?g.o:DCV[k]);
+  if(!caps.length&&!Object.values(M.fixed).includes("fgen")){nets.forEach((x,c)=>arrs[c].fill(V(x)));return out;}
+  const A=Array.from({length:n},()=>Array(n).fill(0));for(let i=0;i<n;i++)A[i][i]+=GMIN;
+  const stamp=(e,g1)=>{for(const [x,y] of [[e.n1,e.n2],[e.n2,e.n1]]){if(!(x in idx))continue;A[idx[x]][idx[x]]+=g1;if(y in idx)A[idx[x]][idx[y]]-=g1;}};
+  res.forEach(e=>stamp(e,1/e.v));caps.forEach(e=>stamp(e,e.v/dt));
+  const inv=[];for(let c=0;c<n;c++){const e=Array(n).fill(0);e[c]=1;inv.push(gauss(A,e));}
+  // precompute: coupling of unknown nodes to fixed (source) nodes, and cap terminal indices
+  const KEYS=Object.keys(DCV).concat("fgen"),kIdx=k=>KEYS.indexOf(k),fvals=new Float64Array(KEYS.length);
+  DCV&&Object.keys(DCV).forEach((k,i)=>fvals[i]=DCV[k]);const FG_I=kIdx("fgen");
+  const fixTerms=[];const addT=(e,g1)=>{for(const [x,y] of [[e.n1,e.n2],[e.n2,e.n1]])if(x in idx&&!(y in idx)&&y in M.fixed)fixTerms.push([idx[x],g1,kIdx(M.fixed[y])]);};
+  res.forEach(e=>addT(e,1/e.v));caps.forEach(e=>addT(e,e.v/dt));
+  const capT=caps.map(e=>({i1:e.n1 in idx?idx[e.n1]:-1,i2:e.n2 in idx?idx[e.n2]:-1,k1:e.n1 in M.fixed?kIdx(M.fixed[e.n1]):-1,k2:e.n2 in M.fixed?kIdx(M.fixed[e.n2]):-1,ge:e.v/dt}));
+  const invF=inv.map(c=>Float64Array.from(c));
+  let v=Float64Array.from(M.unk.map(x=>V(x))),nv=new Float64Array(n),bb=new Float64Array(n);
+  const vc=Float64Array.from(caps.map(e=>V(e.n1)-V(e.n2)));
+  const probe=nets.map(x=>x in idx?{i:idx[x]}:{k:x in M.fixed?kIdx(M.fixed[x]):-1});
+  const nodeV=(i,k)=>i>=0?v[i]:(k>=0?fvals[k]:0);
+  for(let k=1;k<=K*N;k++){
+    const t=k*dt;fvals[FG_I]=fgenAt(g,t);bb.fill(0);
+    for(const [i,g1,ki] of fixTerms)bb[i]+=g1*fvals[ki];
+    for(let c=0;c<capT.length;c++){const ct=capT[c],h=ct.ge*vc[c];if(ct.i1>=0)bb[ct.i1]+=h;if(ct.i2>=0)bb[ct.i2]-=h;}
+    nv.fill(0);for(let c=0;c<n;c++){const bc=bb[c];if(!bc)continue;const col=invF[c];for(let r=0;r<n;r++)nv[r]+=col[r]*bc;}
+    const tmp=v;v=nv;nv=tmp;
+    for(let c=0;c<capT.length;c++){const ct=capT[c];vc[c]=nodeV(ct.i1,ct.k1)-nodeV(ct.i2,ct.k2);}
+    if(k>(K-1)*N){const j=k%N;for(let c=0;c<probe.length;c++){const pr=probe[c];arrs[c][j]=pr.i!==undefined?v[pr.i]:(pr.k>=0?fvals[pr.k]:0);}}
+  }
+  return out;
+}
+
+// ================= scope (ELVISmx style) =================
+const VDIV=[0.01,0.02,0.05,0.1,0.2,0.5,1,2,5,10],TB=[5e-6,10e-6,20e-6,50e-6,100e-6,200e-6,500e-6,1e-3,2e-3,5e-3,10e-3,20e-3];
+const vTxt=v=>v<1?(v*1000)+" mV":v+" V",tbTxt=t=>t>=1e-3?(t*1e3)+" ms":(t*1e6)+" µs";
+["v0","v1"].forEach(id=>{$(id).innerHTML=VDIV.map(v=>`<option value="${v}">${vTxt(v)}/div</option>`).join("");$(id).value="1";});
+$("tb").innerHTML=TB.map(v=>`<option value="${v}">${tbTxt(v)}/div</option>`).join("");$("tb").value="0.0002";
+let curs=[0.1,0.5],trigCache=null,DRIFT=0;
+const cv=$("scr"),cx=cv.getContext("2d");
+function sampleAt(arr,T,t){const N=arr.length,x=((t%T)+T)%T/T*N,i=Math.floor(x)%N,fr=x-Math.floor(x);return arr[i]*(1-fr)+arr[(i+1)%N]*fr;}
+function chanArr(c){const a=c?TRACE.s1:TRACE.s0;if($("cp"+c).value==="AC"){TRACE._ac=TRACE._ac||{};if(!TRACE._ac[c]){let m=0;for(const v of a)m+=v;m/=a.length;TRACE._ac[c]=a.map(v=>v-m);}return TRACE._ac[c];}return a;}
+function drawScope(){
+  if($("v-pc").hidden||!scRun)return;
+  const W=cv.width,H=cv.height;cx.fillStyle="#000";cx.fillRect(0,0,W,H);
+  cx.strokeStyle="#2b2f2b";cx.lineWidth=1;
+  for(let i=1;i<10;i++){cx.beginPath();cx.moveTo(i*W/10,0);cx.lineTo(i*W/10,H);cx.stroke();}
+  for(let i=1;i<8;i++){cx.beginPath();cx.moveTo(0,i*H/8);cx.lineTo(W,i*H/8);cx.stroke();}
+  cx.strokeStyle="#4a514a";cx.beginPath();cx.moveTo(W/2,0);cx.lineTo(W/2,H);cx.moveTo(0,H/2);cx.lineTo(W,H/2);cx.stroke();
+  cx.font="600 22px Martian Mono, monospace";
+  if(!TRACE)return;
+  const tb=+$("tb").value,vd=[+$("v0").value,+$("v1").value],trS=+$("trS").value,lvl=+$("trL").value,T=TRACE.T;
+  const arrs=[chanArr(0),chanArr(1)],en=[$("en0").checked,$("en1").checked],col=["#ffd34d","#5fd4ff"];
+  const edge=$("trT").value==="edge",fall=$("trSl").value==="fall";
+  if(!trigCache){const a=arrs[trS],N=a.length;let ti=null;for(let i=0;i<N;i++){const p=a[(i-1+N)%N],c=a[i];if(fall?(p>lvl&&c<=lvl):(p<lvl&&c>=lvl)){ti=i/N*T;break;}}trigCache={t:ti};}
+  const untrig=!edge||trigCache.t===null;if(untrig)DRIFT=(DRIFT+0.65*tb)%T;
+  const t0=(untrig?DRIFT:trigCache.t)-tb;
+  const y=(v,c)=>H/2-v/vd[c]*H/8,samp=800;
+  [0,1].forEach(c=>{if(!en[c])return;cx.strokeStyle=col[c];cx.lineWidth=2.4;cx.beginPath();
+    for(let i=0;i<=samp;i++){const t=t0+i/samp*10*tb,v=sampleAt(arrs[c],T,t)+(Math.random()-.5)*0.008,X=i/samp*W,Y=Math.max(-5,Math.min(H+5,y(v,c)));i?cx.lineTo(X,Y):cx.moveTo(X,Y);}cx.stroke();
+    cx.fillStyle=col[c];cx.fillText(c?"1▸":"0▸",4,y(0,c)+(c?28:8));});
+  if(edge){cx.fillStyle=untrig?"#ff6b6b":"#9aa4ae";cx.fillText(untrig?"Untriggered: level is outside the signal":(fall?"T↘":"T↗"),untrig?W*0.12:W/10-8,24);
+    cx.fillStyle=col[trS];cx.fillText("◂T",W-48,y(lvl,trS)+8);}
+  else{cx.fillStyle="#9aa4ae";cx.fillText("Trigger: Immediate",W-280,24);}
+  if(TRACE.bad){cx.fillStyle="#ff6b6b";cx.fillText("Circuit fault: see the bench",W*0.28,H/2-20);}
+  const cch=[+$("c1Ch").value,+$("c2Ch").value],ts=t=>Math.abs(t)>=1e-3?(t*1e3).toFixed(3)+" ms":(t*1e6).toFixed(1)+" µs";
+  const cr=curs.map((f,i)=>{const t=t0+f*10*tb;return{t:t-(t0+tb),v:sampleAt(arrs[cch[i]],T,t)};});
+  if($("curOn").checked){cx.setLineDash([10,8]);cx.lineWidth=1.8;
+    curs.forEach((f,i)=>{cx.strokeStyle="#e6eaef";cx.beginPath();cx.moveTo(f*W,0);cx.lineTo(f*W,H);cx.stroke();cx.fillStyle="#e6eaef";cx.fillText(`C${i+1} (CH${cch[i]})`,f*W+6,H-12);
+      cx.setLineDash([]);cx.strokeStyle=cch[i]?"#5fd4ff":"#ffd34d";cx.beginPath();cx.arc(f*W,y(cr[i].v,cch[i]),8,0,7);cx.stroke();cx.setLineDash([10,8]);});cx.setLineDash([]);}
+  const st=a=>{let mx=-1e9,mn=1e9,s=0;for(const v of a){if(v>mx)mx=v;if(v<mn)mn=v;s+=v*v;}return{pp:mx-mn,rms:Math.sqrt(s/a.length)};};
+  TRACE._st=TRACE._st||{};const sk=$("cp0").value+$("cp1").value;if(!TRACE._st[sk])TRACE._st[sk]=[st(arrs[0]),st(arrs[1])];const [m0,m1]=TRACE._st[sk],f=gen().f;
+  $("meas").innerHTML=`<div><b style="color:#ffd34d">CH 0</b>RMS ${m0.rms.toFixed(3)} V · Freq ${f} Hz · Vp-p ${m0.pp.toFixed(3)} V</div><div><b style="color:#5fd4ff">CH 1</b>RMS ${m1.rms.toFixed(3)} V · Freq ${f} Hz · Vp-p ${m1.pp.toFixed(3)} V</div>
+  ${$("curOn").checked?`<div><b>C1</b>${ts(cr[0].t)}, ${cr[0].v.toFixed(3)} V</div><div><b>C2</b>${ts(cr[1].t)}, ${cr[1].v.toFixed(3)} V</div><div><b>dT (C2 − C1)</b>${ts(cr[1].t-cr[0].t)}</div><div><b>dV (C2 − C1)</b>${(cr[1].v-cr[0].v).toFixed(3)} V</div>`:""}`;
+}
+let cdrag=-1;const fx=e=>{const r=cv.getBoundingClientRect();return Math.min(1,Math.max(0,(e.clientX-r.left)/r.width));};
+cv.addEventListener("pointerdown",e=>{if(!$("curOn").checked)return;const f=fx(e);cdrag=Math.abs(curs[0]-f)<=Math.abs(curs[1]-f)?0:1;curs[cdrag]=f;cv.setPointerCapture(e.pointerId);});
+cv.addEventListener("pointermove",e=>{if(cdrag>=0)curs[cdrag]=fx(e);});
+cv.addEventListener("pointerup",()=>cdrag=-1);
+document.querySelectorAll("[data-nudge]").forEach(b=>b.onclick=()=>{const[i,d]=b.dataset.nudge.split(",").map(Number);curs[i]=Math.min(1,Math.max(0,curs[i]+d*0.0005));});
+["trS","trL","trSl","cp0","cp1"].forEach(id=>$(id).addEventListener("input",()=>trigCache=null));
+const syncTrig=()=>{const e=$("trT").value==="edge";document.querySelectorAll(".edgeOnly").forEach(x=>x.hidden=!e);$("trHint").hidden=e;trigCache=null;};$("trT").addEventListener("input",syncTrig);syncTrig();
+$("autoS").onclick=()=>{if(!TRACE)return;[0,1].forEach(c=>{const a=chanArr(c);let mx=0;for(const v of a)mx=Math.max(mx,Math.abs(v));const need=mx/3.5;$("v"+c).value=String(VDIV.find(v=>v>=need)||10);});
+  const tbN=TRACE.T*2/10;$("tb").value=String(TB.find(t=>t>=tbN)||TB[TB.length-1]);trigCache=null;};
+const toggle2=(a,b,on)=>{$(a).setAttribute("aria-pressed",on);$(b).setAttribute("aria-pressed",!on);};
+$("scRunB").onclick=()=>{scRun=true;toggle2("scRunB","scStopB",true);};$("scStopB").onclick=()=>{scRun=false;toggle2("scRunB","scStopB",false);};
+$("dmmRunB").onclick=()=>{dmmRun=true;toggle2("dmmRunB","dmmStopB",true);$("dmmRun").textContent="● Running";recompute();};
+$("dmmStopB").onclick=()=>{dmmRun=false;toggle2("dmmRunB","dmmStopB",false);$("dmmRun").textContent="■ Stopped";};
+$("fgRunB").onclick=()=>{fgRun=true;toggle2("fgRunB","fgStopB",true);recompute();};$("fgStopB").onclick=()=>{fgRun=false;toggle2("fgRunB","fgStopB",false);recompute();};
+document.querySelectorAll("[data-dmm]").forEach(b=>b.onclick=()=>{dmmMode=b.dataset.dmm;document.querySelectorAll("[data-dmm]").forEach(x=>x.setAttribute("aria-pressed",x===b));recompute();});
+document.querySelectorAll("[data-wave]").forEach(b=>b.onclick=()=>{FG.w=b.dataset.wave;document.querySelectorAll("[data-wave]").forEach(x=>x.setAttribute("aria-pressed",x===b));recompute();});
+["fgF","fgA","fgO"].forEach(id=>$(id).addEventListener("input",()=>{FG.f=+$("fgF").value;FG.A=+$("fgA").value;FG.o=+$("fgO").value;$("fgBig").textContent=(FG.f||0).toFixed(2);recompute();}));
+let last=0;(function loop(ts){if(ts-last>33){drawScope();last=ts;}requestAnimationFrame(loop);})(0);
+setInterval(()=>{const d=new Date();$("clock").textContent=d.toLocaleTimeString([], {hour:"2-digit",minute:"2-digit"});},1000);
+
+// ================= circuit checker =================
+function runCheck(){
+  const out=[],f=NETS.find,srcPin=part==="dc"?HID["+15V"]:HID["FGEN"],load=part==="dc"?"RL":"C",other=part==="dc"?"C":"RL";
+  const map={G:f(HID["GROUND"]),A:f(srcPin)};
+  const CON=[["R1","A","B"],["R2","B","G"],["R3","B","D"],["R4","D","G"],["R5","A","C"],["R6","C","D"],[load,"C","G"]];
+  const pn=id=>{const p=parts.find(x=>x.id===id);return p.ends[0].pt&&p.ends[1].pt?[f(p.ends[0].pt),f(p.ends[1].pt)]:null;};
+  for(let it=0;it<8;it++)for(const [id,x,y] of CON){const n=pn(id);if(!n)continue;
+    for(const [a,b] of [[x,y],[y,x]])if(map[a]&&!map[b]){if(n[0]===map[a])map[b]=n[1];else if(n[1]===map[a])map[b]=n[0];}}
+  if(!parts.some(p=>p.ends.some(e=>e.pt&&f(e.pt)===map.A)))out.push(["no",`${part==="dc"?"+15V (pin 51)":"FGEN (pin 33)"} isn't wired to node A.`]);
+  if(!parts.some(p=>p.ends.some(e=>e.pt&&f(e.pt)===map.G)))out.push(["no","Nothing is connected to GROUND. Wire the GROUND pin to a blue (−) rail."]);
+  for(const [id,x,y] of CON){const n=pn(id);
+    if(!n){out.push(["no",`${id} isn't fully plugged into the board.`]);continue;}
+    const okc=map[x]&&map[y]&&((n[0]===map[x]&&n[1]===map[y])||(n[1]===map[x]&&n[0]===map[y]));
+    if(n[0]===n[1])out.push(["no",`${id} has both leads on the same node (same row strip or rail), so it's shorted out.`]);
+    else if(!okc)out.push(["no",`${id} should connect node ${x==="G"?"GND":x} to node ${y==="G"?"GND":y}.`]);}
+  const ks=Object.keys(map);for(let i=0;i<ks.length;i++)for(let j=i+1;j<ks.length;j++)if(map[ks[i]]&&map[ks[i]]===map[ks[j]])out.push(["no",`Nodes ${ks[i]} and ${ks[j]} are connected together (short).`]);
+  if(pn(other))out.push(["no",`${other} is plugged in but isn't part of this experiment. Put it back in the drawer.`]);
+  if(!out.length)out.push(["ok",`✓ Circuit matches the schematic for ${part==="dc"?"part 1 (DC)":part==="tr"?"part 2 (transient)":"part 3 (AC)"}${power?"":". Board power is OFF"}.`]);
+  $("checkOut").innerHTML=out.map(([c,m])=>`<div class="${c}">${c==="ok"?"":"✗ "}${esc(m)}</div>`).join("");$("checkOut").dataset.live="1";
+}
+$("chkC").onclick=runCheck;
+
+// ================= auto-build (block 2) =================
+function autoBuild(){
+  resetBench();
+  // Layout mirrors the schematic: top wire (row 6) A–R5–C, middle wire (row 12) A–R1–B–R3–D,
+  // R2 / R4 / R6 / load standing vertically, ground line along row 18. Left block = A, B; middle block = C, D.
+  const H=(b,c,r)=>`h${b}${c}${r-1}`,put=(id,a,b)=>{const p=parts.find(x=>x.id===id);p.ends[0].pt=a;p.ends[1].pt=b;};
+  const W=(a,b,c)=>wires.push({id:"w"+(++wireSeq),color:c,ends:[{pt:a},{pt:b}]});
+  put("R5",H(0,"e",6),H(1,"a",6));                 // top: A → C
+  put("R1",H(0,"e",12),H(0,"h",12));               // middle: A → B (across the channel)
+  put("R3",H(0,"j",12),H(1,"a",12));               // middle: B → D
+  put("R6",H(1,"c",6),H(1,"c",12));                // vertical: C → D
+  put("R2",H(0,"g",12),H(0,"g",18));               // vertical: B → ground
+  put("R4",H(1,"d",12),H(1,"d",18));               // vertical: D → ground
+  put(part==="dc"?"RL":"C",H(1,"h",6),H(1,"h",18)); // vertical at the right: C → ground
+  W(H(0,"a",6),H(0,"a",12),"#d93a3a");             // node A: left edge, top to middle
+  W(H(1,"e",6),H(1,"f",6),"#2f9e44");              // node C continues right to the load
+  W(part==="dc"?HID["+15V"]:HID["FGEN"],H(0,"b",12),part==="dc"?"#d93a3a":"#e6b800");
+  W(HID["GROUND"],H(0,"b",18),"#222");             // ground line along row 18
+  W(H(0,"e",18),H(0,"f",18),"#222");W(H(0,"j",18),H(1,"a",18),"#222");W(H(1,"e",18),H(1,"f",18),"#222");
+  recompute();runCheck();
+}
+$("autoB").onclick=()=>{$("guide").hidden=true;autoBuild();};
+
+// ================= schematic <-> board linking =================
+// LINK = part id (R1…RL, C) or node id (nA…nD, nG) currently highlighted on both views.
+let LINK=null;
+const NODEPARTS=()=>{const L=part==="dc"?"RL":"C";return{nA:["R1","R5"],nB:["R1","R2","R3"],nC:["R5","R6",L],nD:["R3","R6","R4"],nG:["R2","R4",L]};};
+function nodeOfNet(net){ // which schematic node is this net? only when it's unambiguous
+  const N=NETS,src=HID[part==="dc"?"+15V":"FGEN"];
+  if(N.find(HID["GROUND"])===net)return "nG";
+  if(src&&N.find(src)===net)return "nA";
+  const on=new Set();parts.forEach(p=>p.ends.forEach(e=>{if(e.pt&&N.find(e.pt)===net)on.add(p.id);}));
+  let best=null,bs=1,tie=false;
+  for(const [k,ps] of Object.entries(NODEPARTS())){const sc=ps.filter(x=>on.has(x)).length;if(sc>bs){best=k;bs=sc;tie=false;}else if(sc===bs&&sc>1)tie=true;}
+  return tie?null:best;
+}
+function netOfNode(k){ // board net that best matches a schematic node
+  const N=NETS;if(k==="nG")return N.find(HID["GROUND"]);
+  if(k==="nA"){const src=HID[part==="dc"?"+15V":"FGEN"];if(wires.some(w=>w.ends.some(e=>e.pt===src)))return N.find(src);}
+  const cnt=new Map();for(const id of NODEPARTS()[k]){const p=parts.find(x=>x.id===id);if(!p)continue;new Set(p.ends.filter(e=>e.pt).map(e=>N.find(e.pt))).forEach(n=>cnt.set(n,(cnt.get(n)||0)+1));}
+  let best=null,bc=1;cnt.forEach((c,n)=>{if(c>bc){best=n;bc=c;}});return best;
+}
+function setLink(k,force){
+  if(k===LINK&&!force)return;const prevPart=LINK&&LINK[0]!=="n",nowPart=k&&k[0]!=="n";LINK=k;
+  document.querySelectorAll(".sch .hl").forEach(el=>el.classList.toggle("on",el.dataset.cp===k));
+  if((prevPart||nowPart)&&!force)render();
+}
+function schHover(e){
+  const t=e.target.closest(".hit");
+  if(!t){if(LINK){setLink(null);hl.innerHTML="";}return;}
+  const k=t.dataset.cp;if(k===LINK)return;setLink(k);hl.innerHTML="";
+  if(k[0]==="n"){const net=netOfNode(k);if(net!=null){let s="";for(const p of ALLP)if(!p.nosnap&&NETS.find(p.id)===net)s+=`<circle cx="${p.x}" cy="${p.y}" r="7" fill="rgba(255,216,77,.35)" stroke="#ffd84d" stroke-width="2.6" style="pointer-events:none"/>`;hl.innerHTML=s;}}
+}
+["sch","schMini"].forEach(id=>{const el=$(id);el.addEventListener("pointermove",schHover);el.addEventListener("pointerleave",()=>{setLink(null);hl.innerHTML="";});});
+$("miniT").onclick=()=>{const w=$("miniWrap"),min=w.classList.toggle("min");$("miniT").textContent=min?"Show":"Hide";$("miniT").setAttribute("aria-expanded",!min);try{localStorage.setItem("elvisim-mini",min?"0":"1")}catch(_){}};
+try{if(localStorage.getItem("elvisim-mini")==="0")$("miniT").click();}catch(_){}
+
+// ================= schematic + worksheet =================
+function zig(x1,y1,x2,y2){const horiz=y1===y2,L=horiz?x2-x1:y2-y1,body=56,lead=(L-body)/2,n=6,a=9;let d=`M${x1},${y1} `;
+  if(horiz){d+=`L${x1+lead},${y1} `;for(let i=0;i<n;i++)d+=`L${x1+lead+(i+.5)*body/n},${y1+(i%2?a:-a)} `;d+=`L${x2-lead},${y1} L${x2},${y2}`;}
+  else{d+=`L${x1},${y1+lead} `;for(let i=0;i<n;i++)d+=`L${x1+(i%2?a:-a)},${y1+lead+(i+.5)*body/n} `;d+=`L${x1},${y2-lead} L${x2},${y2}`;}return `<path d="${d}" class="w"/>`;}
+function drawSch(){
+  const L=70,Bx=270,Dx=470,Rx=580,T=40,M=145,Bo=255,t=(x,y,s,c="lbl",a="middle")=>`<text x="${x}" y="${y}" class="${c}" text-anchor="${a}">${s}</text>`;
+  const ar=(x,y,d)=>{const m={r:`M${x-12},${y} L${x+8},${y} M${x+1},${y-4} L${x+8},${y} L${x+1},${y+4}`,u:`M${x},${y+12} L${x},${y-8} M${x-4},${y-1} L${x},${y-8} L${x+4},${y-1}`,d:`M${x},${y-12} L${x},${y+8} M${x-4},${y+1} L${x},${y+8} L${x+4},${y+1}`};return `<path d="${m[d]}" class="arr"/>`;};
+  let s=`<style>.w{fill:none;stroke:var(--ink);stroke-width:1.8}.lbl{fill:var(--ink);font:600 14px 'Public Sans',sans-serif}.pm{fill:var(--muted);font:600 13px 'Public Sans',sans-serif}.vl{fill:var(--ch0);font:600 13px 'Public Sans',sans-serif}.arr{fill:none;stroke:var(--ch1);stroke-width:2}.il{fill:var(--ch1);font:600 13px 'Public Sans',sans-serif}.dot{fill:var(--ink)}.node{fill:var(--accent);font:700 13px 'Public Sans',sans-serif}</style>`;
+  s+=`<path class="w" d="M${L},${M} L${L},${T} L230,${T} M330,${T} L${Rx},${T} M${L},${M} L110,${M} M190,${M} L330,${M} M410,${M} L${Dx},${M} M${L},${Bo} L${Rx},${Bo} M${Bx},${Bo} L${Bx},${Bo+12} M${Bx},${M} L${Bx},${M+10} M${Dx},${M-10} L${Dx},${M}"/>`;
+  s+=`<path class="w" d="M${Bx-14},${Bo+12} L${Bx+14},${Bo+12} M${Bx-9},${Bo+17} L${Bx+9},${Bo+17} M${Bx-4},${Bo+22} L${Bx+4},${Bo+22}"/>`;
+  // highlight boxes (behind the drawing); ids match board parts, n* = nodes
+  const CB={R1:[104,M-20,92,40],R5:[224,T-20,112,40],R3:[324,M-20,92,40],R2:[Bx-20,M+12,40,Bo-M-14],R6:[Dx-20,T+4,40,M-T-16],R4:[Dx-20,M+12,40,Bo-M-14]};
+  CB[part==="dc"?"RL":"C"]=[Rx-20,T+34,40,Bo-T-68];
+  const NB={nA:[L,M],nB:[Bx,M],nC:[Dx,T],nD:[Dx,M],nG:[Bx,Bo+12]};
+  for(const k in CB){const [x,y,w,h]=CB[k];s+=`<rect class="hl" data-cp="${k}" x="${x}" y="${y}" width="${w}" height="${h}" rx="8"/>`;}
+  for(const k in NB){const [x,y]=NB[k];s+=`<circle class="hl" data-cp="${k}" cx="${x}" cy="${y}" r="15"/>`;}
+  s+=zig(110,M,190,M)+zig(230,T,330,T)+zig(330,M,410,M)+zig(Bx,M+10,Bx,Bo)+zig(Dx,T,Dx,M-10)+zig(Dx,M,Dx,Bo);
+  if(part==="dc")s+=zig(Rx,T+40,Rx,Bo-40)+`<path class="w" d="M${Rx},${T} L${Rx},${T+40} M${Rx},${Bo-40} L${Rx},${Bo}"/>`+t(Rx+20,(T+Bo)/2+5,"RL","lbl","start");
+  else{const m=(T+Bo)/2;s+=`<path class="w" d="M${Rx},${T} L${Rx},${m-5} M${Rx-16},${m-5} L${Rx+16},${m-5} M${Rx-16},${m+5} L${Rx+16},${m+5} M${Rx},${m+5} L${Rx},${Bo}"/>`+t(Rx+24,m,"C = 1 µF","lbl","start")+t(Rx+24,m+18,"Vc → CH 1","vl","start");}
+  const sy=(M+Bo)/2;s+=`<path class="w" d="M${L},${M} L${L},${sy-20} M${L},${sy+20} L${L},${Bo}"/><circle cx="${L}" cy="${sy}" r="20" class="w"/>`;
+  s+=part==="dc"?t(L,sy-4,"+","pm")+t(L,sy+14,"−","pm")+t(L-26,sy-2,"15 V","lbl","end")+t(L-26,sy+14,"pin 51","pm","end"):`<path class="w" d="M${L-12},${sy} Q${L-6},${sy-14} ${L},${sy} T${L+12},${sy}"/>`+t(L-26,sy-2,"FGEN","lbl","end")+t(L-26,sy+14,"pin 33","pm","end")+t(L+10,T+30,"Vs → CH 0","vl","start");
+  s+=t(150,M+30,"R1")+t(280,T-14,"R5")+t(370,M+30,"R3")+t(Bx-26,(M+Bo)/2+16,"R2")+t(Dx-28,(T+M)/2+5,"R6")+t(Dx-28,(M+Bo)/2+16,"R4");
+  if(part==="dc"){s+=t(114,M-14,"+","pm")+t(150,M-14,"V1","vl")+t(186,M-14,"−","pm")+t(242,T+24,"+","pm")+t(280,T+24,"V5","vl")+t(318,T+24,"−","pm")+t(334,M-14,"+","pm")+t(370,M-14,"V3","vl")+t(406,M-14,"−","pm")
+    +t(Bx+26,M+28,"+","pm")+t(Bx+30,(M+Bo)/2+5,"V2","vl")+t(Bx+26,Bo-10,"−","pm")+t(Dx+24,T+22,"+","pm")+t(Dx+30,(T+M)/2+5,"V6","vl")+t(Dx+24,M-12,"−","pm")+t(Dx+24,M+28,"+","pm")+t(Dx+30,(M+Bo)/2+5,"V4","vl")+t(Dx+24,Bo-10,"−","pm");
+    s+=ar(88,M-12,"r")+t(90,M+22,"I1","il")+ar(Bx-14,M+38,"u")+t(Bx-30,M+30,"I2","il","end")+ar(300,M-12,"r")+t(300,M-26,"I3","il")+ar(Dx-14,M+22,"d")+t(Dx-30,M+28,"I4","il","end")+ar(150,T-12,"r")+t(150,T+22,"I5","il");}
+  const dot=(x,y,n)=>`<circle cx="${x}" cy="${y}" r="4.5" class="dot"/>`+(n?`<text x="${x+(n==="A"?-14:9)}" y="${y-8}" class="node">${n}</text>`:"");
+  s+=dot(L,M,"A")+dot(Bx,M,"B")+dot(Dx,T,"C")+dot(Dx,M,"D")+dot(Bx,Bo,"")+t(Bx+22,Bo+22,"GND","node","start");
+  for(const k in CB){const [x,y,w,h]=CB[k];s+=`<rect class="hit" data-cp="${k}" x="${x}" y="${y}" width="${w}" height="${h}"><title>${k==="C"?"C 1 µF":k}</title></rect>`;}
+  for(const k in NB){const [x,y]=NB[k];s+=`<circle class="hit" data-cp="${k}" cx="${x}" cy="${y}" r="15"><title>${k==="nG"?"Ground":"Node "+k[1]}</title></circle>`;}
+  $("sch").innerHTML=s;$("schMini").innerHTML=s;setLink(LINK,true);$("schTitle").textContent=part==="dc"?"Schematic: part 1":"Schematic: parts 2–3 (RL replaced by C)";
+}
+function theory(){
+  const solve=(on,rl,inj)=>{const vA=on?15:0,idx={B:0,C:1,D:2},G=[[0,0,0],[0,0,0],[0,0,0]],b=[0,0,0],fx={A:vA,G:0};
+    const E=[["A","B",P.R1],["B","G",P.R2],["B","D",P.R3],["D","G",P.R4],["A","C",P.R5],["C","D",P.R6]];if(rl)E.push(["C","G",P.RL]);
+    for(const [p,q,R] of E){const gg=1/R;for(const [x,y] of [[p,q],[q,p]]){if(!(x in idx))continue;G[idx[x]][idx[x]]+=gg;if(y in idx)G[idx[x]][idx[y]]-=gg;else b[idx[x]]+=gg*fx[y];}}
+    if(inj)b[1]+=inj;const v=gauss(G,b);return{A:vA,B:v[0],C:v[1],D:v[2]};};
+  const v=solve(true,true),Voc=solve(true,false).C,Rth=solve(false,false,1).C,tau=Rth*P.C,k=Voc/15,w=2*Math.PI*1000,m=1/Math.sqrt(1+(w*tau)**2),phi=Math.atan(w*tau)*180/Math.PI;
+  return{dc:[["V1",v.A-v.B,"V"],["V2",v.B,"V"],["V3",v.B-v.D,"V"],["V4",v.D,"V"],["V5",v.A-v.C,"V"],["V6",v.C-v.D,"V"],["I1",(v.A-v.B)/P.R1*1e3,"mA"],["I2",-v.B/P.R2*1e3,"mA"],["I3",(v.B-v.D)/P.R3*1e3,"mA"],["Voc",Voc,"V"],["Isc",Voc/Rth*1e3,"mA"],["Rth",Rth,"Ω"]],
+   tr:[["Vc-pp",k*10,"V"],["0.63Vc",0.632*k*10,"V"],["τ",tau*1e3,"ms"]],ac:[["|Vc|",k*10*m,"Vpp"],["Δt",phi/360/1000*1e6,"µs"],["Phase",-phi,"°"]]};
+}
+const HOW={
+ dc:`<h2>Procedure (part 1)</h2><ol class="steps">
+ <li><b>Build:</b> drag R1–R6 and RL from the drawer onto the board. Each <b>row of 5 holes</b> in a block is one node. Wire <b>+15V</b> (header) to node A and <b>GROUND</b> to a blue (−) rail. Press <b>Check circuit</b>.</li>
+ <li><b>Voltages:</b> on the Computer screen choose <b>V⎓</b>. Red plug in <b>VΩ</b>, black in <b>COM</b>. Red probe on the + end, black on the − end.</li>
+ <li><b>Currents:</b> drag the red plug to the <b>A</b> jack and choose A⎓. Pull one lead of the resistor into an empty row and bridge the gap with the probes, red where the current enters.</li>
+ <li><b>Voc:</b> put RL back in the drawer and use V⎓ across its rows (C and GND).</li>
+ <li><b>Isc:</b> red plug in A, A⎓, probes across C and GND.</li>
+ <li><b>Rth:</b> delete the +15V wire, wire node A to GROUND instead, red plug back in VΩ, Ω across C and GND.</li></ol>
+ <details><summary>Exam check: calculating it by hand</summary><p>Nodal analysis with V<sub>A</sub> = 15 V. Rth isn't simple series-parallel: use a 1 A test source at C, or Voc/Isc. I2's arrow points up, so I2 is negative.</p></details>`,
+ tr:`<h2>Procedure (part 2)</h2><ol class="steps">
+ <li>Swap RL for the <b>1 µF</b> capacitor. Move the source wire from +15V to <b>FGEN</b> (pin 33).</li>
+ <li>Clip the <b>CH 0</b> red clip on node A (Vs) and the <b>CH 1</b> red clip on node C (Vc). Black clips go on ground only.</li>
+ <li>Computer screen, FGEN: <b>Square, 50 Hz, 10 Vpp, 5 V offset</b>, then Run.</li>
+ <li>Scope trigger: set <b>Type = Edge</b>, Source <b>Chan 0</b>, Slope <b>Rising</b>, Level <b>1 V</b>. Timebase <b>1 ms/div</b>; choose a V/div that fits 10 V.</li>
+ <li>Cursors on CH 1: <b>C1</b> at the start of the rising edge, <b>C2</b> at 0.63 × Vc-pp. dT = τ.</li></ol>
+ <details><summary>Exam check: theory</summary><p>τ = Rth·C. The Thevenin voltage scales by Voc/15, so Vc only rises to that fraction of 10 V.</p></details>`,
+ ac:`<h2>Procedure (part 3)</h2><ol class="steps">
+ <li>Same wiring as part 2. FGEN: <b>Sine, 1 kHz, 10 Vpp, 0 V offset</b>.</li>
+ <li>CH 0 = Vs (reference), CH 1 = Vc. Trigger <b>Type = Edge</b>, Chan 0, Rising, level <b>0 V</b>. Read Vc's Vp-p.</li>
+ <li>Zoom to 50–100 µs/div. Set C1 channel to CH 0 and C2 channel to CH 1. Put C1 on CH 0's rising zero crossing and C2 on Vc's next rising zero crossing.</li>
+ <li>Phase = dT × 360° × f. Vc is later, so it <b>lags</b>: enter a negative angle.</li></ol>
+ <details><summary>Exam check: phasors</summary><p>Vc = k·Vs/(1 + jωRthC): |Vc| = k·10/√(1+(ωτ)²) Vpp, ∠Vc = −tan⁻¹(ωτ).</p></details>`};
+function renderSheet(){
+  const list=theory()[part],titles={dc:"Worksheet: DC & Thevenin",tr:"Worksheet: transient",ac:"Worksheet: AC steady state"};
+  let h=`<h2>${titles[part]}</h2><p style="margin:0 0 6px;font-size:13px;color:var(--muted)">Enter what you measure. Within 3% is marked correct.</p><div class="ws" id="ws">`;
+  list.forEach(([n,v,u],i)=>h+=`<div class="q"><label class="lab" for="q${i}">${n}</label><div class="row" style="flex-wrap:nowrap"><input type="number" step="any" id="q${i}"><span class="unit">${u}</span></div><span class="mark" id="m${i}"></span><div class="ans">${v.toFixed(u==="Ω"?1:3)} ${u}</div></div>`);
+  if(part==="ac")h+=`<div class="q"><label class="lab" for="qLL">Vc is</label><select id="qLL"><option value="">choose…</option><option>leading</option><option>lagging</option></select><span class="mark" id="mLL"></span><div class="ans">lagging</div></div>`;
+  h+=`</div><div class="row" style="margin-top:12px"><button class="primary" id="chk">Check answers</button><button id="rev">Show answers</button><button id="clr">Clear</button><span class="score" id="score"></span></div>`;
+  $("wsPanel").innerHTML=h;$("howPanel").innerHTML=HOW[part];
+  $("chk").onclick=()=>{let ok=0,tot=0;list.forEach(([n,v],i)=>{const e=$("q"+i),m=$("m"+i);if(e.value===""){m.textContent="";m.className="mark";return;}tot++;const x=+e.value,tol=Math.abs(v)*.03;
+      if(Math.abs(x-v)<=tol){ok++;m.textContent="✓ correct";m.className="mark ok";}else if(Math.abs(Math.abs(x)-Math.abs(v))<=tol){m.textContent="sign?";m.className="mark half";}else{m.textContent=x>v?"✗ too high":"✗ too low";m.className="mark no";}});
+    const ll=$("qLL");if(ll&&ll.value){tot++;const g=ll.value==="lagging";if(g)ok++;$("mLL").textContent=g?"✓ correct":"✗";$("mLL").className="mark "+(g?"ok":"no");}
+    $("score").textContent=tot?`${ok}/${tot}`:"Enter at least one value";};
+  $("rev").onclick=()=>{$("ws").classList.toggle("reveal");$("rev").textContent=$("ws").classList.contains("reveal")?"Hide answers":"Show answers";};
+  $("clr").onclick=renderSheet;
+}
+document.querySelectorAll("[data-part]").forEach(b=>b.onclick=()=>{part=b.dataset.part;document.querySelectorAll("[data-part]").forEach(x=>x.setAttribute("aria-pressed",x===b));drawSch();renderSheet();if($("checkOut").dataset.live==="1")runCheck();});
+$("bIdeal").onclick=()=>{P={...NOM};$("bIdeal").setAttribute("aria-pressed","true");$("bReal").setAttribute("aria-pressed","false");$("bNew").hidden=true;recompute();renderSheet();};
+$("bReal").onclick=()=>{randomize();$("bIdeal").setAttribute("aria-pressed","false");$("bReal").setAttribute("aria-pressed","true");$("bNew").hidden=false;recompute();renderSheet();};
+$("bNew").onclick=()=>{randomize();recompute();renderSheet();};
+const VIEWS={bench:"v-bench",pc:"v-pc",sheet:"v-sheet"};
+for(const k in VIEWS)$("mt-"+k).onclick=()=>{for(const j in VIEWS){$(VIEWS[j]).hidden=j!==k;$("mt-"+j).setAttribute("aria-selected",j===k);}};
+
+drawSch();renderSheet();recompute();
+
+
+// ================= guided setups =================
+const GUIDES={
+ V1:{title:"Measure V1 (across R1)",part:"dc",do:()=>{probe("h0c11","h0f11");dmm("V");},
+   steps:["DMM set to <b>V⎓</b>. Red plug in <b>VΩ</b>, black in <b>COM</b>.","Red probe on <b>node A</b> (row 12, left half: the + end of R1), black probe on <b>node B</b> (row 12, right half: the − end).","A voltmeter goes <b>across</b> the part (in parallel), so nothing gets unplugged."],exp:"V1"},
+ I1:{title:"Measure I1 (current through R1)",part:"dc",do:()=>{part1("R1",1,"h0h9");plug("J_A");probe("h0i9","h0f11");dmm("A");},
+   steps:["Red plug moved from VΩ to the <b>A</b> jack; DMM set to <b>A⎓</b>.","<b>Branch broken:</b> R1's right lead pulled out of node B (row 12) up into the empty <b>row 10</b> on the same side.","Meter bridges the gap: <b>red probe on row 10</b> (where the current comes out of R1 and enters the meter), <b>black probe on node B</b> (row 12).","All of I1 now has to flow through the meter, so it's <b>in series</b>."],exp:"I1"},
+ I2:{title:"Measure I2 (current through R2, arrow pointing up)",part:"dc",do:()=>{part1("R2",1,"h0g15");plug("J_A");probe("h0h17","h0h15");dmm("A");},
+   steps:["Red plug in <b>A</b>, DMM on <b>A⎓</b>.","<b>Branch broken:</b> R2's bottom lead moved off the ground line (row 18) up to the empty <b>row 16</b>.","I2's arrow points <b>up</b> (ground → B), so the meter is placed to read in that direction: <b>red on row 18</b> (ground side), <b>black on row 16</b>.","The real current flows <b>down</b> through R2, so the reading is <b>negative</b>. That's correct for this arrow."],exp:"I2"},
+ I3:{title:"Measure I3 (current through R3)",part:"dc",do:()=>{part1("R3",1,"h1a9");plug("J_A");probe("h1b9","h1b11");dmm("A");},
+   steps:["Red plug in <b>A</b>, DMM on <b>A⎓</b>.","<b>Branch broken:</b> R3's right lead pulled out of node D (row 12, middle block) up into the empty <b>row 10</b>.","<b>Red on row 10</b> (current leaving R3), <b>black on node D</b> (row 12)."],exp:"I3"},
+ Voc:{title:"Measure Voc (open-circuit voltage at RL)",part:"dc",do:()=>{pull("RL");probe("h1g5","h1g17");dmm("V");},
+   steps:["<b>RL removed</b> (back in the drawer), so terminals a–b are open.","DMM on <b>V⎓</b>, red in VΩ: <b>red where RL's top lead was</b> (node C, row 6), <b>black where its bottom lead was</b> (ground line, row 18)."],exp:"Voc"},
+ Isc:{title:"Measure Isc (short-circuit current at RL)",part:"dc",do:()=>{pull("RL");plug("J_A");probe("h1g5","h1g17");dmm("A");},
+   steps:["<b>RL removed.</b> Red plug in <b>A</b>, DMM on <b>A⎓</b>.","Probes across RL's terminals: <b>red on node C</b>, <b>black on ground</b>. The ammeter itself is the short circuit."],exp:"Isc"},
+ Rth:{title:"Measure Rth (looking into RL's terminals)",part:"dc",do:()=>{pull("RL");const w=wires.find(w=>w.ends[0].pt===HID["+15V"]);if(w)w.ends[0].pt=HID["GROUND"];probe("h1g5","h1g17");dmm("R");},
+   steps:["<b>RL removed.</b>","<b>Source replaced by a short:</b> the wire from +15V now comes from GROUND, so node A is tied to ground.","Red plug back in <b>VΩ</b>, DMM on <b>Ω</b>: red on node C, black on ground.","Check: Rth ≈ Voc ÷ Isc."],exp:"Rth"},
+ tau:{title:"Measure τ (capacitor charging)",part:"tr",do:()=>{dmm("V");plug("J_V");scopeP("h0c11","h1d5");fgen("sq",50,10,5);scopeSet({tb:"0.001",v0:"2",v1:"1",trT:"edge",trS:"0",trSl:"rise",trL:"1",c1Ch:"1",c2Ch:"1"});setCurs(0.1,0.1+0.0414);},
+   steps:["RL swapped for the <b>1 µF capacitor</b>; source wire moved to <b>FGEN</b>.","<b>CH 0</b> clip on node A (Vs), <b>CH 1</b> clip on node C (Vc).","FGEN: <b>square, 50 Hz, 10 Vpp, 5 V offset</b> (so Vc starts at 0 V).","Scope: trigger <b>Edge, Chan 0, Rising, 1 V</b>; <b>1 ms/div</b>; cursors on CH 1.","On the <b>Computer screen</b>: C1 sits on the rising edge and C2 at about 0.63 × Vc-pp. <b>dT = τ</b>. Nudge C2 until its voltage reads 0.632 × Vc-pp."],exp:"tau"},
+ ac:{title:"Measure |Vc| and phase at 1 kHz",part:"ac",do:()=>{dmm("V");plug("J_V");scopeP("h0c11","h1d5");fgen("sin",1000,10,0);scopeSet({tb:"0.0001",v0:"2",v1:"1",trT:"edge",trS:"0",trSl:"rise",trL:"0",c1Ch:"0",c2Ch:"1"});},
+   steps:["Same circuit as part 2. FGEN: <b>sine, 1 kHz, 10 Vpp, 0 V offset</b>.","Scope: trigger <b>Edge, Chan 0, Rising, 0 V</b>; <b>100 µs/div</b>.","Read <b>CH 1 Vp-p</b> for |Vc|.","Set <b>C1 channel = CH 0</b> and <b>C2 channel = CH 1</b>. Put C1 on CH 0's rising zero crossing and C2 on Vc's next rising zero crossing. Phase = −dT × 360° × f (Vc <b>lags</b>)."],exp:"ac"}};
+function probe(r,b){wires.find(w=>w.id==="L_red").ends[1].pt=r;wires.find(w=>w.id==="L_blk").ends[1].pt=b;}
+function plug(j){wires.find(w=>w.id==="L_red").ends[0].pt=j;}
+function part1(id,i,pt){parts.find(p=>p.id===id).ends[i].pt=pt;}
+function pull(id){const p=parts.find(p=>p.id===id);p.ends.forEach((e,i)=>{e.pt=null;e.x=250+PARTDEF.indexOf(id)*140+i*100;e.y=965;});}
+function dmm(m){dmmMode=m;document.querySelectorAll("[data-dmm]").forEach(x=>x.setAttribute("aria-pressed",x.dataset.dmm===m));}
+function scopeP(a,c){wires.find(w=>w.id==="L_s0").ends[1].pt=a;wires.find(w=>w.id==="L_s1").ends[1].pt=c;}
+function fgen(w,f,A,o){FG.w=w;FG.f=f;FG.A=A;FG.o=o;fgRun=true;$("fgF").value=f;$("fgA").value=A;$("fgO").value=o;$("fgBig").textContent=f.toFixed(2);document.querySelectorAll("[data-wave]").forEach(x=>x.setAttribute("aria-pressed",x.dataset.wave===w));}
+function scopeSet(o){for(const k in o){$(k).value=o[k];}syncTrig();trigCache=null;}
+function setCurs(a,b){curs=[a,b];}
+function expText(key){const T=theory(),f=(n)=>{const r=[...T.dc,...T.tr,...T.ac].find(x=>x[0]===n);return r?`${r[1].toFixed(r[2]==="Ω"?1:3)} ${r[2]}`:"";};
+  return {V1:`Expected reading: <b>${f("V1")}</b>`,I1:`Expected reading: <b>${f("I1")}</b>`,I2:`Expected reading: <b>${f("I2")}</b> (negative because of the arrow direction)`,I3:`Expected reading: <b>${f("I3")}</b>`,
+   Voc:`Expected reading: <b>${f("Voc")}</b>`,Isc:`Expected reading: <b>${f("Isc")}</b>`,Rth:`Expected reading: <b>${f("Rth")}</b>`,
+   tau:`Expected: Vc-pp <b>${f("Vc-pp")}</b>, 0.63·Vc <b>${f("0.63Vc")}</b>, τ <b>${f("τ")}</b>. Open the Computer screen (key 2) to read it.`,
+   ac:`Expected: |Vc| <b>${f("|Vc|")}</b>, dT <b>${f("Δt")}</b>, phase <b>${f("Phase")}</b>. Open the Computer screen (key 2) to read it.`}[key];}
+function runGuide(key){const g=GUIDES[key];if(!g)return;
+  if(part!==g.part)document.querySelector(`[data-part="${g.part}"]`).click();
+  autoBuild();g.do();recompute();
+  $("gTitle").textContent="Guided setup · "+g.title;$("gSteps").innerHTML=g.steps.map(x=>`<li>${x}</li>`).join("");$("gExp").innerHTML=expText(g.exp)+` <span style="color:var(--muted)">This replaced your own build; press Reset to start fresh.</span>`;
+  const intact=key==="V1"||key==="tau"||key==="ac";
+  $("checkOut").dataset.live="";$("checkOut").innerHTML=intact?'<div class="ok">✓ Circuit matches the schematic.</div>':'<span class="empty">The circuit is changed on purpose for this measurement (branch broken, RL removed or source shorted), so Check circuit is paused. Press Reset or Auto-build to restore it.</span>';
+  $("guide").hidden=false;track("guide-"+key);}
+$("guideSel").addEventListener("change",e=>{runGuide(e.target.value);e.target.value="";});
+$("gClose").onclick=()=>$("guide").hidden=true;
+
+// ---------- shell: swatches, theme, keyboard ----------
+document.querySelectorAll("[data-sw]").forEach(b=>b.onclick=()=>{$("wColor").value=b.dataset.sw;document.querySelectorAll("[data-sw]").forEach(x=>x.setAttribute("aria-pressed",x===b));});
+document.addEventListener("keydown",e=>{if(/INPUT|SELECT|TEXTAREA/.test(document.activeElement.tagName)||e.metaKey||e.ctrlKey||e.altKey)return;
+  const m={"1":"bench","2":"pc","3":"sheet"}[e.key];if(m){$("mt-"+m).click();return;}
+  if(e.key==="v"||e.key==="V"){(TILT.on?$("vflat"):$("v3d")).click();}});
+
+// ---------- analytics (only active when a GoatCounter code is set and the page is hosted, e.g. GitHub Pages) ----------
+const GC=(window.ANALYTICS||{}).goatcounter,hosted=/^https?:$/.test(location.protocol)&&!/claude\.ai|claudeusercontent|localhost/.test(location.hostname);
+const track=(name)=>{try{if(window.goatcounter&&window.goatcounter.count)window.goatcounter.count({path:"event/"+name,title:name,event:true});}catch(e){}};
+if(GC&&hosted){
+  const sc=document.createElement("script");sc.async=true;sc.src="https://gc.zgo.at/count.js";sc.dataset.goatcounter=`https://${GC}.goatcounter.com/count`;document.head.append(sc);
+  // fallback: if a blocker stops count.js, send GoatCounter's no-JS pixel instead
+  setTimeout(()=>{if(window.goatcounter&&window.goatcounter.count)return;const q=new URLSearchParams({p:location.pathname,t:document.title,r:document.referrer||"",s:screen.width+","+screen.height});const img=new Image();img.src=`https://${GC}.goatcounter.com/count?${q}`;},3000);
+  if(window.ANALYTICS.showCount)fetch(`https://${GC}.goatcounter.com/counter/TOTAL.json`).then(r=>r.ok?r.json():null).then(d=>{if(d&&d.count){$("visits").textContent=`${d.count} visits`;$("visits").hidden=false;}}).catch(()=>{});
+}
+// usage events: which tools people actually use
+[["chkC","check-circuit"],["autoB","auto-build"],["mt-pc","open-computer-screen"],["mt-sheet","open-lab-sheet"],["autoS","scope-autoscale"],["bReal","real-parts"]].forEach(([id,n])=>$(id)?.addEventListener("click",()=>track(n)));
+document.querySelectorAll("[data-part]").forEach(b=>b.addEventListener("click",()=>track("experiment-"+b.dataset.part)));
+document.addEventListener("click",e=>{if(e.target.closest&&e.target.closest("#chk"))track("check-worksheet");});
+window.__bench={get parts(){return parts},get wires(){return wires},get power(){return power},set power(v){power=v;recompute();},get fgRun(){return fgRun},set fgRun(v){fgRun=v;recompute();},HID,simTime:()=>{const t=performance.now();simulate(LASTM);return performance.now()-t;},recTime:()=>{const t=performance.now();recompute();return performance.now()-t;},TILT,get part(){return part},autoBuild,recompute,DM:()=>DM,STATUS:()=>STATUS,TRACE:()=>TRACE,svgPt,PTS,setMode:m=>{dmmMode=m;recompute();},FG,setPart:p=>{part=p;}};
+})();
+</script>
+</body>
+</html>

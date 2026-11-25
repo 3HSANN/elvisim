@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How I built ELVISim</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20width%3D%2264%22%20height%3D%2264%22%20viewBox%3D%220%200%2016%2016%22%20shape-rendering%3D%22crispEdges%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Crect%20x%3D%222%22%20y%3D%220%22%20width%3D%2212%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%221%22%20y%3D%221%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%222%22%20y%3D%221%22%20width%3D%2212%22%20height%3D%221%22%20fill%3D%22%235DB34A%22/%3E%3Crect%20x%3D%2214%22%20y%3D%221%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%220%22%20y%3D%222%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%221%22%20y%3D%222%22%20width%3D%2214%22%20height%3D%221%22%20fill%3D%22%235DB34A%22/%3E%3Crect%20x%3D%2215%22%20y%3D%222%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%220%22%20y%3D%223%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%221%22%20y%3D%223%22%20width%3D%2214%22%20height%3D%221%22%20fill%3D%22%23F6C12E%22/%3E%3Crect%20x%3D%2215%22%20y%3D%223%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%220%22%20y%3D%224%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%221%22%20y%3D%224%22%20width%3D%2214%22%20height%3D%221%22%20fill%3D%22%23F6C12E%22/%3E%3Crect%20x%3D%2215%22%20y%3D%224%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%220%22%20y%3D%225%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%221%22%20y%3D%225%22%20width%3D%225%22%20height%3D%221%22%20fill%3D%22%23F08A24%22/%3E%3Crect%20x%3D%226%22%20y%3D%225%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23ffffff%22/%3E%3Crect%20x%3D%227%22%20y%3D%225%22%20width%3D%228%22%20height%3D%221%22%20fill%3D%22%23F08A24%22/%3E%3Crect%20x%3D%2215%22%20y%3D%225%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%220%22%20y%3D%226%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%221%22%20y%3D%226%22%20width%3D%224%22%20height%3D%221%22%20fill%3D%22%23F08A24%22/%3E%3Crect%20x%3D%225%22%20y%3D%226%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23ffffff%22/%3E%3Crect%20x%3D%226%22%20y%3D%226%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%227%22%20y%3D%226%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23ffffff%22/%3E%3Crect%20x%3D%228%22%20y%3D%226%22%20width%3D%227%22%20height%3D%221%22%20fill%3D%22%23F08A24%22/%3E%3Crect%20x%3D%2215%22%20y%3D%226%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%220%22%20y%3D%227%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%221%22%20y%3D%227%22%20width%3D%223%22%20height%3D%221%22%20fill%3D%22%23DC3D3A%22/%3E%3Crect%20x%3D%224%22%20y%3D%227%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23ffffff%22/%3E%3Crect%20x%3D%225%22%20y%3D%227%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%226%22%20y%3D%227%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23DC3D3A%22/%3E%3Crect%20x%3D%227%22%20y%3D%227%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%228%22%20y%3D%227%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23ffffff%22/%3E%3Crect%20x%3D%229%22%20y%3D%227%22%20width%3D%226%22%20height%3D%221%22%20fill%3D%22%23DC3D3A%22/%3E%3Crect%20x%3D%2215%22%20y%3D%227%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%220%22%20y%3D%228%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%221%22%20y%3D%228%22%20width%3D%223%22%20height%3D%221%22%20fill%3D%22%23ffffff%22/%3E%3Crect%20x%3D%224%22%20y%3D%228%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%225%22%20y%3D%228%22%20width%3D%223%22%20height%3D%221%22%20fill%3D%22%23DC3D3A%22/%3E%3Crect%20x%3D%228%22%20y%3D%228%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%229%22%20y%3D%228%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23ffffff%22/%3E%3Crect%20x%3D%2210%22%20y%3D%228%22%20width%3D%223%22%20height%3D%221%22%20fill%3D%22%23DC3D3A%22/%3E%3Crect%20x%3D%2213%22%20y%3D%228%22%20width%3D%222%22%20height%3D%221%22%20fill%3D%22%23ffffff%22/%3E%3Crect%20x%3D%2215%22%20y%3D%228%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%220%22%20y%3D%229%22%20width%3D%224%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%224%22%20y%3D%229%22%20width%3D%225%22%20height%3D%221%22%20fill%3D%22%23DC3D3A%22/%3E%3Crect%20x%3D%229%22%20y%3D%229%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%2210%22%20y%3D%229%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23ffffff%22/%3E%3Crect%20x%3D%2211%22%20y%3D%229%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23DC3D3A%22/%3E%3Crect%20x%3D%2212%22%20y%3D%229%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23ffffff%22/%3E%3Crect%20x%3D%2213%22%20y%3D%229%22%20width%3D%223%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%220%22%20y%3D%2210%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%221%22%20y%3D%2210%22%20width%3D%229%22%20height%3D%221%22%20fill%3D%22%238E4A9C%22/%3E%3Crect%20x%3D%2210%22%20y%3D%2210%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%2211%22%20y%3D%2210%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23ffffff%22/%3E%3Crect%20x%3D%2212%22%20y%3D%2210%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%2213%22%20y%3D%2210%22%20width%3D%222%22%20height%3D%221%22%20fill%3D%22%238E4A9C%22/%3E%3Crect%20x%3D%2215%22%20y%3D%2210%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%220%22%20y%3D%2211%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%221%22%20y%3D%2211%22%20width%3D%2210%22%20height%3D%221%22%20fill%3D%22%238E4A9C%22/%3E%3Crect%20x%3D%2211%22%20y%3D%2211%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%2212%22%20y%3D%2211%22%20width%3D%223%22%20height%3D%221%22%20fill%3D%22%238E4A9C%22/%3E%3Crect%20x%3D%2215%22%20y%3D%2211%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%220%22%20y%3D%2212%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%221%22%20y%3D%2212%22%20width%3D%2214%22%20height%3D%221%22%20fill%3D%22%232A9AD6%22/%3E%3Crect%20x%3D%2215%22%20y%3D%2212%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%220%22%20y%3D%2213%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%221%22%20y%3D%2213%22%20width%3D%2214%22%20height%3D%221%22%20fill%3D%22%232A9AD6%22/%3E%3Crect%20x%3D%2215%22%20y%3D%2213%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%221%22%20y%3D%2214%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%222%22%20y%3D%2214%22%20width%3D%2212%22%20height%3D%221%22%20fill%3D%22%232A9AD6%22/%3E%3Crect%20x%3D%2214%22%20y%3D%2214%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%222%22%20y%3D%2215%22%20width%3D%2212%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Martian+Mono:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/notebook.css">
+<style>
+/* Build log: dated notebook entries down a left time rail, then method, tests and next steps. */
+.intro{padding:64px 0 24px;display:grid;gap:18px}
+.log{margin-top:40px;display:grid;gap:0;border-left:2px solid var(--rule);margin-left:8px}
+.entry{position:relative;padding:0 0 44px 34px}
+.entry::before{content:"";position:absolute;left:-9px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--paper-2);border:2px solid var(--rule)}
+.entry .label{color:var(--pen)}
+.entry h3{margin:6px 0 10px}
+.entry ul{margin:10px 0 0;padding-left:20px;max-width:62ch}
+.entry li{margin:4px 0;color:var(--ink-2);font-size:17px}
+.entry .hand{display:block;margin-top:12px;font-size:23px}
+.section{padding-top:72px}
+.section header{border-bottom:2px solid var(--rule);padding-bottom:12px;margin-bottom:24px;display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.card{padding:20px;display:grid;gap:10px;align-content:start}
+.card p{font-size:16.5px;color:var(--ink-2)}
+code{font:500 13.5px var(--mono);background:#fff;border:1px solid var(--grid-major);border-radius:3px;padding:1px 5px}
+.bug{padding:24px;border:2px solid var(--redpen);background:#fff7f5;display:grid;gap:12px}
+.bug .label{color:var(--redpen)}
+table{width:100%;border-collapse:collapse;font-size:16px;background:var(--paper-2);border:2px solid var(--rule)}
+th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--grid-major)}
+th{font:600 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);border-bottom:2px solid var(--rule)}
+td.num{font:500 14px var(--mono);font-variant-numeric:tabular-nums}
+.tablewrap{overflow-x:auto}
+.pxlogo{image-rendering:pixelated}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="mark" href="../index.html" aria-label="ELVISim home">
+    <svg width="34" height="34" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true" class="pxlogo"><rect x="2" y="0" width="12" height="1" fill="#1d2733"/><rect x="1" y="1" width="1" height="1" fill="#1d2733"/><rect x="2" y="1" width="12" height="1" fill="#5DB34A"/><rect x="14" y="1" width="1" height="1" fill="#1d2733"/><rect x="0" y="2" width="1" height="1" fill="#1d2733"/><rect x="1" y="2" width="14" height="1" fill="#5DB34A"/><rect x="15" y="2" width="1" height="1" fill="#1d2733"/><rect x="0" y="3" width="1" height="1" fill="#1d2733"/><rect x="1" y="3" width="14" height="1" fill="#F6C12E"/><rect x="15" y="3" width="1" height="1" fill="#1d2733"/><rect x="0" y="4" width="1" height="1" fill="#1d2733"/><rect x="1" y="4" width="14" height="1" fill="#F6C12E"/><rect x="15" y="4" width="1" height="1" fill="#1d2733"/><rect x="0" y="5" width="1" height="1" fill="#1d2733"/><rect x="1" y="5" width="5" height="1" fill="#F08A24"/><rect x="6" y="5" width="1" height="1" fill="#ffffff"/><rect x="7" y="5" width="8" height="1" fill="#F08A24"/><rect x="15" y="5" width="1" height="1" fill="#1d2733"/><rect x="0" y="6" width="1" height="1" fill="#1d2733"/><rect x="1" y="6" width="4" height="1" fill="#F08A24"/><rect x="5" y="6" width="1" height="1" fill="#ffffff"/><rect x="6" y="6" width="1" height="1" fill="#1d2733"/><rect x="7" y="6" width="1" height="1" fill="#ffffff"/><rect x="8" y="6" width="7" height="1" fill="#F08A24"/><rect x="15" y="6" width="1" height="1" fill="#1d2733"/><rect x="0" y="7" width="1" height="1" fill="#1d2733"/><rect x="1" y="7" width="3" height="1" fill="#DC3D3A"/><rect x="4" y="7" width="1" height="1" fill="#ffffff"/><rect x="5" y="7" width="1" height="1" fill="#1d2733"/><rect x="6" y="7" width="1" height="1" fill="#DC3D3A"/><rect x="7" y="7" width="1" height="1" fill="#1d2733"/><rect x="8" y="7" width="1" height="1" fill="#ffffff"/><rect x="9" y="7" width="6" height="1" fill="#DC3D3A"/><rect x="15" y="7" width="1" height="1" fill="#1d2733"/><rect x="0" y="8" width="1" height="1" fill="#1d2733"/><rect x="1" y="8" width="3" height="1" fill="#ffffff"/><rect x="4" y="8" width="1" height="1" fill="#1d2733"/><rect x="5" y="8" width="3" height="1" fill="#DC3D3A"/><rect x="8" y="8" width="1" height="1" fill="#1d2733"/><rect x="9" y="8" width="1" height="1" fill="#ffffff"/><rect x="10" y="8" width="3" height="1" fill="#DC3D3A"/><rect x="13" y="8" width="2" height="1" fill="#ffffff"/><rect x="15" y="8" width="1" height="1" fill="#1d2733"/><rect x="0" y="9" width="4" height="1" fill="#1d2733"/><rect x="4" y="9" width="5" height="1" fill="#DC3D3A"/><rect x="9" y="9" width="1" height="1" fill="#1d2733"/><rect x="10" y="9" width="1" height="1" fill="#ffffff"/><rect x="11" y="9" width="1" height="1" fill="#DC3D3A"/><rect x="12" y="9" width="1" height="1" fill="#ffffff"/><rect x="13" y="9" width="3" height="1" fill="#1d2733"/><rect x="0" y="10" width="1" height="1" fill="#1d2733"/><rect x="1" y="10" width="9" height="1" fill="#8E4A9C"/><rect x="10" y="10" width="1" height="1" fill="#1d2733"/><rect x="11" y="10" width="1" height="1" fill="#ffffff"/><rect x="12" y="10" width="1" height="1" fill="#1d2733"/><rect x="13" y="10" width="2" height="1" fill="#8E4A9C"/><rect x="15" y="10" width="1" height="1" fill="#1d2733"/><rect x="0" y="11" width="1" height="1" fill="#1d2733"/><rect x="1" y="11" width="10" height="1" fill="#8E4A9C"/><rect x="11" y="11" width="1" height="1" fill="#1d2733"/><rect x="12" y="11" width="3" height="1" fill="#8E4A9C"/><rect x="15" y="11" width="1" height="1" fill="#1d2733"/><rect x="0" y="12" width="1" height="1" fill="#1d2733"/><rect x="1" y="12" width="14" height="1" fill="#2A9AD6"/><rect x="15" y="12" width="1" height="1" fill="#1d2733"/><rect x="0" y="13" width="1" height="1" fill="#1d2733"/><rect x="1" y="13" width="14" height="1" fill="#2A9AD6"/><rect x="15" y="13" width="1" height="1" fill="#1d2733"/><rect x="1" y="14" width="1" height="1" fill="#1d2733"/><rect x="2" y="14" width="12" height="1" fill="#2A9AD6"/><rect x="14" y="14" width="1" height="1" fill="#1d2733"/><rect x="2" y="15" width="12" height="1" fill="#1d2733"/></svg>
+    <span><b>ELVISim</b><small>ELE 211L · NI ELVIS II+</small></span>
+  </a>
+  <nav aria-label="Main"><a href="../index.html">Overview</a><a href="../sim/index.html">Simulator</a><a href="index.html" aria-current="page">How I built it</a><a href="https://github.com/3HSANN/elvisim">Source</a></nav>
+</div></header>
+
+<main class="wrap">
+  <section class="intro">
+    <span class="label">Build log · 17 – 23 Nov 2026</span>
+    <h1 style="font-size:clamp(36px,5vw,58px)">How I built a lab bench in about <em>two hours</em>.</h1>
+    <p class="lede">I set the requirements, checked every version against my own lab, and caught what was wrong. Claude Opus 5.5 wrote the code. Here's how it went, in order.</p>
+  </section>
+
+  <div class="log">
+    <article class="entry">
+      <span class="label">17 Nov · Evening</span>
+      <h3>From the practice script to a breadboard</h3>
+      <p>The first version was a flat bench with a DMM and a scope. It worked, but it didn't feel like the lab. The real skill is <em>wiring</em>, so I asked for a breadboard where I drag every wire myself.</p>
+      <ul><li>Breadboard strips, header pins and DMM jacks are all connection points</li><li>Wires join points into nodes; a circuit solver works out every voltage</li><li>Mistakes behave like the real board: shorts trip the supply, a powered ohmmeter reads "Err"</li></ul>
+    </article>
+    <article class="entry">
+      <span class="label">18 Nov · 8:30 pm</span>
+      <h3>Making it look like the real ELVIS II+</h3>
+      <p>From a photo of our workstation: vertical breadboard blocks, the side panels with BNC and banana jacks, the power and function generator knobs, a component drawer, and a tilted 3D view.</p>
+      <ul><li>A Computer screen tab with mock ELVISmx panels for the DMM, function generator and scope</li><li>A 3D rocker switch with a click sound synthesised in the browser</li><li>The scope's Edge trigger with slope, because Immediate drifts, just like in the lab</li></ul>
+      <span class="hand">then: test everything</span>
+    </article>
+    <article class="entry">
+      <span class="label">18 Nov · 9:10 pm</span>
+      <h3>62 checks, one real bug</h3>
+      <p>Every reading was checked against hand calculations, along with the fault cases, wiring with the mouse in 3D and flat view, and speed. They all passed, but an extra check at low frequencies found a real bug, described below.</p>
+    </article>
+    <article class="entry">
+      <span class="label">22 Nov · Practising</span>
+      <h3>Using it taught me what to add</h3>
+      <p>My first builds were wrong: I wired nodes down <em>columns</em> instead of across rows, and measured current with the black probe on the wrong end of R2. Those mistakes became features.</p>
+      <ul><li>Guided setups for I1–I3, Voc, Isc, Rth, τ and AC phase</li><li>A separate channel for each cursor, so dT can be measured between Vs and Vc, as in ELVISmx</li></ul>
+    </article>
+    <article class="entry" style="padding-bottom:8px">
+      <span class="label">23 Nov · Lab final</span>
+      <h3>It spread through the class</h3>
+      <p>Over 230 visits so far, mostly from links shared in chats, plus some through iLearn. Visits are counted with GoatCounter, which doesn't use cookies.</p>
+    </article>
+  </div>
+
+  <section class="section" aria-labelledby="h-bug">
+    <header><h2 id="h-bug">The bug worth writing down</h2><span class="label">Numerical methods</span></header>
+    <div class="bug">
+      <span class="label">Symptom</span>
+      <p>At 50 Hz the capacitor's time constant read 0.414 ms, matching theory. At 1–10 Hz the <em>same circuit</em> read 0.5–0.6 ms. The circuit hadn't changed, so the error had to be in the simulation.</p>
+      <span class="label">Cause</span>
+      <p>The transient solver split each period into a fixed 1,600 steps. At 1 Hz that's 0.625 ms per step, longer than τ itself, so the curve was smeared out.</p>
+      <span class="label">Fix</span>
+      <p>Before simulating, measure the resistance each capacitor sees and set the step to <code>Δt = τ_min / 40</code>. τ is now correct from 1 Hz to 100 kHz. Precomputing the solver terms made it about 10× faster too.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="h-how">
+    <header><h2 id="h-how">How the simulation works</h2><span class="label">Under the bench</span></header>
+    <div class="cols">
+      <article class="card sheet"><span class="label">1 · Nodes</span><h3>Union-find</h3><p>Each breadboard row, rail, header pin and jack is a point. Strips and wires merge points into nets, so "is this the same node?" is a single lookup.</p></article>
+      <article class="card sheet"><span class="label">2 · DC</span><h3>Nodal analysis</h3><p>Supplies fix their net's voltage, and resistors and the DMM's 0.1 Ω shunt fill a conductance matrix solved by Gaussian elimination. The ohmmeter injects a 1 mA test current.</p></article>
+      <article class="card sheet"><span class="label">3 · Transient</span><h3>Backward Euler</h3><p>Each capacitor becomes a conductance <code>C/Δt</code> plus a history current, stepped through several periods until it reaches steady state. The scope reads the last period.</p></article>
+      <article class="card sheet"><span class="label">4 · Faults</span><h3>Current limits</h3><p>If a supply would need more than its limit (0.5 A for ±15 V), the bench reports an overload instead of showing an impossible reading.</p></article>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="h-test">
+    <header><h2 id="h-test">Checked against theory</h2><span class="label">Nominal parts</span></header>
+    <div class="tablewrap"><table>
+      <thead><tr><th>Quantity</th><th>Simulator</th><th>Hand calculation</th></tr></thead>
+      <tbody>
+        <tr><td>V1 across R1</td><td class="num">6.928 V</td><td class="num">6.928 V</td></tr>
+        <tr><td>I1 / I2 / I3</td><td class="num">13.58 / −11.87 / 1.714 mA</td><td class="num">same</td></tr>
+        <tr><td>Voc · Isc · Rth</td><td class="num">9.866 V · 23.83 mA · 413.9 Ω</td><td class="num">same</td></tr>
+        <tr><td>τ = Rth·C</td><td class="num">0.414 ms</td><td class="num">0.414 ms</td></tr>
+        <tr><td>Vc at 1 kHz</td><td class="num">2.36 Vpp, −69.0°</td><td class="num">2.36 Vpp, −68.97°</td></tr>
+      </tbody></table></div>
+  </section>
+
+  <section class="section" aria-labelledby="h-next">
+    <header><h2 id="h-next">Next on the bench</h2><span class="label">Ideas</span></header>
+    <div class="cols">
+      <article class="card sheet"><h3>More experiments</h3><p>Maximum power transfer with a load sweep, RL circuits, and a Bode plot panel.</p></article>
+      <article class="card sheet"><h3>Phone-friendly wiring</h3><p>Bigger touch targets and a zoomed breadboard view for practising on a phone.</p></article>
+      <article class="card sheet"><h3>Exam mode</h3><p>A timer, random part values and no guided setups: a mock practical you can grade yourself.</p></article>
+    </div>
+  </section>
+
+  <footer class="page">
+    <div class="titleblock" role="group" aria-label="Project details">
+      <div><span>Project</span><b>ELVISim</b></div>
+      <div><span>Drawn by</span><b>Ehsan Fijhas</b></div>
+      <div><span>Course</span><b>ELE 211L · AUS</b></div>
+      <div><span>Built with</span><b>Claude Opus 5.5</b></div>
+      <div><span>Sheet</span><b>Build log</b></div>
+    </div>
+    <p class="credits">Prompted, designed and built by Ehsan Fijhas · Built with Claude Opus 5.5 · Unofficial practice tool, not affiliated with AUS or NI.</p>
+  </footer>
+</main>
+<script data-goatcounter="https://3hsannn.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script>setTimeout(function(){if(window.goatcounter&&window.goatcounter.count)return;var q=new URLSearchParams({p:location.pathname,t:document.title,r:document.referrer||""});new Image().src="https://3hsannn.goatcounter.com/count?"+q;},3000);</script>
+</body>
+</html>

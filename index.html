@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ELVISim</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20width%3D%2264%22%20height%3D%2264%22%20viewBox%3D%220%200%2016%2016%22%20shape-rendering%3D%22crispEdges%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Crect%20x%3D%222%22%20y%3D%220%22%20width%3D%2212%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%221%22%20y%3D%221%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%222%22%20y%3D%221%22%20width%3D%2212%22%20height%3D%221%22%20fill%3D%22%235DB34A%22/%3E%3Crect%20x%3D%2214%22%20y%3D%221%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%220%22%20y%3D%222%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%221%22%20y%3D%222%22%20width%3D%2214%22%20height%3D%221%22%20fill%3D%22%235DB34A%22/%3E%3Crect%20x%3D%2215%22%20y%3D%222%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%220%22%20y%3D%223%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%221%22%20y%3D%223%22%20width%3D%2214%22%20height%3D%221%22%20fill%3D%22%23F6C12E%22/%3E%3Crect%20x%3D%2215%22%20y%3D%223%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%220%22%20y%3D%224%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%221%22%20y%3D%224%22%20width%3D%2214%22%20height%3D%221%22%20fill%3D%22%23F6C12E%22/%3E%3Crect%20x%3D%2215%22%20y%3D%224%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%220%22%20y%3D%225%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%221%22%20y%3D%225%22%20width%3D%225%22%20height%3D%221%22%20fill%3D%22%23F08A24%22/%3E%3Crect%20x%3D%226%22%20y%3D%225%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23ffffff%22/%3E%3Crect%20x%3D%227%22%20y%3D%225%22%20width%3D%228%22%20height%3D%221%22%20fill%3D%22%23F08A24%22/%3E%3Crect%20x%3D%2215%22%20y%3D%225%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%220%22%20y%3D%226%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%221%22%20y%3D%226%22%20width%3D%224%22%20height%3D%221%22%20fill%3D%22%23F08A24%22/%3E%3Crect%20x%3D%225%22%20y%3D%226%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23ffffff%22/%3E%3Crect%20x%3D%226%22%20y%3D%226%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%227%22%20y%3D%226%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23ffffff%22/%3E%3Crect%20x%3D%228%22%20y%3D%226%22%20width%3D%227%22%20height%3D%221%22%20fill%3D%22%23F08A24%22/%3E%3Crect%20x%3D%2215%22%20y%3D%226%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%220%22%20y%3D%227%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%221%22%20y%3D%227%22%20width%3D%223%22%20height%3D%221%22%20fill%3D%22%23DC3D3A%22/%3E%3Crect%20x%3D%224%22%20y%3D%227%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23ffffff%22/%3E%3Crect%20x%3D%225%22%20y%3D%227%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%226%22%20y%3D%227%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23DC3D3A%22/%3E%3Crect%20x%3D%227%22%20y%3D%227%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%228%22%20y%3D%227%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23ffffff%22/%3E%3Crect%20x%3D%229%22%20y%3D%227%22%20width%3D%226%22%20height%3D%221%22%20fill%3D%22%23DC3D3A%22/%3E%3Crect%20x%3D%2215%22%20y%3D%227%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%220%22%20y%3D%228%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%221%22%20y%3D%228%22%20width%3D%223%22%20height%3D%221%22%20fill%3D%22%23ffffff%22/%3E%3Crect%20x%3D%224%22%20y%3D%228%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%225%22%20y%3D%228%22%20width%3D%223%22%20height%3D%221%22%20fill%3D%22%23DC3D3A%22/%3E%3Crect%20x%3D%228%22%20y%3D%228%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%229%22%20y%3D%228%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23ffffff%22/%3E%3Crect%20x%3D%2210%22%20y%3D%228%22%20width%3D%223%22%20height%3D%221%22%20fill%3D%22%23DC3D3A%22/%3E%3Crect%20x%3D%2213%22%20y%3D%228%22%20width%3D%222%22%20height%3D%221%22%20fill%3D%22%23ffffff%22/%3E%3Crect%20x%3D%2215%22%20y%3D%228%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%220%22%20y%3D%229%22%20width%3D%224%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%224%22%20y%3D%229%22%20width%3D%225%22%20height%3D%221%22%20fill%3D%22%23DC3D3A%22/%3E%3Crect%20x%3D%229%22%20y%3D%229%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%2210%22%20y%3D%229%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23ffffff%22/%3E%3Crect%20x%3D%2211%22%20y%3D%229%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23DC3D3A%22/%3E%3Crect%20x%3D%2212%22%20y%3D%229%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23ffffff%22/%3E%3Crect%20x%3D%2213%22%20y%3D%229%22%20width%3D%223%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%220%22%20y%3D%2210%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%221%22%20y%3D%2210%22%20width%3D%229%22%20height%3D%221%22%20fill%3D%22%238E4A9C%22/%3E%3Crect%20x%3D%2210%22%20y%3D%2210%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%2211%22%20y%3D%2210%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%23ffffff%22/%3E%3Crect%20x%3D%2212%22%20y%3D%2210%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%2213%22%20y%3D%2210%22%20width%3D%222%22%20height%3D%221%22%20fill%3D%22%238E4A9C%22/%3E%3Crect%20x%3D%2215%22%20y%3D%2210%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%220%22%20y%3D%2211%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%221%22%20y%3D%2211%22%20width%3D%2210%22%20height%3D%221%22%20fill%3D%22%238E4A9C%22/%3E%3Crect%20x%3D%2211%22%20y%3D%2211%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%2212%22%20y%3D%2211%22%20width%3D%223%22%20height%3D%221%22%20fill%3D%22%238E4A9C%22/%3E%3Crect%20x%3D%2215%22%20y%3D%2211%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%220%22%20y%3D%2212%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%221%22%20y%3D%2212%22%20width%3D%2214%22%20height%3D%221%22%20fill%3D%22%232A9AD6%22/%3E%3Crect%20x%3D%2215%22%20y%3D%2212%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%220%22%20y%3D%2213%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%221%22%20y%3D%2213%22%20width%3D%2214%22%20height%3D%221%22%20fill%3D%22%232A9AD6%22/%3E%3Crect%20x%3D%2215%22%20y%3D%2213%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%221%22%20y%3D%2214%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%222%22%20y%3D%2214%22%20width%3D%2212%22%20height%3D%221%22%20fill%3D%22%232A9AD6%22/%3E%3Crect%20x%3D%2214%22%20y%3D%2214%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3Crect%20x%3D%222%22%20y%3D%2215%22%20width%3D%2212%22%20height%3D%221%22%20fill%3D%22%231d2733%22/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Martian+Mono:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/notebook.css">
+<style>
+/* Landing: hero thesis on the left with a red-pen margin note; the bench screenshot taped to the page on the right. */
+.hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:56px;align-items:center;padding:72px 0 40px}
+@media (max-width:900px){.hero{grid-template-columns:1fr;gap:40px;padding-top:48px}}
+.hero .label{margin-bottom:18px;display:block}
+.hero .lede{margin:24px 0 32px}
+.actions{display:flex;gap:16px;flex-wrap:wrap}
+.note{position:relative;margin:30px 0 0 6px;display:flex;align-items:flex-start;gap:10px;transform:rotate(-2deg);transform-origin:left}
+.note svg{flex:none;margin-top:-18px}
+.taped{position:relative;transform:rotate(1.4deg)}
+.taped img{display:block;width:100%;height:auto;border:1.5px solid var(--rule);background:#fff;box-shadow:0 18px 30px -18px rgba(29,39,51,.45);outline:1px solid oklch(0 0 0 / .1);outline-offset:-1px}
+.tape{position:absolute;width:110px;height:30px;background:rgba(251,227,107,.72);border:1px solid rgba(160,130,20,.25);box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.tape.a{top:-14px;left:28px;transform:rotate(-6deg)}
+.tape.b{bottom:40px;right:-18px;transform:rotate(38deg)}
+.caption{font:500 11px var(--mono);color:var(--ink-2);margin-top:14px;letter-spacing:.04em}
+/* figures */
+.section{padding-top:88px}
+.section header{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;border-bottom:2px solid var(--rule);padding-bottom:12px;margin-bottom:28px}
+.figs{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
+.fig{padding:18px 18px 20px;display:grid;gap:12px;align-content:start}
+.fig svg{width:100%;height:auto;display:block;background:#fff;border:1px solid var(--grid-major)}
+.fig .label{color:var(--pen)}
+.fig p{font-size:16.5px;line-height:1.5;color:var(--ink-2)}
+/* readings strip */
+.readings{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));border:2px solid var(--rule);background:var(--paper-2)}
+.readings div{padding:22px 20px;border-right:1px solid var(--rule)}
+.readings div:last-child{border-right:0}
+.readings b{display:block;font:600 34px/1 var(--mono);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.readings span{display:block;margin-top:10px;font-size:15.5px;color:var(--ink-2);line-height:1.4}
+/* story */
+.story{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:48px;align-items:start}
+@media (max-width:820px){.story{grid-template-columns:1fr}}
+.story p+p{margin-top:16px}
+.margin-note{border-left:3px solid var(--redpen);padding:4px 0 4px 18px}
+.pxlogo{image-rendering:pixelated}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="mark" href="index.html" aria-label="ELVISim home">
+    <svg width="34" height="34" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true" class="pxlogo"><rect x="2" y="0" width="12" height="1" fill="#1d2733"/><rect x="1" y="1" width="1" height="1" fill="#1d2733"/><rect x="2" y="1" width="12" height="1" fill="#5DB34A"/><rect x="14" y="1" width="1" height="1" fill="#1d2733"/><rect x="0" y="2" width="1" height="1" fill="#1d2733"/><rect x="1" y="2" width="14" height="1" fill="#5DB34A"/><rect x="15" y="2" width="1" height="1" fill="#1d2733"/><rect x="0" y="3" width="1" height="1" fill="#1d2733"/><rect x="1" y="3" width="14" height="1" fill="#F6C12E"/><rect x="15" y="3" width="1" height="1" fill="#1d2733"/><rect x="0" y="4" width="1" height="1" fill="#1d2733"/><rect x="1" y="4" width="14" height="1" fill="#F6C12E"/><rect x="15" y="4" width="1" height="1" fill="#1d2733"/><rect x="0" y="5" width="1" height="1" fill="#1d2733"/><rect x="1" y="5" width="5" height="1" fill="#F08A24"/><rect x="6" y="5" width="1" height="1" fill="#ffffff"/><rect x="7" y="5" width="8" height="1" fill="#F08A24"/><rect x="15" y="5" width="1" height="1" fill="#1d2733"/><rect x="0" y="6" width="1" height="1" fill="#1d2733"/><rect x="1" y="6" width="4" height="1" fill="#F08A24"/><rect x="5" y="6" width="1" height="1" fill="#ffffff"/><rect x="6" y="6" width="1" height="1" fill="#1d2733"/><rect x="7" y="6" width="1" height="1" fill="#ffffff"/><rect x="8" y="6" width="7" height="1" fill="#F08A24"/><rect x="15" y="6" width="1" height="1" fill="#1d2733"/><rect x="0" y="7" width="1" height="1" fill="#1d2733"/><rect x="1" y="7" width="3" height="1" fill="#DC3D3A"/><rect x="4" y="7" width="1" height="1" fill="#ffffff"/><rect x="5" y="7" width="1" height="1" fill="#1d2733"/><rect x="6" y="7" width="1" height="1" fill="#DC3D3A"/><rect x="7" y="7" width="1" height="1" fill="#1d2733"/><rect x="8" y="7" width="1" height="1" fill="#ffffff"/><rect x="9" y="7" width="6" height="1" fill="#DC3D3A"/><rect x="15" y="7" width="1" height="1" fill="#1d2733"/><rect x="0" y="8" width="1" height="1" fill="#1d2733"/><rect x="1" y="8" width="3" height="1" fill="#ffffff"/><rect x="4" y="8" width="1" height="1" fill="#1d2733"/><rect x="5" y="8" width="3" height="1" fill="#DC3D3A"/><rect x="8" y="8" width="1" height="1" fill="#1d2733"/><rect x="9" y="8" width="1" height="1" fill="#ffffff"/><rect x="10" y="8" width="3" height="1" fill="#DC3D3A"/><rect x="13" y="8" width="2" height="1" fill="#ffffff"/><rect x="15" y="8" width="1" height="1" fill="#1d2733"/><rect x="0" y="9" width="4" height="1" fill="#1d2733"/><rect x="4" y="9" width="5" height="1" fill="#DC3D3A"/><rect x="9" y="9" width="1" height="1" fill="#1d2733"/><rect x="10" y="9" width="1" height="1" fill="#ffffff"/><rect x="11" y="9" width="1" height="1" fill="#DC3D3A"/><rect x="12" y="9" width="1" height="1" fill="#ffffff"/><rect x="13" y="9" width="3" height="1" fill="#1d2733"/><rect x="0" y="10" width="1" height="1" fill="#1d2733"/><rect x="1" y="10" width="9" height="1" fill="#8E4A9C"/><rect x="10" y="10" width="1" height="1" fill="#1d2733"/><rect x="11" y="10" width="1" height="1" fill="#ffffff"/><rect x="12" y="10" width="1" height="1" fill="#1d2733"/><rect x="13" y="10" width="2" height="1" fill="#8E4A9C"/><rect x="15" y="10" width="1" height="1" fill="#1d2733"/><rect x="0" y="11" width="1" height="1" fill="#1d2733"/><rect x="1" y="11" width="10" height="1" fill="#8E4A9C"/><rect x="11" y="11" width="1" height="1" fill="#1d2733"/><rect x="12" y="11" width="3" height="1" fill="#8E4A9C"/><rect x="15" y="11" width="1" height="1" fill="#1d2733"/><rect x="0" y="12" width="1" height="1" fill="#1d2733"/><rect x="1" y="12" width="14" height="1" fill="#2A9AD6"/><rect x="15" y="12" width="1" height="1" fill="#1d2733"/><rect x="0" y="13" width="1" height="1" fill="#1d2733"/><rect x="1" y="13" width="14" height="1" fill="#2A9AD6"/><rect x="15" y="13" width="1" height="1" fill="#1d2733"/><rect x="1" y="14" width="1" height="1" fill="#1d2733"/><rect x="2" y="14" width="12" height="1" fill="#2A9AD6"/><rect x="14" y="14" width="1" height="1" fill="#1d2733"/><rect x="2" y="15" width="12" height="1" fill="#1d2733"/></svg>
+    <span><b>ELVISim</b><small>ELE 211L · NI ELVIS II+</small></span>
+  </a>
+  <nav aria-label="Main"><a href="index.html" aria-current="page">Overview</a><a href="sim/index.html">Simulator</a><a href="build-log/index.html">How I built it</a><a href="https://github.com/3HSANN/elvisim">Source</a></nav>
+</div></header>
+
+<main class="wrap">
+  <section class="hero">
+    <div>
+      <span class="label">Practice bench · Electric Circuits I lab</span>
+      <h1>Wire it, probe it, <em>break it</em> before you touch the real bench.</h1>
+      <p class="lede">ELVISim is the NI ELVIS II+ workstation in your browser. Build the circuit on a breadboard, measure it with the DMM and oscilloscope, and see exactly what the real board would show, mistakes included.</p>
+      <div class="actions">
+        <a class="btn primary" href="sim/index.html">Open the simulator →</a>
+        <a class="btn" href="build-log/index.html">How I built it</a>
+      </div>
+      <div class="note">
+        <svg width="54" height="46" viewBox="0 0 54 46" fill="none" stroke="#c8372d" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M50 40C34 38 14 30 8 8"/><path d="M3 15l5-8 7 5"/></svg>
+        <span class="hand">built the week of my lab final,<br>because I couldn't practise at home</span>
+      </div>
+    </div>
+    <figure class="taped" style="margin:0">
+      <span class="tape a" aria-hidden="true"></span><span class="tape b" aria-hidden="true"></span>
+      <img src="assets/preview.jpg" alt="ELVISim bench: a breadboard with resistors wired between rows, DMM probes on two nodes, and the board's side panels" width="1200" height="1083">
+      <figcaption class="caption">FIG. 0 · THE BENCH, PART 1 CIRCUIT WIRED, DMM ACROSS R1</figcaption>
+    </figure>
+  </section>
+
+  <section class="section" aria-labelledby="h-what">
+    <header><h2 id="h-what">What you can practise</h2><span class="label">4 figures</span></header>
+    <div class="figs">
+      <article class="fig sheet">
+        <svg viewBox="0 0 240 120" role="img" aria-label="Breadboard rows with a resistor spanning two rows"><g fill="#4a5563">
+          <rect x="40" y="22" width="6" height="6"/><rect x="58" y="22" width="6" height="6"/><rect x="76" y="22" width="6" height="6"/><rect x="94" y="22" width="6" height="6"/><rect x="112" y="22" width="6" height="6"/>
+          <rect x="40" y="82" width="6" height="6"/><rect x="58" y="82" width="6" height="6"/><rect x="76" y="82" width="6" height="6"/><rect x="94" y="82" width="6" height="6"/><rect x="112" y="82" width="6" height="6"/></g>
+          <rect x="34" y="16" width="90" height="18" rx="4" fill="#fbe36b" opacity=".55"/><rect x="34" y="76" width="90" height="18" rx="4" fill="#fbe36b" opacity=".55"/>
+          <path d="M79 25V40l-6 4 12 6-12 6 12 6-6 4v19" fill="none" stroke="#1d2733" stroke-width="2"/>
+          <text x="140" y="30" font-family="Caveat" font-size="18" fill="#c8372d">row = 1 node</text><text x="140" y="90" font-family="Caveat" font-size="18" fill="#c8372d">another node</text></svg>
+        <span class="label">Fig. 1 · Build</span>
+        <h3>Real breadboard wiring</h3>
+        <p>Drag wires and parts into holes. Hover any hole to see its node; Check circuit tells you which part is in the wrong row.</p>
+      </article>
+      <article class="fig sheet">
+        <svg viewBox="0 0 240 120" role="img" aria-label="Ammeter inserted in series with a resistor"><path d="M20 60h40l5-10 10 20 10-20 10 20 5-10h20" fill="none" stroke="#1d2733" stroke-width="2"/><circle cx="150" cy="60" r="18" fill="#fff" stroke="#2346a8" stroke-width="2.2"/><text x="150" y="66" text-anchor="middle" font-family="Martian Mono" font-size="15" font-weight="700" fill="#2346a8">A</text><path d="M168 60h50" stroke="#1d2733" stroke-width="2"/><path d="M110 44l8 6-8 6" fill="none" stroke="#c8372d" stroke-width="2"/><text x="120" y="104" text-anchor="middle" font-family="Caveat" font-size="19" fill="#c8372d">meter goes in series</text></svg>
+        <span class="label">Fig. 2 · Measure</span>
+        <h3>DMM like the real one</h3>
+        <p>Plug leads into VΩ, COM and A. Ammeter across a supply? The supply trips, just like in the lab.</p>
+      </article>
+      <article class="fig sheet">
+        <svg viewBox="0 0 240 120" role="img" aria-label="Two sine waves with cursors measuring a time shift"><rect x="10" y="10" width="220" height="100" fill="#10161d"/><path d="M10 60C30 10 60 10 80 60S130 110 150 60 200 10 230 60" fill="none" stroke="#f2c230" stroke-width="2"/><path d="M10 78C40 82 62 42 96 42S140 78 166 78 210 42 230 50" fill="none" stroke="#4fc3f7" stroke-width="2"/><path d="M45 10v100M96 10v100" stroke="#e6eaef" stroke-dasharray="4 4"/><text x="70" y="24" text-anchor="middle" font-family="Martian Mono" font-size="9" fill="#e6eaef">dT</text></svg>
+        <span class="label">Fig. 3 · Observe</span>
+        <h3>Scope with Edge trigger</h3>
+        <p>Function generator, two channels, a trigger type and slope, and a separate channel for each cursor, set up like ELVISmx.</p>
+      </article>
+      <article class="fig sheet">
+        <svg viewBox="0 0 240 120" role="img" aria-label="Capacitor charging curve with the time constant marked"><path d="M20 100h200M20 100V14" stroke="#1d2733" stroke-width="1.5"/><path d="M20 100C50 34 90 22 220 20" fill="none" stroke="#2346a8" stroke-width="2.4"/><path d="M20 46h44v54" fill="none" stroke="#c8372d" stroke-dasharray="4 3" stroke-width="1.5"/><text x="68" y="44" font-family="Caveat" font-size="18" fill="#c8372d">63% at τ</text><text x="58" y="114" font-family="Martian Mono" font-size="9" fill="#4a5563">τ</text></svg>
+        <span class="label">Fig. 4 · Verify</span>
+        <h3>Numbers you can trust</h3>
+        <p>A nodal solver and transient simulation compute every reading. Guided setups walk you through I1, Rth, τ and AC phase.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="h-read">
+    <header><h2 id="h-read">Readings so far</h2><span class="label">Logged 23 Nov 2026</span></header>
+    <div class="readings">
+      <div><b>230+</b><span>visits from classmates so far, some through iLearn</span></div>
+      <div><b>62</b><span>automated checks against hand calculations and lab faults</span></div>
+      <div><b>±1%</b><span>τ, Thevenin values and AC phase compared with theory</span></div>
+      <div><b>≈2 h</b><span>of build time over a few evenings</span></div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="h-why">
+    <header><h2 id="h-why">Why it exists</h2><span class="label">Entry · 17 Nov</span></header>
+    <div class="story">
+      <div>
+        <p>The ELE 211 practical exam isn't hard on theory. It's hard on <span class="hl">procedure under time pressure</span>: which row is which node, where the red probe goes when you break a branch, why the scope trace won't sit still.</p>
+        <p>You only get to practise that on the real bench during lab hours. So I turned our practice-session script into a bench I could run at home, wrong turns included, and it spread through the class that week.</p>
+        <p style="margin-top:22px"><a class="btn" href="build-log/index.html">Read the build log →</a></p>
+      </div>
+      <aside class="margin-note">
+        <p class="hand" style="font-size:24px">my favourite mistake: black probe in the right row… of the wrong block</p>
+      </aside>
+    </div>
+  </section>
+
+  <footer class="page">
+    <div class="titleblock" role="group" aria-label="Project details">
+      <div><span>Project</span><b>ELVISim</b></div>
+      <div><span>Drawn by</span><b>Ehsan Fijhas</b></div>
+      <div><span>Course</span><b>ELE 211L · AUS</b></div>
+      <div><span>Built with</span><b>Claude Opus 5.5</b></div>
+      <div><span>Rev</span><b>2.0 preview</b></div>
+    </div>
+    <p class="credits">Prompted, designed and built by Ehsan Fijhas · Built with Claude Opus 5.5 · Unofficial practice tool, not affiliated with AUS or NI.</p>
+  </footer>
+</main>
+<script data-goatcounter="https://3hsannn.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script>setTimeout(function(){if(window.goatcounter&&window.goatcounter.count)return;var q=new URLSearchParams({p:location.pathname,t:document.title,r:document.referrer||""});new Image().src="https://3hsannn.goatcounter.com/count?"+q;},3000);</script>
+</body>
+</html>
